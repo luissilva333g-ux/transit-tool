@@ -11,7 +11,7 @@ export default function FrozenSection() {
     <section id="congelados" className="section-padding bg-background">
       <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
         <div>
-          <div className="inline-flex items-center gap-2 bg-blue-50 text-blue-600 px-4 py-2 rounded-2xl text-sm font-semibold mb-6">
+          <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-2xl text-sm font-semibold mb-6">
             <Snowflake className="h-4 w-4" />
             Serviço Frigorífico
           </div>
