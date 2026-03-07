@@ -1,0 +1,167 @@
+import { useState, useMemo } from "react";
+import { Search, MessageCircle } from "lucide-react";
+
+// All city data with route info
+const CITY_ROUTES: { cities: string[]; route: string; getNextDates: () => string }[] = [
+  {
+    cities: ["Porto","Vila Nova de Gaia","Espinho","Valongo","Ermesinde","Alfena","Rio Tinto","Gondomar","São Cosme","Fânzeres","Maia","Águas Santas","Moreira da Maia","Trofa","Vila do Conde","Póvoa de Varzim","Matosinhos","Leça da Palmeira","Senhora da Hora","São Mamede de Infesta","Santo Tirso","Rebordões","Negrelos","Paços de Ferreira","Freamunde","Lousada","Vizela","Felgueiras","Fafe","Braga","Vila Verde","Prado","Amares","Póvoa de Lanhoso","Guimarães","Caldas das Taipas","Pevidém","Joane","Vila Nova de Famalicão","Ribeirão","Riba de Ave","Oliveira São Mateus","Barcelos","Esposende","Apúlia","Fão","Aveiro","Ílhavo","Gafanha da Nazaré","Gafanha da Encarnação","Vagos","Oliveira do Bairro","Oiã","Águeda","Albergaria-a-Velha","Estarreja","Pardilhó","Avanca","Ovar","Esmoriz","Santa Maria da Feira","Fiães","São João da Madeira","Vale de Cambra","Arouca","Sever do Vouga","Mealhada","Pampilhosa","Cantanhede","Tocha","Mira","Coimbra","Cernache","Condeixa-a-Nova","Soure","Montemor-o-Velho","Lousã","Miranda do Corvo","Penacova","Arganil"],
+    route: "Passamos na sua zona todas as Segundas-feiras.",
+    getNextDates: () => {
+      const dates: string[] = [];
+      const now = new Date();
+      let d = new Date(now);
+      while (dates.length < 3) {
+        if (d.getDay() === 1 && d >= now) dates.push(d.toLocaleDateString("pt-PT", { day: "numeric", month: "long" }));
+        d = new Date(d.getTime() + 86400000);
+      }
+      return `Próximas viagens: ${dates.join(", ")}`;
+    }
+  },
+  {
+    cities: ["Viseu","Abraveses","Repeses","Ranhados","Bodiosa","Campo","Lordosa","São João de Lourosa","Silgueiros","Mundão","Cavernães","Coração de Jesus","Rio de Loba","Seia","São Romão","Paranhos da Beira","Santa Comba","Sabugueiro","Lapa dos Dinheiros","Loriga","Sazes da Beira","Valezim","Vide","Tábua","Midões","Mouronho","Candosa","Carapinha","São João da Boa Vista","Covas","Pinheiro de Coja","Oliveira do Hospital","Nogueira do Cravo","Lagares da Beira","Avô","Lourosa","Meruge","Ervedal da Beira","Penalva de Alva","Travanca de Lagos","Castro Daire","Mões","Moledo","Parada de Ester","Picão","Gosende","Cabril","Mezio","Monteiras","Vila Nova de Paiva","Queiriga","Touro","Pendilhe","Vila Cova à Coelheira","Sátão","Rio de Moinhos","Ferreira de Aves","Romãs","Silvã de Cima","Lamas","Lapa","Aguiar da Beira","Carapito","Dornelas","Pena Verde","Cortiçada","Forninhos","Mortágua","Vale de Remígio","Sobral","Pala","Santa Comba Dão","Treixedo","Pinheiro de Ázere","São Joaninho","Tondela","Campo de Besteiros","Castelões","Molelos","Nandufe","Canas de Santa Maria","Caramulo","Guardão","Varzielas"],
+    route: "Passamos na sua zona 2x por semana (Quarta-feira e Sexta ou Sábado).",
+    getNextDates: () => {
+      const dates: string[] = [];
+      const now = new Date();
+      let d = new Date(now);
+      while (dates.length < 3) {
+        if ((d.getDay() === 3 || d.getDay() === 5) && d >= now) dates.push(d.toLocaleDateString("pt-PT", { day: "numeric", month: "long" }));
+        d = new Date(d.getTime() + 86400000);
+      }
+      return `Próximas viagens: ${dates.join(", ")}`;
+    }
+  },
+  {
+    cities: ["Guarda","Mangualde","Abrunhosa-a-Velha","Cunha Baixa","Quintela de Azurara","Mesquitela","Moimenta de Maceira Dão","Alcafache","Fornos de Algodres","Algodres","Figueiró da Granja","Casal Vasco","Infias","Juncais","Maceira","Vila Chã","Celorico da Beira","Lageosa do Mondego","Fornotelheiro","Linhares da Beira","Baraçal","Prados","Açores","Trancoso","Freches","Torres","Tamanhos","Valdujo","Vila Franca das Naves","Reboleiro","Pinhel","Alverca da Beira","Souropires","Valbom","Freixedas","Atalaia","Safurdão","Méda","Longroiva","Vale Flor","Poço do Canto","Prova","Aveloso","Adão","Gonçalo","Famalicão da Serra","Videmonte","Maçainhas","Benespera","Belmonte","Caria","Colmeal da Torre","Covilhã","Tortosendo","Teixoso","Canhoso","Boidobra","Ferro","Orjais","Verdelhos","Paul","Unhais da Serra","Fundão","Silvares","Alpedrinha","Soalheira","Vale de Prazeres","Castelo Novo","Donas","Fatela","Pêro Viseu","Castelo Branco","Alcains","Lardosa","Escalos de Baixo","Escalos de Cima","Cebolais de Cima","Retaxo","Benquerenças","Penamacor","Aranhas","Aldeia do Bispo","Bemposta","Meimoa"],
+    route: "Passamos na sua zona todas as Terças-feiras (tarde).",
+    getNextDates: () => {
+      const dates: string[] = [];
+      const now = new Date();
+      let d = new Date(now);
+      while (dates.length < 3) {
+        if (d.getDay() === 2 && d >= now) dates.push(d.toLocaleDateString("pt-PT", { day: "numeric", month: "long" }));
+        d = new Date(d.getTime() + 86400000);
+      }
+      return `Próximas viagens: ${dates.join(", ")}`;
+    }
+  },
+  {
+    cities: ["Lisboa","Amadora","Alfragide","Queluz","Massamá","Monte Abraão","Cacém","Rio de Mouro","Sintra","Mem Martins","Algueirão","Belas","Odivelas","Pontinha","Caneças","Loures","Sacavém","Moscavide","Portela","Prior Velho","Bobadela","Santa Iria de Azóia","São João da Talha","Bucelas","Vila Franca de Xira","Alverca do Ribatejo","Póvoa de Santa Iria","Forte da Casa","Vialonga","Castanheira do Ribatejo","Carregado","Alenquer","Azambuja","Aveiras de Cima","Aveiras de Baixo","Vila Nova da Rainha","Arruda dos Vinhos","Sobral de Monte Agraço","Torres Vedras","Malveira","Mafra","Ericeira","Venda do Pinheiro","Milharado","Lourinhã","Bombarral","Cadaval","Oeiras","Paço de Arcos","Carnaxide","Algés","Linda-a-Velha","Cruz Quebrada","Cascais","Estoril","Carcavelos","Parede","São Domingos de Rana","Alcabideche","Setúbal","Azeitão","Palmela","Pinhal Novo","Quinta do Anjo","Montijo","Alcochete","Samouco","Barreiro","Lavradio","Baixa da Banheira","Moita","Alhos Vedros","Seixal","Arrentela","Amora","Corroios","Fernão Ferro","Almada","Cacilhas","Costa da Caparica","Charneca da Caparica","Trafaria","Sesimbra","Quinta do Conde","Santiago do Cacém","Santo André","Sines","Grândola","Alcácer do Sal","Santarém","Cartaxo","Almeirim","Alpiarça","Rio Maior","Benavente","Samora Correia","Salvaterra de Magos","Coruche","Chamusca","Golegã","Entroncamento","Torres Novas","Riachos","Tomar","Ourém","Fátima","Abrantes","Constância","Vila Nova da Barquinha","Mação","Sardoal","Ferreira do Zêzere","Alcanena","Mira de Aire","Minde","Leiria","Marinha Grande","Vieira de Leiria","Batalha","Porto de Mós","Juncal","Pombal","Meirinhas","Redinha","Ansião","Alvaiázere","Figueiró dos Vinhos","Castanheira de Pera","Pedrógão Grande","Caldas da Rainha","Óbidos","Gaeiras","Peniche","Atouguia da Baleia","Nazaré"],
+    route: "Rota Quinzenal (Sexta e Sábado).",
+    getNextDates: () => {
+      const allDates = [
+        [2026,0,16],[2026,0,17],[2026,0,30],[2026,0,31],
+        [2026,1,13],[2026,1,14],[2026,1,27],[2026,1,28],
+        [2026,2,13],[2026,2,14],[2026,2,27],[2026,2,28],
+        [2026,3,10],[2026,3,11],[2026,3,17],[2026,3,18],
+        [2026,4,8],[2026,4,9],[2026,4,22],[2026,4,23],
+        [2026,5,5],[2026,5,6],[2026,5,19],[2026,5,20],
+        [2026,6,3],[2026,6,4],[2026,6,17],[2026,6,18],[2026,6,31],
+        [2026,7,1],[2026,7,14],[2026,7,15],[2026,7,28],[2026,7,29],
+        [2026,8,11],[2026,8,12],
+        [2026,9,9],[2026,9,10],[2026,9,23],[2026,9,24],
+        [2026,10,6],[2026,10,7],[2026,10,20],[2026,10,21],
+        [2026,11,4],[2026,11,5],[2026,11,11],[2026,11,12],
+      ];
+      const now = new Date();
+      now.setHours(0,0,0,0);
+      const upcoming = allDates
+        .map(([y,m,d]) => new Date(y,m,d))
+        .filter(d => d >= now)
+        .slice(0, 4)
+        .map(d => d.toLocaleDateString("pt-PT", { day: "numeric", month: "long" }));
+      return `Próximas datas: ${upcoming.join(", ")}`;
+    }
+  },
+  {
+    cities: ["Viana do Castelo","Darque","Meadela","Areosa","Santa Marta de Portuzelo","Barroselas","Carreço","Afife","Vila Praia de Âncora","Âncora","Caminha","Seixas","Lanhelas","Vila Nova de Cerveira","Gondarém","Reboreda","Valença","Arão","Friestas","Monção","Mazedo","Troviscoso","Melgaço","Penso","Arcos de Valdevez","Ponte da Barca","Ponte de Lima","Feitosa","Arcozelo","Freixo","Vila Real","Lordelo","Mateus","Andrães","Adoufe","Campeã","Vila Pouca de Aguiar","Pedras Salgadas","Ribeira de Pena","Mondim de Basto","Alijó","Favaios","Murça","Sabrosa","Peso da Régua","Godim","Santa Marta de Penaguião","Mesão Frio","Chaves","Vidago","Valpaços","Carrazedo de Montenegro","Bragança","Izeda","Macedo de Cavaleiros","Morais","Mirandela","Carvalhais","Torre de Dona Chama","Vila Flor","Alfândega da Fé","Mogadouro","Vimioso","Miranda do Douro"],
+    route: "Rota Norte Especial (datas específicas).",
+    getNextDates: () => {
+      const allDates = [
+        [2026,0,5],[2026,0,19],[2026,1,2],[2026,1,16],[2026,2,9],[2026,2,30],
+        [2026,3,13],[2026,4,11],[2026,5,8],[2026,6,13],[2026,6,27],
+        [2026,7,10],[2026,7,24],[2026,8,14],[2026,9,12],[2026,10,9],[2026,10,30],[2026,11,14]
+      ];
+      const now = new Date();
+      now.setHours(0,0,0,0);
+      const upcoming = allDates
+        .map(([y,m,d]) => new Date(y,m,d))
+        .filter(d => d >= now)
+        .slice(0, 4)
+        .map(d => d.toLocaleDateString("pt-PT", { day: "numeric", month: "long" }));
+      return `Próximas datas: ${upcoming.join(", ")}`;
+    }
+  },
+];
+
+// Normalize for search
+function normalize(str: string) {
+  return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
+}
+
+export default function SmartFinder() {
+  const [query, setQuery] = useState("");
+  const [selectedResult, setSelectedResult] = useState<{ route: string; dates: string } | null>(null);
+
+  const suggestions = useMemo(() => {
+    if (query.length < 2) return [];
+    const q = normalize(query);
+    const results: { city: string; routeIdx: number }[] = [];
+    CITY_ROUTES.forEach((r, idx) => {
+      r.cities.forEach(c => {
+        if (normalize(c).includes(q)) results.push({ city: c, routeIdx: idx });
+      });
+    });
+    return results.slice(0, 8);
+  }, [query]);
+
+  const handleSelect = (routeIdx: number) => {
+    const r = CITY_ROUTES[routeIdx];
+    setSelectedResult({ route: r.route, dates: r.getNextDates() });
+    setQuery("");
+  };
+
+  return (
+    <div className="w-full max-w-2xl mx-auto">
+      <div className="relative">
+        <Search className="absolute left-5 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
+        <input
+          type="text"
+          value={query}
+          onChange={(e) => { setQuery(e.target.value); setSelectedResult(null); }}
+          placeholder="Para onde quer enviar a sua mercadoria?"
+          className="w-full pl-14 pr-6 py-5 bg-card border border-border rounded-3xl text-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-primary/30 transition-all placeholder:text-muted-foreground"
+        />
+        {suggestions.length > 0 && (
+          <div className="absolute top-full left-0 right-0 mt-2 bg-card border border-border rounded-2xl shadow-lg overflow-hidden z-50">
+            {suggestions.map((s, i) => (
+              <button
+                key={i}
+                onClick={() => handleSelect(s.routeIdx)}
+                className="w-full text-left px-6 py-3.5 hover:bg-surface transition-colors text-foreground"
+              >
+                {s.city}
+              </button>
+            ))}
+          </div>
+        )}
+      </div>
+
+      {selectedResult && (
+        <div className="mt-6 bg-surface rounded-3xl p-8 animate-in fade-in slide-in-from-bottom-2 duration-300">
+          <p className="text-xl font-semibold text-foreground mb-1">{selectedResult.route}</p>
+          <p className="text-muted-foreground mb-6">{selectedResult.dates}</p>
+          <a
+            href="https://wa.me/351917405318?text=Olá! Gostaria de agendar uma recolha."
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 bg-whatsapp text-whatsapp-foreground px-8 py-4 rounded-2xl font-semibold text-lg hover:opacity-90 transition-opacity"
+          >
+            <MessageCircle className="h-5 w-5" />
+            Agendar recolha (WhatsApp)
+          </a>
+        </div>
+      )}
+    </div>
+  );
+}
