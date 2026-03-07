@@ -1,16 +1,22 @@
 import { useState } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Globe } from "lucide-react";
+import { useLang } from "@/contexts/LangContext";
+import { t, LANG_LABELS, type Lang } from "@/lib/i18n";
 
-const navItems = [
-  { label: "Armazéns", href: "#armazens" },
-  { label: "Congelados", href: "#congelados" },
-  { label: "Preparar Envio", href: "#preparar" },
-  { label: "FAQ", href: "#faq" },
-  { label: "Contactos", href: "#contactos" },
-];
+const LANGS: Lang[] = ["pt", "en", "fr", "de"];
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [langOpen, setLangOpen] = useState(false);
+  const { lang, setLang } = useLang();
+
+  const navItems = [
+    { label: t("nav.warehouses", lang), href: "#armazens" },
+    { label: t("nav.frozen", lang), href: "#congelados" },
+    { label: t("nav.prepare", lang), href: "#preparar" },
+    { label: t("nav.faq", lang), href: "#faq" },
+    { label: t("nav.contacts", lang), href: "#contactos" },
+  ];
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-xl border-b border-border/50">
@@ -18,7 +24,7 @@ export default function Navbar() {
         <a href="#" className="font-extrabold text-lg text-foreground">
           Transportes Carlos & César
         </a>
-        
+
         {/* Desktop */}
         <div className="hidden md:flex items-center gap-8">
           {navItems.map(item => (
@@ -26,24 +32,65 @@ export default function Navbar() {
               {item.label}
             </a>
           ))}
+
+          {/* Language Switcher */}
+          <div className="relative">
+            <button
+              onClick={() => setLangOpen(!langOpen)}
+              className="flex items-center gap-1.5 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+            >
+              <Globe className="h-4 w-4" />
+              {LANG_LABELS[lang]}
+            </button>
+            {langOpen && (
+              <div className="absolute right-0 top-full mt-2 bg-card border border-border rounded-xl shadow-lg overflow-hidden min-w-[80px]">
+                {LANGS.map(l => (
+                  <button
+                    key={l}
+                    onClick={() => { setLang(l); setLangOpen(false); }}
+                    className={`w-full text-left px-4 py-2.5 text-sm font-medium transition-colors hover:bg-surface ${l === lang ? "text-primary" : "text-foreground"}`}
+                  >
+                    {LANG_LABELS[l]}
+                  </button>
+                ))}
+              </div>
+            )}
+          </div>
         </div>
 
         {/* Mobile toggle */}
-        <button onClick={() => setIsOpen(!isOpen)} className="md:hidden text-foreground">
-          {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-        </button>
+        <div className="flex md:hidden items-center gap-3">
+          {/* Mobile lang */}
+          <div className="relative">
+            <button onClick={() => setLangOpen(!langOpen)} className="text-muted-foreground">
+              <Globe className="h-5 w-5" />
+            </button>
+            {langOpen && (
+              <div className="absolute right-0 top-full mt-2 bg-card border border-border rounded-xl shadow-lg overflow-hidden min-w-[80px]">
+                {LANGS.map(l => (
+                  <button
+                    key={l}
+                    onClick={() => { setLang(l); setLangOpen(false); }}
+                    className={`w-full text-left px-4 py-2.5 text-sm font-medium transition-colors hover:bg-surface ${l === lang ? "text-primary" : "text-foreground"}`}
+                  >
+                    {LANG_LABELS[l]}
+                  </button>
+                ))}
+              </div>
+            )}
+          </div>
+          <button onClick={() => setIsOpen(!isOpen)} className="text-foreground">
+            {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+          </button>
+        </div>
       </div>
 
       {/* Mobile menu */}
       {isOpen && (
         <div className="md:hidden bg-background border-b border-border px-6 pb-4">
           {navItems.map(item => (
-            <a
-              key={item.href}
-              href={item.href}
-              onClick={() => setIsOpen(false)}
-              className="block py-3 text-base font-medium text-muted-foreground hover:text-foreground transition-colors"
-            >
+            <a key={item.href} href={item.href} onClick={() => setIsOpen(false)}
+              className="block py-3 text-base font-medium text-muted-foreground hover:text-foreground transition-colors">
               {item.label}
             </a>
           ))}

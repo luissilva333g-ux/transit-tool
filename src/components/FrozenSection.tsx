@@ -1,25 +1,26 @@
 import frozenImg from "@/assets/frozen-service.jpg";
 import { Snowflake, MessageCircle } from "lucide-react";
+import { useLang } from "@/contexts/LangContext";
+import { t } from "@/lib/i18n";
 
 const FROZEN_DATES = [
-  "19 Janeiro", "16 Fevereiro", "23 Março", "20 Abril", "18 Maio", "15 Junho",
-  "20 Julho", "17 Agosto", "7 Setembro", "19 Outubro", "16 Novembro", "14 Dezembro"
+  "19 Jan", "16 Fev", "23 Mar", "20 Abr", "18 Mai", "15 Jun",
+  "20 Jul", "17 Ago", "7 Set", "19 Out", "16 Nov", "14 Dez"
 ];
 
 export default function FrozenSection() {
+  const { lang } = useLang();
   return (
     <section id="congelados" className="section-padding bg-background">
       <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
         <div>
           <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-2xl text-sm font-semibold mb-6">
             <Snowflake className="h-4 w-4" />
-            Serviço Frigorífico
+            {t("frozen.badge", lang)}
           </div>
-          <h2 className="text-3xl md:text-4xl font-extrabold mb-4">Congelados Portugal → Luxemburgo</h2>
-          <p className="text-muted-foreground text-lg mb-6">
-            Saída às Segundas-feiras, chegada às Quintas. Levantamento no Luxemburgo entre 16:00 e 18:30.
-          </p>
-          <p className="text-muted-foreground mb-2 font-semibold">Datas de saída 2026:</p>
+          <h2 className="text-3xl md:text-4xl font-extrabold mb-4">{t("frozen.title", lang)}</h2>
+          <p className="text-muted-foreground text-lg mb-6">{t("frozen.desc", lang)}</p>
+          <p className="text-muted-foreground mb-2 font-semibold">{t("frozen.dates_label", lang)}</p>
           <div className="flex flex-wrap gap-2 mb-8">
             {FROZEN_DATES.map((d, i) => (
               <span key={i} className="bg-surface text-surface-foreground px-3 py-1.5 rounded-xl text-sm font-medium">{d}</span>
@@ -32,7 +33,7 @@ export default function FrozenSection() {
             className="inline-flex items-center gap-2 bg-whatsapp text-whatsapp-foreground px-8 py-4 rounded-2xl font-semibold text-lg hover:opacity-90 transition-opacity"
           >
             <MessageCircle className="h-5 w-5" />
-            Contactar César (Luxemburgo)
+            {t("frozen.contact", lang)}
           </a>
         </div>
         <div className="rounded-3xl overflow-hidden">

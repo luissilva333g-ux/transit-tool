@@ -1,13 +1,16 @@
 import { Truck, Clock, Shield, MapPin } from "lucide-react";
-
-const features = [
-  { icon: Truck, title: "Porta-a-Porta", desc: "Recolhemos e entregamos ao domicílio em toda a rota." },
-  { icon: Clock, title: "+30 Anos", desc: "Experiência e confiança na rota Portugal ⇄ Luxemburgo." },
-  { icon: Shield, title: "Sem Taxas Extra", desc: "Armazenamento gratuito. A mercadoria aguarda sem custos." },
-  { icon: MapPin, title: "Cobertura Total", desc: "De Bragança ao Alentejo, passamos na sua zona." },
-];
+import { useLang } from "@/contexts/LangContext";
+import { t } from "@/lib/i18n";
 
 export default function FeaturesSection() {
+  const { lang } = useLang();
+  const features = [
+    { icon: Truck, title: t("feat.door_title", lang), desc: t("feat.door_desc", lang) },
+    { icon: Clock, title: t("feat.years_title", lang), desc: t("feat.years_desc", lang) },
+    { icon: Shield, title: t("feat.free_title", lang), desc: t("feat.free_desc", lang) },
+    { icon: MapPin, title: t("feat.coverage_title", lang), desc: t("feat.coverage_desc", lang) },
+  ];
+
   return (
     <section className="section-padding bg-background">
       <div className="max-w-6xl mx-auto">
