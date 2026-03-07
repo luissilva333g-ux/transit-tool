@@ -1,14 +1,17 @@
 import { Package, Tag, Tv, Thermometer } from "lucide-react";
 import labelImg from "@/assets/label-detail.jpg";
-
-const steps = [
-  { icon: Package, title: "Embalamento", desc: "O cliente é responsável pela embalagem. Use caixas fortes e fita adesiva larga." },
-  { icon: Tag, title: "Identificação", desc: "Obrigatório colocar Nome, Morada e Telefone (remetente e destinatário) em cada volume." },
-  { icon: Tv, title: "Frágeis", desc: "TVs e eletrónicos devem ir na caixa original com proteção reforçada." },
-  { icon: Thermometer, title: "Congelados", desc: "Uso obrigatório de geleiras térmicas ou esferovite adequadas." },
-];
+import { useLang } from "@/contexts/LangContext";
+import { t } from "@/lib/i18n";
 
 export default function PrepareSection() {
+  const { lang } = useLang();
+  const steps = [
+    { icon: Package, title: t("prep.pack_title", lang), desc: t("prep.pack_desc", lang) },
+    { icon: Tag, title: t("prep.label_title", lang), desc: t("prep.label_desc", lang) },
+    { icon: Tv, title: t("prep.fragile_title", lang), desc: t("prep.fragile_desc", lang) },
+    { icon: Thermometer, title: t("prep.frozen_title", lang), desc: t("prep.frozen_desc", lang) },
+  ];
+
   return (
     <section id="preparar" className="section-padding bg-surface">
       <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
@@ -16,8 +19,8 @@ export default function PrepareSection() {
           <img src={labelImg} alt="Detalhe de etiqueta de identificação numa caixa" className="w-full h-auto object-cover" />
         </div>
         <div className="order-1 md:order-2">
-          <h2 className="text-3xl md:text-4xl font-extrabold mb-4">Preparar o Envio</h2>
-          <p className="text-muted-foreground text-lg mb-8">O guia simplificado para que a sua mercadoria chegue em segurança.</p>
+          <h2 className="text-3xl md:text-4xl font-extrabold mb-4">{t("prep.title", lang)}</h2>
+          <p className="text-muted-foreground text-lg mb-8">{t("prep.subtitle", lang)}</p>
           <div className="space-y-6">
             {steps.map((s, i) => (
               <div key={i} className="flex gap-4">
