@@ -29,20 +29,20 @@ export default function WarehousesSection() {
   return (
     <section id="armazens" className="section-padding bg-surface">
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-3xl md:text-4xl font-extrabold text-center mb-4">{t("wh.title", lang)}</h2>
-        <p className="text-muted-foreground text-center mb-14 text-lg">{t("wh.subtitle", lang)}</p>
-        <div className="grid md:grid-cols-3 gap-8">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-center mb-3 sm:mb-4">{t("wh.title", lang)}</h2>
+        <p className="text-muted-foreground text-center mb-8 sm:mb-14 text-base sm:text-lg">{t("wh.subtitle", lang)}</p>
+        <div className="grid gap-4 sm:gap-8 md:grid-cols-3">
           {warehouses.map((w, i) => (
             <div key={i} className="card-premium flex flex-col">
-              <h3 className="text-xl font-bold mb-3">{w.name}</h3>
+              <h3 className="text-lg sm:text-xl font-bold mb-2 sm:mb-3">{w.name}</h3>
               <div className="flex items-start gap-2 mb-1 text-muted-foreground">
-                <MapPin className="h-4 w-4 mt-1 shrink-0" />
-                <span className="text-base">{w.address}{w.postcode && `, ${w.postcode}`}</span>
+                <MapPin className="h-4 w-4 mt-0.5 shrink-0" />
+                <span className="text-sm sm:text-base">{w.address}{w.postcode && `, ${w.postcode}`}</span>
               </div>
-              {w.note && <p className="text-sm text-muted-foreground ml-6 mb-4">{w.note}</p>}
+              {w.note && <p className="text-xs sm:text-sm text-muted-foreground ml-6 mb-3 sm:mb-4">{w.note}</p>}
               <div className="flex items-start gap-2 text-muted-foreground mt-auto">
-                <Clock className="h-4 w-4 mt-1 shrink-0" />
-                <div className="space-y-0.5 text-base">
+                <Clock className="h-4 w-4 mt-0.5 shrink-0" />
+                <div className="space-y-0.5 text-sm sm:text-base">
                   {w.hours.map((h, j) => <p key={j}>{h}</p>)}
                 </div>
               </div>

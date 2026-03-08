@@ -119,19 +119,19 @@ export default function SmartFinder() {
   return (
     <div className="w-full max-w-2xl mx-auto">
       <div className="relative">
-        <Search className="absolute left-5 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
+        <Search className="absolute left-4 sm:left-5 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
         <input
           type="text"
           value={query}
           onChange={(e) => { setQuery(e.target.value); setSelectedResult(null); }}
           placeholder={t("finder.placeholder", lang)}
-          className="w-full pl-14 pr-6 py-5 bg-card border border-border rounded-3xl text-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-primary/30 transition-all placeholder:text-muted-foreground"
+          className="w-full pl-12 sm:pl-14 pr-4 sm:pr-6 py-4 sm:py-5 bg-card border border-border rounded-2xl sm:rounded-3xl text-base sm:text-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-primary/30 transition-all placeholder:text-muted-foreground"
         />
         {suggestions.length > 0 && (
-          <div className="absolute top-full left-0 right-0 mt-2 bg-card border border-border rounded-2xl shadow-lg overflow-hidden z-50">
+          <div className="absolute top-full left-0 right-0 mt-2 bg-card border border-border rounded-xl sm:rounded-2xl shadow-lg overflow-hidden z-50 max-h-64 overflow-y-auto">
             {suggestions.map((s, i) => (
               <button key={i} onClick={() => handleSelect(s.routeIdx)}
-                className="w-full text-left px-6 py-3.5 hover:bg-surface transition-colors text-foreground">
+                className="w-full text-left px-4 sm:px-6 py-3 sm:py-3.5 hover:bg-surface transition-colors text-foreground text-sm sm:text-base">
                 {s.city}
               </button>
             ))}
@@ -140,14 +140,14 @@ export default function SmartFinder() {
       </div>
 
       {selectedResult && (
-        <div className="mt-6 bg-surface rounded-3xl p-8 animate-in fade-in slide-in-from-bottom-2 duration-300">
-          <p className="text-xl font-semibold text-foreground mb-1">{selectedResult.route}</p>
-          <p className="text-muted-foreground mb-6">{selectedResult.dates}</p>
+        <div className="mt-4 sm:mt-6 bg-surface rounded-2xl sm:rounded-3xl p-5 sm:p-8 animate-in fade-in slide-in-from-bottom-2 duration-300">
+          <p className="text-lg sm:text-xl font-semibold text-foreground mb-1">{selectedResult.route}</p>
+          <p className="text-sm sm:text-base text-muted-foreground mb-4 sm:mb-6">{selectedResult.dates}</p>
           <a
             href={`https://wa.me/351917405318?text=${encodeURIComponent(t("finder.wa_text", lang))}`}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 bg-whatsapp text-whatsapp-foreground px-8 py-4 rounded-2xl font-semibold text-lg hover:opacity-90 transition-opacity"
+            className="inline-flex items-center gap-2 bg-whatsapp text-whatsapp-foreground px-6 sm:px-8 py-3 sm:py-4 rounded-xl sm:rounded-2xl font-semibold text-base sm:text-lg hover:opacity-90 transition-opacity"
           >
             <MessageCircle className="h-5 w-5" />
             {t("finder.schedule", lang)}
