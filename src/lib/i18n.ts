@@ -99,10 +99,10 @@ const translations = {
 
   // Footer
   "footer.title": { pt: "Contactos", en: "Contacts", fr: "Contacts", de: "Kontakte" },
-  "footer.hq": { pt: "Sede Mortágua", en: "HQ Mortágua", fr: "Siège Mortágua", de: "Hauptsitz Mortágua" },
-  "footer.management": { pt: "Carlos (Gestão)", en: "Carlos (Management)", fr: "Carlos (Direction)", de: "Carlos (Leitung)" },
-  "footer.logistics": { pt: "Luís (Logística)", en: "Luís (Logistics)", fr: "Luís (Logistique)", de: "Luís (Logistik)" },
-  "footer.luxembourg": { pt: "César (Luxemburgo)", en: "César (Luxembourg)", fr: "César (Luxembourg)", de: "César (Luxemburg)" },
+  "footer.office": { pt: "Escritório - Portugal", en: "Office - Portugal", fr: "Bureau - Portugal", de: "Büro - Portugal" },
+  "footer.cesar": { pt: "César", en: "César", fr: "César", de: "César" },
+  "footer.carlos": { pt: "Carlos", en: "Carlos", fr: "Carlos", de: "Carlos" },
+  "footer.luis": { pt: "Luís", en: "Luís", fr: "Luís", de: "Luís" },
   "footer.copyright": { pt: "Todos os direitos reservados.", en: "All rights reserved.", fr: "Tous droits réservés.", de: "Alle Rechte vorbehalten." },
   "footer.tagline": { pt: "Mais de 30 anos na rota Portugal ⇄ Luxemburgo.", en: "Over 30 years on the Portugal ⇄ Luxembourg route.", fr: "Plus de 30 ans sur la route Portugal ⇄ Luxembourg.", de: "Über 30 Jahre auf der Route Portugal ⇄ Luxemburg." },
 } as const;
