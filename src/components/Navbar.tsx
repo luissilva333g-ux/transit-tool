@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Menu, X, Globe } from "lucide-react";
 import { useLang } from "@/contexts/LangContext";
 import { t, LANG_LABELS, type Lang } from "@/lib/i18n";
+import logo from "@/assets/logo.png";
 
 const LANGS: Lang[] = ["pt", "en", "fr", "de"];
 
@@ -21,7 +22,8 @@ export default function Navbar() {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-xl border-b border-border/50">
       <div className="max-w-6xl mx-auto px-6 flex items-center justify-between h-16">
-        <a href="#" className="font-extrabold text-lg text-foreground">
+        <a href="#" className="flex items-center gap-2 font-extrabold text-lg text-foreground">
+          <img src={logo} alt="Logo Transportes Carlos & César" className="h-9 w-9" />
           Transportes Carlos & César
         </a>
 
