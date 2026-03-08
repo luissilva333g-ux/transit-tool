@@ -91,7 +91,7 @@ function normalize(str: string) {
 
 export default function SmartFinder() {
   const [query, setQuery] = useState("");
-  const [selectedResult, setSelectedResult<{ route: string; dates: string } | null>(null);
+  const [selectedResult, setSelectedResult] = useState<{ route: string; dates: string } | null>(null);
   const { lang } = useLang();
   const locale = DATE_LOCALES[lang];
 
