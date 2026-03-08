@@ -84,7 +84,7 @@
   body {
     @apply bg-background text-foreground font-sans antialiased;
     font-family: 'Inter', sans-serif;
-    font-size: 18px;
+    font-size: 16px;
     line-height: 1.6;
   }
   h1, h2, h3, h4, h5, h6 {
@@ -94,9 +94,9 @@
 
 @layer utilities {
   .section-padding {
-    @apply px-6 py-20 md:px-12 lg:px-20;
+    @apply px-4 py-14 sm:px-6 sm:py-16 md:px-12 md:py-20 lg:px-20;
   }
   .card-premium {
-    @apply bg-card rounded-3xl border border-border p-8 shadow-sm transition-shadow hover:shadow-md;
+    @apply bg-card rounded-2xl sm:rounded-3xl border border-border p-5 sm:p-8 shadow-sm transition-shadow hover:shadow-md;
   }
 }

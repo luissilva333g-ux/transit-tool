@@ -14,14 +14,14 @@ export default function FeaturesSection() {
   return (
     <section className="section-padding bg-background">
       <div className="max-w-6xl mx-auto">
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-8">
           {features.map((f, i) => (
             <div key={i} className="text-center">
-              <div className="mx-auto h-16 w-16 rounded-3xl bg-whatsapp/10 flex items-center justify-center mb-5">
-                <f.icon className="h-7 w-7 text-whatsapp" />
+              <div className="mx-auto h-12 w-12 sm:h-16 sm:w-16 rounded-2xl sm:rounded-3xl bg-whatsapp/10 flex items-center justify-center mb-3 sm:mb-5">
+                <f.icon className="h-5 w-5 sm:h-7 sm:w-7 text-whatsapp" />
               </div>
-              <h3 className="font-bold text-xl mb-2">{f.title}</h3>
-              <p className="text-muted-foreground">{f.desc}</p>
+              <h3 className="font-bold text-base sm:text-xl mb-1 sm:mb-2">{f.title}</h3>
+              <p className="text-muted-foreground text-sm sm:text-base">{f.desc}</p>
             </div>
           ))}
         </div>

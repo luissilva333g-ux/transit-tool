@@ -23,7 +23,7 @@ export default function ClosureBanner() {
   if (!activeKey) return null;
 
   return (
-    <div className="bg-destructive text-destructive-foreground text-center py-3 px-4 text-base font-medium">
+    <div className="bg-destructive text-destructive-foreground text-center py-2.5 sm:py-3 px-4 text-sm sm:text-base font-medium">
       ⚠️ {t(activeKey, lang)}. {t("closure.suffix", lang)}
     </div>
   );

@@ -21,20 +21,20 @@ export default function FAQSection() {
   return (
     <section id="faq" className="section-padding bg-background">
       <div className="max-w-3xl mx-auto">
-        <h2 className="text-3xl md:text-4xl font-extrabold text-center mb-4">{t("faq.title", lang)}</h2>
-        <p className="text-muted-foreground text-center mb-12 text-lg">{t("faq.subtitle", lang)}</p>
-        <div className="space-y-3">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-center mb-3 sm:mb-4">{t("faq.title", lang)}</h2>
+        <p className="text-muted-foreground text-center mb-8 sm:mb-12 text-base sm:text-lg">{t("faq.subtitle", lang)}</p>
+        <div className="space-y-2 sm:space-y-3">
           {FAQ_KEYS.map((f, i) => (
             <div key={i} className="card-premium !p-0 overflow-hidden">
               <button
                 onClick={() => setOpen(open === i ? null : i)}
-                className="w-full flex items-center justify-between px-7 py-5 text-left"
+                className="w-full flex items-center justify-between px-5 sm:px-7 py-4 sm:py-5 text-left"
               >
-                <span className="font-semibold text-lg">{t(f.q, lang)}</span>
-                <ChevronDown className={`h-5 w-5 text-muted-foreground transition-transform ${open === i ? "rotate-180" : ""}`} />
+                <span className="font-semibold text-base sm:text-lg pr-4">{t(f.q, lang)}</span>
+                <ChevronDown className={`h-5 w-5 text-muted-foreground transition-transform shrink-0 ${open === i ? "rotate-180" : ""}`} />
               </button>
               {open === i && (
-                <div className="px-7 pb-5 text-muted-foreground animate-in fade-in slide-in-from-top-1 duration-200">
+                <div className="px-5 sm:px-7 pb-4 sm:pb-5 text-muted-foreground text-sm sm:text-base animate-in fade-in slide-in-from-top-1 duration-200">
                   {t(f.a, lang)}
                 </div>
               )}
