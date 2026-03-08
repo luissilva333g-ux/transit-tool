@@ -6,20 +6,22 @@ export default function WarehousesSection() {
   const { lang } = useLang();
   const warehouses = [
     {
-      name: "Mortágua, Portugal",
-      subtitle: t("wh.central", lang),
-      address: "Zona Industrial de Mortágua (junto ao bar Tirikeda), 3450-232 MRT",
-      hours: ["Seg-Qua: 09:00–13:00 / 15:00–19:00", "Qui: 09:00–13:00", "Sex: 15:00–19:00", "Sáb: 09:00–13:00"],
+      name: "🇵🇹 Mortágua, Portugal",
+      address: "Zona Industrial de Mortágua",
+      note: t("wh.note_mortagua", lang),
+      postcode: "3450-232 MRT",
+      hours: [t("wh.hours_mortagua_1", lang), t("wh.hours_mortagua_2", lang), t("wh.hours_mortagua_3", lang), t("wh.hours_mortagua_4", lang)],
     },
     {
-      name: "Hollerich, Luxemburgo",
-      address: "20 Rue de Cessange, L-1320 (Garagens ao fundo do parque da Intralux)",
+      name: "🇱🇺 Hollerich, Luxemburgo",
+      address: "20 Rue de Cessange, L-1320",
+      note: t("wh.note_hollerich", lang),
       hours: ["Ter: 17:00–20:30", "Sáb: 08:00–13:00"],
     },
     {
-      name: "Rédange, França",
-      subtitle: t("wh.border", lang),
+      name: "🇱🇺🇫🇷 Rédange, França",
       address: "712, Rue de la Cote, F-57390",
+      note: t("wh.note_redange", lang),
       hours: ["Ter: 16:00–19:00", "Sáb: 10:00–17:00"],
     },
   ];
