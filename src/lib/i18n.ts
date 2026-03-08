@@ -46,8 +46,8 @@ const translations = {
   "feat.door_desc": { pt: "Recolhemos e entregamos ao domicílio em toda a rota.", en: "We pick up and deliver to your home across the entire route.", fr: "Nous collectons et livrons à domicile sur tout le trajet.", de: "Wir holen ab und liefern entlang der gesamten Route." },
   "feat.years_title": { pt: "+30 Anos", en: "+30 Years", fr: "+30 Ans", de: "+30 Jahre" },
   "feat.years_desc": { pt: "Experiência e confiança na rota Portugal ⇄ Luxemburgo.", en: "Experience and trust on the Portugal ⇄ Luxembourg route.", fr: "Expérience et confiance sur la route Portugal ⇄ Luxembourg.", de: "Erfahrung und Vertrauen auf der Route Portugal ⇄ Luxemburg." },
-  "feat.free_title": { pt: "Sem Taxas Extra", en: "No Extra Fees", fr: "Sans Frais Supplémentaires", de: "Keine Zusatzkosten" },
-  "feat.free_desc": { pt: "Armazenamento gratuito. A mercadoria aguarda sem custos.", en: "Free storage. Your goods wait at no extra cost.", fr: "Stockage gratuit. Vos marchandises attendent sans frais.", de: "Kostenlose Lagerung. Ihre Waren warten ohne Zusatzkosten." },
+  "feat.free_title": { pt: "Preços Imbatíveis", en: "Unbeatable Prices", fr: "Prix Imbattables", de: "Unschlagbare Preise" },
+  "feat.free_desc": { pt: "Os preços mais baixos do mercado. Envios internacionais a partir de 10 €.", en: "The lowest prices on the market. International shipments from €10.", fr: "Les prix les plus bas du marché. Envois internationaux à partir de 10 €.", de: "Die niedrigsten Preise auf dem Markt. Internationale Sendungen ab 10 €." },
   "feat.coverage_title": { pt: "Cobertura Total", en: "Full Coverage", fr: "Couverture Totale", de: "Vollständige Abdeckung" },
   "feat.coverage_desc": { pt: "De Bragança ao Alentejo, passamos na sua zona.", en: "From Bragança to Alentejo, we cover your area.", fr: "De Bragança à l'Alentejo, nous couvrons votre zone.", de: "Von Bragança bis zum Alentejo, wir decken Ihr Gebiet ab." },
 
@@ -65,7 +65,7 @@ const translations = {
   "frozen.title": { pt: "Congelados Portugal → Luxemburgo", en: "Frozen Goods Portugal → Luxembourg", fr: "Surgelés Portugal → Luxembourg", de: "Tiefkühlware Portugal → Luxemburg" },
   "frozen.desc": { pt: "Saída às Segundas-feiras, chegada às Quintas. Levantamento no Luxemburgo entre 16:00 e 18:30.", en: "Departure on Mondays, arrival on Thursdays. Pickup in Luxembourg between 4:00 PM and 6:30 PM.", fr: "Départ le lundi, arrivée le jeudi. Retrait au Luxembourg entre 16h00 et 18h30.", de: "Abfahrt montags, Ankunft donnerstags. Abholung in Luxemburg zwischen 16:00 und 18:30." },
   "frozen.dates_label": { pt: "Datas de saída 2026:", en: "2026 departure dates:", fr: "Dates de départ 2026 :", de: "Abfahrtstermine 2026:" },
-  "frozen.contact": { pt: "Contactar César (Luxemburgo)", en: "Contact César (Luxembourg)", fr: "Contacter César (Luxembourg)", de: "César kontaktieren (Luxemburg)" },
+  "frozen.contact": { pt: "Contactar Escritório", en: "Contact Office", fr: "Contacter le Bureau", de: "Büro kontaktieren" },
 
   // Prepare
   "prep.title": { pt: "Preparar o Envio", en: "Prepare Your Shipment", fr: "Préparer l'Envoi", de: "Sendung Vorbereiten" },
@@ -100,7 +100,7 @@ const translations = {
   // Footer
   "footer.title": { pt: "Contactos", en: "Contacts", fr: "Contacts", de: "Kontakte" },
   "footer.office": { pt: "Escritório - Portugal", en: "Office - Portugal", fr: "Bureau - Portugal", de: "Büro - Portugal" },
-  "footer.cesar": { pt: "César", en: "César", fr: "César", de: "César" },
+  "footer.cesar": { pt: "César - Luxemburgo", en: "César - Luxembourg", fr: "César - Luxembourg", de: "César - Luxemburg" },
   "footer.carlos": { pt: "Carlos", en: "Carlos", fr: "Carlos", de: "Carlos" },
   "footer.luis": { pt: "Luís", en: "Luís", fr: "Luís", de: "Luís" },
   "footer.copyright": { pt: "Todos os direitos reservados.", en: "All rights reserved.", fr: "Tous droits réservés.", de: "Alle Rechte vorbehalten." },

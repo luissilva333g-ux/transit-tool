@@ -27,7 +27,7 @@ export default function FrozenSection() {
             ))}
           </div>
           <a
-            href="https://wa.me/352621152128?text=Olá! Gostaria de saber mais sobre o serviço de congelados."
+            href="https://wa.me/351231922340?text=Olá! Gostaria de saber mais sobre o serviço de congelados."
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 bg-whatsapp text-whatsapp-foreground px-8 py-4 rounded-2xl font-semibold text-lg hover:opacity-90 transition-opacity"
