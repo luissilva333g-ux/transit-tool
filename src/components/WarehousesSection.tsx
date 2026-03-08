@@ -6,20 +6,22 @@ export default function WarehousesSection() {
   const { lang } = useLang();
   const warehouses = [
     {
-      name: "Mortágua, Portugal",
-      subtitle: t("wh.central", lang),
-      address: "Zona Industrial de Mortágua (junto ao bar Tirikeda), 3450-232 MRT",
+      name: "🇵🇹 Mortágua, Portugal",
+      address: "Zona Industrial de Mortágua",
+      note: t("wh.note_mortagua", lang),
+      postcode: "3450-232 MRT",
       hours: ["Seg-Qua: 09:00–13:00 / 15:00–19:00", "Qui: 09:00–13:00", "Sex: 15:00–19:00", "Sáb: 09:00–13:00"],
     },
     {
-      name: "Hollerich, Luxemburgo",
-      address: "20 Rue de Cessange, L-1320 (Garagens ao fundo do parque da Intralux)",
+      name: "🇱🇺 Hollerich, Luxemburgo",
+      address: "20 Rue de Cessange, L-1320",
+      note: t("wh.note_hollerich", lang),
       hours: ["Ter: 17:00–20:30", "Sáb: 08:00–13:00"],
     },
     {
-      name: "Rédange, França",
-      subtitle: t("wh.border", lang),
+      name: "🇱🇺🇫🇷 Rédange, França",
       address: "712, Rue de la Cote, F-57390",
+      note: t("wh.note_redange", lang),
       hours: ["Ter: 16:00–19:00", "Sáb: 10:00–17:00"],
     },
   ];
@@ -32,12 +34,12 @@ export default function WarehousesSection() {
         <div className="grid md:grid-cols-3 gap-8">
           {warehouses.map((w, i) => (
             <div key={i} className="card-premium flex flex-col">
-              <h3 className="text-xl font-bold mb-1">{w.name}</h3>
-              {w.subtitle && <span className="text-sm text-whatsapp font-semibold mb-3">{w.subtitle}</span>}
-              <div className="flex items-start gap-2 mb-4 text-muted-foreground">
+              <h3 className="text-xl font-bold mb-3">{w.name}</h3>
+              <div className="flex items-start gap-2 mb-1 text-muted-foreground">
                 <MapPin className="h-4 w-4 mt-1 shrink-0" />
-                <span className="text-base">{w.address}</span>
+                <span className="text-base">{w.address}{w.postcode && `, ${w.postcode}`}</span>
               </div>
+              {w.note && <p className="text-sm text-muted-foreground ml-6 mb-4">{w.note}</p>}
               <div className="flex items-start gap-2 text-muted-foreground mt-auto">
                 <Clock className="h-4 w-4 mt-1 shrink-0" />
                 <div className="space-y-0.5 text-base">

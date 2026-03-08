@@ -56,6 +56,9 @@ const translations = {
   "wh.subtitle": { pt: "Pontos de recolha e entrega estratégicos", en: "Strategic pickup and delivery points", fr: "Points de collecte et de livraison stratégiques", de: "Strategische Abhol- und Lieferpunkte" },
   "wh.central": { pt: "Ponto Central", en: "Central Hub", fr: "Point Central", de: "Zentraler Knotenpunkt" },
   "wh.border": { pt: "Fronteira Luxemburgo", en: "Luxembourg Border", fr: "Frontière Luxembourg", de: "Grenze Luxemburg" },
+  "wh.note_mortagua": { pt: "(junto ao bar Tirikeda)", en: "(next to bar Tirikeda)", fr: "(à côté du bar Tirikeda)", de: "(neben der Bar Tirikeda)" },
+  "wh.note_hollerich": { pt: "(Garagens ao fundo do parque da Intralux)", en: "(Garages at the back of the Intralux park)", fr: "(Garages au fond du parc Intralux)", de: "(Garagen am Ende des Intralux-Parks)" },
+  "wh.note_redange": { pt: "(fronteira de Esch 🇱🇺 com Villerupt 🇫🇷)", en: "(border of Esch 🇱🇺 with Villerupt 🇫🇷)", fr: "(frontière d'Esch 🇱🇺 avec Villerupt 🇫🇷)", de: "(Grenze von Esch 🇱🇺 mit Villerupt 🇫🇷)" },
 
   // Frozen
   "frozen.badge": { pt: "Serviço Frigorífico", en: "Refrigerated Service", fr: "Service Réfrigéré", de: "Kühltransport" },
