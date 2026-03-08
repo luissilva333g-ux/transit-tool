@@ -1,6 +1,7 @@
 import { Phone, MessageCircle } from "lucide-react";
 import { useLang } from "@/contexts/LangContext";
 import { t } from "@/lib/i18n";
+import logo from "@/assets/logo.png";
 
 const contacts = [
   { nameKey: "footer.hq" as const, phone: "+351 231 922 340", wa: "351231922340" },
@@ -31,9 +32,10 @@ export default function Footer() {
             </div>
           ))}
         </div>
-        <div className="border-t border-background/10 pt-8 text-center text-background/50 text-sm">
+        <div className="border-t border-background/10 pt-8 flex flex-col items-center gap-3 text-center text-background/50 text-sm">
+          <img src={logo} alt="Logo Transportes Carlos & César" className="h-12 w-12 opacity-60" />
           <p>© 2026 Transportes Carlos & César. {t("footer.copyright", lang)}</p>
-          <p className="mt-1">{t("footer.tagline", lang)}</p>
+          <p>{t("footer.tagline", lang)}</p>
         </div>
       </div>
     </footer>
