@@ -34,12 +34,12 @@ export default function WarehousesSection() {
         <div className="grid md:grid-cols-3 gap-8">
           {warehouses.map((w, i) => (
             <div key={i} className="card-premium flex flex-col">
-              <h3 className="text-xl font-bold mb-1">{w.name}</h3>
-              {w.subtitle && <span className="text-sm text-whatsapp font-semibold mb-3">{w.subtitle}</span>}
-              <div className="flex items-start gap-2 mb-4 text-muted-foreground">
+              <h3 className="text-xl font-bold mb-3">{w.name}</h3>
+              <div className="flex items-start gap-2 mb-1 text-muted-foreground">
                 <MapPin className="h-4 w-4 mt-1 shrink-0" />
-                <span className="text-base">{w.address}</span>
+                <span className="text-base">{w.address}{w.postcode && `, ${w.postcode}`}</span>
               </div>
+              {w.note && <p className="text-sm text-muted-foreground ml-6 mb-4">{w.note}</p>}
               <div className="flex items-start gap-2 text-muted-foreground mt-auto">
                 <Clock className="h-4 w-4 mt-1 shrink-0" />
                 <div className="space-y-0.5 text-base">
