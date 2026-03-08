@@ -1,4 +1,4 @@
-import { Truck, Clock, Shield, MapPin } from "lucide-react";
+import { Truck, Clock, Tag, MapPin } from "lucide-react";
 import { useLang } from "@/contexts/LangContext";
 import { t } from "@/lib/i18n";
 
@@ -7,7 +7,7 @@ export default function FeaturesSection() {
   const features = [
     { icon: Truck, title: t("feat.door_title", lang), desc: t("feat.door_desc", lang) },
     { icon: Clock, title: t("feat.years_title", lang), desc: t("feat.years_desc", lang) },
-    { icon: Shield, title: t("feat.free_title", lang), desc: t("feat.free_desc", lang) },
+    { icon: Tag, title: t("feat.free_title", lang), desc: t("feat.free_desc", lang) },
     { icon: MapPin, title: t("feat.coverage_title", lang), desc: t("feat.coverage_desc", lang) },
   ];
 
