@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { LangProvider } from "@/contexts/LangContext";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
+import Regulamento from "./pages/Regulamento";
 
 const queryClient = new QueryClient();
 
@@ -18,6 +19,7 @@ const App = () => (
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Index />} />
+            <Route path="/regulamento" element={<Regulamento />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>
