@@ -160,6 +160,11 @@ export default function SmartFinder() {
       return;
     }
     const routeIdx = DISTRICT_ROUTES[norm];
+    if (routeIdx === -1) {
+      setState("luxembourg");
+      setQuery("");
+      return;
+    }
     if (routeIdx !== undefined) {
       handleSelect(routeIdx);
     } else {
