@@ -85,24 +85,21 @@ const CITY_ROUTES: { cities: string[]; routeKey: TranslationKey; datesLabelKey: 
   },
 ];
 
-// District → route index mapping
+// District → route index mapping (-1 = Luxembourg special)
 const DISTRICT_ROUTES: Record<string, number> = {
   "porto": 0, "braga": 0, "aveiro": 0, "coimbra": 0,
   "viseu": 1,
   "guarda": 2, "castelo branco": 2,
   "lisboa": 3, "setubal": 3, "santarem": 3, "leiria": 3,
   "viana do castelo": 4, "vila real": 4, "braganca": 4,
+  "luxemburgo": -1, "luxembourg": -1,
 };
 
 const NOT_COVERED_DISTRICTS = ["faro", "beja", "evora", "portalegre"];
 
-function normalize(str: string) {
-  return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
-}
-
 const ALL_DISTRICTS = [
   "Aveiro", "Beja", "Braga", "Bragança", "Castelo Branco", "Coimbra",
-  "Évora", "Faro", "Guarda", "Leiria", "Lisboa", "Portalegre",
+  "Évora", "Faro", "Guarda", "Leiria", "Lisboa", "Luxemburgo", "Portalegre",
   "Porto", "Santarém", "Setúbal", "Viana do Castelo", "Vila Real", "Viseu",
 ];
 
