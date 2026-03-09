@@ -101,7 +101,7 @@ function normalize(str: string) {
   return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
 }
 
-
+const ALL_DISTRICTS = [
   "Aveiro", "Beja", "Braga", "Bragança", "Castelo Branco", "Coimbra",
   "Évora", "Faro", "Guarda", "Leiria", "Lisboa", "Luxemburgo", "Portalegre",
   "Porto", "Santarém", "Setúbal", "Viana do Castelo", "Vila Real", "Viseu",
