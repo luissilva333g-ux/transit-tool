@@ -1,5 +1,5 @@
 import { useState, useMemo } from "react";
-import { Search, MessageCircle } from "lucide-react";
+import { Search, MessageCircle, MapPin, AlertTriangle } from "lucide-react";
 import { useLang } from "@/contexts/LangContext";
 import { t, DATE_LOCALES, type Lang } from "@/lib/i18n";
 import type { TranslationKey } from "@/lib/i18n";
@@ -85,18 +85,38 @@ const CITY_ROUTES: { cities: string[]; routeKey: TranslationKey; datesLabelKey: 
   },
 ];
 
+// District → route index mapping
+const DISTRICT_ROUTES: Record<string, number> = {
+  "porto": 0, "braga": 0, "aveiro": 0, "coimbra": 0,
+  "viseu": 1,
+  "guarda": 2, "castelo branco": 2,
+  "lisboa": 3, "setubal": 3, "santarem": 3, "leiria": 3,
+  "viana do castelo": 4, "vila real": 4, "braganca": 4,
+};
+
+const NOT_COVERED_DISTRICTS = ["faro", "beja", "evora", "portalegre"];
+
 function normalize(str: string) {
   return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
 }
 
+const ALL_DISTRICTS = [
+  "Aveiro", "Beja", "Braga", "Bragança", "Castelo Branco", "Coimbra",
+  "Évora", "Faro", "Guarda", "Leiria", "Lisboa", "Portalegre",
+  "Porto", "Santarém", "Setúbal", "Viana do Castelo", "Vila Real", "Viseu",
+];
+
+type FinderState = "search" | "ask_district" | "result" | "not_covered" | "not_found";
+
 export default function SmartFinder() {
   const [query, setQuery] = useState("");
+  const [state, setState] = useState<FinderState>("search");
   const [selectedResult, setSelectedResult] = useState<{ route: string; dates: string } | null>(null);
   const { lang } = useLang();
   const locale = DATE_LOCALES[lang];
 
   const suggestions = useMemo(() => {
-    if (query.length < 2) return [];
+    if (state !== "search" || query.length < 2) return [];
     const q = normalize(query);
     const results: { city: string; routeIdx: number }[] = [];
     CITY_ROUTES.forEach((r, idx) => {
@@ -105,7 +125,21 @@ export default function SmartFinder() {
       });
     });
     return results.slice(0, 8);
-  }, [query]);
+  }, [query, state]);
+
+  // Check if we should show "ask district" prompt
+  const showAskDistrict = useMemo(() => {
+    if (state !== "search") return false;
+    if (query.length < 3) return false;
+    if (suggestions.length > 0) return false;
+    return true;
+  }, [query, suggestions, state]);
+
+  const districtSuggestions = useMemo(() => {
+    if (!showAskDistrict) return [];
+    const q = normalize(query);
+    return ALL_DISTRICTS.filter(d => normalize(d).includes(q));
+  }, [query, showAskDistrict]);
 
   const handleSelect = (routeIdx: number) => {
     const r = CITY_ROUTES[routeIdx];
@@ -113,7 +147,30 @@ export default function SmartFinder() {
       route: t(r.routeKey, lang),
       dates: `${t(r.datesLabelKey, lang)}: ${r.getDates(locale)}`,
     });
+    setState("result");
     setQuery("");
+  };
+
+  const handleDistrictSelect = (district: string) => {
+    const norm = normalize(district);
+    if (NOT_COVERED_DISTRICTS.includes(norm)) {
+      setState("not_covered");
+      setQuery("");
+      return;
+    }
+    const routeIdx = DISTRICT_ROUTES[norm];
+    if (routeIdx !== undefined) {
+      handleSelect(routeIdx);
+    } else {
+      setState("not_found");
+      setQuery("");
+    }
+  };
+
+  const handleInputChange = (val: string) => {
+    setQuery(val);
+    setSelectedResult(null);
+    setState("search");
   };
 
   return (
@@ -123,10 +180,11 @@ export default function SmartFinder() {
         <input
           type="text"
           value={query}
-          onChange={(e) => { setQuery(e.target.value); setSelectedResult(null); }}
+          onChange={(e) => handleInputChange(e.target.value)}
           placeholder={t("finder.placeholder", lang)}
           className="w-full pl-12 sm:pl-14 pr-4 sm:pr-6 py-4 sm:py-5 bg-card border border-border rounded-2xl sm:rounded-3xl text-base sm:text-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-primary/30 transition-all placeholder:text-muted-foreground"
         />
+        {/* City suggestions */}
         {suggestions.length > 0 && (
           <div className="absolute top-full left-0 right-0 mt-2 bg-card border border-border rounded-xl sm:rounded-2xl shadow-lg overflow-hidden z-50 max-h-64 overflow-y-auto">
             {suggestions.map((s, i) => (
@@ -137,9 +195,37 @@ export default function SmartFinder() {
             ))}
           </div>
         )}
+
+        {/* Ask district fallback */}
+        {showAskDistrict && (
+          <div className="absolute top-full left-0 right-0 mt-2 bg-card border border-border rounded-xl sm:rounded-2xl shadow-lg overflow-hidden z-50 max-h-72 overflow-y-auto">
+            <div className="px-4 sm:px-6 py-3 border-b border-border">
+              <p className="text-sm text-muted-foreground flex items-center gap-2">
+                <MapPin className="h-4 w-4" />
+                {t("finder.ask_district", lang)}
+              </p>
+            </div>
+            {districtSuggestions.length > 0 ? (
+              districtSuggestions.map((d, i) => (
+                <button key={i} onClick={() => handleDistrictSelect(d)}
+                  className="w-full text-left px-4 sm:px-6 py-3 sm:py-3.5 hover:bg-surface transition-colors text-foreground text-sm sm:text-base">
+                  {d}
+                </button>
+              ))
+            ) : (
+              ALL_DISTRICTS.map((d, i) => (
+                <button key={i} onClick={() => handleDistrictSelect(d)}
+                  className="w-full text-left px-4 sm:px-6 py-3 sm:py-3.5 hover:bg-surface transition-colors text-foreground text-sm sm:text-base">
+                  {d}
+                </button>
+              ))
+            )}
+          </div>
+        )}
       </div>
 
-      {selectedResult && (
+      {/* Route result */}
+      {state === "result" && selectedResult && (
         <div className="mt-4 sm:mt-6 bg-surface rounded-2xl sm:rounded-3xl p-5 sm:p-8 animate-in fade-in slide-in-from-bottom-2 duration-300">
           <p className="text-lg sm:text-xl font-semibold text-foreground mb-1">{selectedResult.route}</p>
           <p className="text-sm sm:text-base text-muted-foreground mb-4 sm:mb-6">{selectedResult.dates}</p>
@@ -151,6 +237,31 @@ export default function SmartFinder() {
           >
             <MessageCircle className="h-5 w-5" />
             {t("finder.schedule", lang)}
+          </a>
+        </div>
+      )}
+
+      {/* Not covered */}
+      {state === "not_covered" && (
+        <div className="mt-4 sm:mt-6 bg-surface rounded-2xl sm:rounded-3xl p-5 sm:p-8 animate-in fade-in slide-in-from-bottom-2 duration-300">
+          <p className="text-base sm:text-lg text-foreground flex items-center gap-2">
+            <AlertTriangle className="h-5 w-5 text-amber-500 shrink-0" />
+            {t("finder.not_covered", lang)}
+          </p>
+        </div>
+      )}
+
+      {/* Not found */}
+      {state === "not_found" && (
+        <div className="mt-4 sm:mt-6 bg-surface rounded-2xl sm:rounded-3xl p-5 sm:p-8 animate-in fade-in slide-in-from-bottom-2 duration-300">
+          <p className="text-base sm:text-lg text-foreground mb-4">
+            {t("finder.not_found", lang)}
+          </p>
+          <a
+            href="tel:+351231922340"
+            className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 sm:px-8 py-3 sm:py-4 rounded-xl sm:rounded-2xl font-semibold text-base sm:text-lg hover:opacity-90 transition-opacity"
+          >
+            📞 +351 231 922 340
           </a>
         </div>
       )}

@@ -31,6 +31,9 @@ const translations = {
   "finder.placeholder": { pt: "Para onde quer enviar a sua mercadoria?", en: "Where do you want to send your goods?", fr: "Où voulez-vous envoyer votre marchandise ?", de: "Wohin möchten Sie Ihre Ware senden?" },
   "finder.schedule": { pt: "Agendar recolha (WhatsApp)", en: "Schedule pickup (WhatsApp)", fr: "Planifier un enlèvement (WhatsApp)", de: "Abholung planen (WhatsApp)" },
   "finder.wa_text": { pt: "Olá! Gostaria de agendar uma recolha.", en: "Hello! I'd like to schedule a pickup.", fr: "Bonjour ! Je souhaite planifier un enlèvement.", de: "Hallo! Ich möchte eine Abholung planen." },
+  "finder.ask_district": { pt: "Não encontrámos a sua cidade. Indique-nos o seu distrito:", en: "We couldn't find your city. Please select your district:", fr: "Nous n'avons pas trouvé votre ville. Indiquez votre district :", de: "Wir konnten Ihre Stadt nicht finden. Bitte wählen Sie Ihren Bezirk:" },
+  "finder.not_covered": { pt: "De momento, as nossas rotas não cobrem essa zona. Contacte-nos para encontrarmos uma solução.", en: "Our routes don't currently cover that area. Contact us to find a solution.", fr: "Nos routes ne couvrent pas cette zone actuellement. Contactez-nous pour trouver une solution.", de: "Unsere Routen decken dieses Gebiet derzeit nicht ab. Kontaktieren Sie uns für eine Lösung." },
+  "finder.not_found": { pt: "Não conseguimos encontrar a sua localização. Contacte-nos para mais informações:", en: "We couldn't find your location. Contact us for more information:", fr: "Nous n'avons pas pu trouver votre localisation. Contactez-nous pour plus d'informations :", de: "Wir konnten Ihren Standort nicht finden. Kontaktieren Sie uns für weitere Informationen:" },
 
   // Route descriptions
   "route.monday": { pt: "Passamos na sua zona todas as Segundas-feiras.", en: "We pass through your area every Monday.", fr: "Nous passons dans votre zone tous les lundis.", de: "Wir fahren jeden Montag durch Ihre Gegend." },
