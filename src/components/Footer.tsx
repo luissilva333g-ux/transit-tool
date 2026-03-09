@@ -1,4 +1,5 @@
-import { Phone, MessageCircle } from "lucide-react";
+import { Phone, MessageCircle, FileText } from "lucide-react";
+import { Link } from "react-router-dom";
 import { useLang } from "@/contexts/LangContext";
 import { t } from "@/lib/i18n";
 import logo from "@/assets/logo.png";
