@@ -97,7 +97,11 @@ const DISTRICT_ROUTES: Record<string, number> = {
 
 const NOT_COVERED_DISTRICTS = ["faro", "beja", "evora", "portalegre"];
 
-const ALL_DISTRICTS = [
+function normalize(str: string) {
+  return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
+}
+
+
   "Aveiro", "Beja", "Braga", "Bragança", "Castelo Branco", "Coimbra",
   "Évora", "Faro", "Guarda", "Leiria", "Lisboa", "Luxemburgo", "Portalegre",
   "Porto", "Santarém", "Setúbal", "Viana do Castelo", "Vila Real", "Viseu",
