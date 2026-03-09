@@ -85,13 +85,14 @@ const CITY_ROUTES: { cities: string[]; routeKey: TranslationKey; datesLabelKey: 
   },
 ];
 
-// District → route index mapping
+// District → route index mapping (-1 = Luxembourg special)
 const DISTRICT_ROUTES: Record<string, number> = {
   "porto": 0, "braga": 0, "aveiro": 0, "coimbra": 0,
   "viseu": 1,
   "guarda": 2, "castelo branco": 2,
   "lisboa": 3, "setubal": 3, "santarem": 3, "leiria": 3,
   "viana do castelo": 4, "vila real": 4, "braganca": 4,
+  "luxemburgo": -1, "luxembourg": -1,
 };
 
 const NOT_COVERED_DISTRICTS = ["faro", "beja", "evora", "portalegre"];
@@ -102,11 +103,11 @@ function normalize(str: string) {
 
 const ALL_DISTRICTS = [
   "Aveiro", "Beja", "Braga", "Bragança", "Castelo Branco", "Coimbra",
-  "Évora", "Faro", "Guarda", "Leiria", "Lisboa", "Portalegre",
+  "Évora", "Faro", "Guarda", "Leiria", "Lisboa", "Luxemburgo", "Portalegre",
   "Porto", "Santarém", "Setúbal", "Viana do Castelo", "Vila Real", "Viseu",
 ];
 
-type FinderState = "search" | "ask_district" | "result" | "not_covered" | "not_found";
+type FinderState = "search" | "ask_district" | "result" | "not_covered" | "not_found" | "luxembourg";
 
 export default function SmartFinder() {
   const [query, setQuery] = useState("");
@@ -159,6 +160,11 @@ export default function SmartFinder() {
       return;
     }
     const routeIdx = DISTRICT_ROUTES[norm];
+    if (routeIdx === -1) {
+      setState("luxembourg");
+      setQuery("");
+      return;
+    }
     if (routeIdx !== undefined) {
       handleSelect(routeIdx);
     } else {
@@ -262,6 +268,24 @@ export default function SmartFinder() {
             className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 sm:px-8 py-3 sm:py-4 rounded-xl sm:rounded-2xl font-semibold text-base sm:text-lg hover:opacity-90 transition-opacity"
           >
             📞 +351 231 922 340
+          </a>
+        </div>
+      )}
+
+      {/* Luxembourg */}
+      {state === "luxembourg" && (
+        <div className="mt-4 sm:mt-6 bg-surface rounded-2xl sm:rounded-3xl p-5 sm:p-8 animate-in fade-in slide-in-from-bottom-2 duration-300">
+          <p className="text-lg sm:text-xl font-semibold text-foreground mb-4">
+            {t("finder.luxembourg", lang)}
+          </p>
+          <a
+            href={`https://wa.me/351917405318?text=${encodeURIComponent(t("finder.wa_text", lang))}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 bg-whatsapp text-whatsapp-foreground px-6 sm:px-8 py-3 sm:py-4 rounded-xl sm:rounded-2xl font-semibold text-base sm:text-lg hover:opacity-90 transition-opacity"
+          >
+            <MessageCircle className="h-5 w-5" />
+            {t("finder.schedule", lang)}
           </a>
         </div>
       )}
