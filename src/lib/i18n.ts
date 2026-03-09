@@ -28,7 +28,7 @@ const translations = {
   "hero.subtitle": { pt: "Transporte de mercadorias porta-a-porta com a confiança de sempre.", en: "Door-to-door freight transport you can always trust.", fr: "Transport de marchandises porte-à-porte en toute confiance.", de: "Tür-zu-Tür-Frachttransport, dem Sie vertrauen können." },
 
   // Smart Finder
-  "finder.placeholder": { pt: "Para onde quer enviar a sua mercadoria?", en: "Where do you want to send your goods?", fr: "Où voulez-vous envoyer votre marchandise ?", de: "Wohin möchten Sie Ihre Ware senden?" },
+  "finder.placeholder": { pt: "Indique-nos a sua cidade para saber as datas das nossas passagens", en: "Enter your city to find our route dates", fr: "Indiquez votre ville pour connaître nos dates de passage", de: "Geben Sie Ihre Stadt ein, um unsere Routentermine zu erfahren" },
   "finder.schedule": { pt: "Agendar recolha (WhatsApp)", en: "Schedule pickup (WhatsApp)", fr: "Planifier un enlèvement (WhatsApp)", de: "Abholung planen (WhatsApp)" },
   "finder.wa_text": { pt: "Olá! Gostaria de agendar uma recolha.", en: "Hello! I'd like to schedule a pickup.", fr: "Bonjour ! Je souhaite planifier un enlèvement.", de: "Hallo! Ich möchte eine Abholung planen." },
   "finder.ask_district": { pt: "Não encontrámos a sua cidade. Indique-nos o seu distrito:", en: "We couldn't find your city. Please select your district:", fr: "Nous n'avons pas trouvé votre ville. Indiquez votre district :", de: "Wir konnten Ihre Stadt nicht finden. Bitte wählen Sie Ihren Bezirk:" },
