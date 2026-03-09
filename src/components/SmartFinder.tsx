@@ -107,7 +107,7 @@ const ALL_DISTRICTS = [
   "Porto", "Santarém", "Setúbal", "Viana do Castelo", "Vila Real", "Viseu",
 ];
 
-type FinderState = "search" | "ask_district" | "result" | "not_covered" | "not_found";
+type FinderState = "search" | "ask_district" | "result" | "not_covered" | "not_found" | "luxembourg";
 
 export default function SmartFinder() {
   const [query, setQuery] = useState("");
