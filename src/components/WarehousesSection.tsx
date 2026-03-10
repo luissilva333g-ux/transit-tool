@@ -17,7 +17,7 @@ export default function WarehousesSection() {
       name: "🇱🇺 Hollerich, Luxemburgo",
       address: "20 Rue de Cessange, L-1320",
       note: t("wh.note_hollerich", lang),
-      hours: ["Ter: 17:00–20:30", "Sáb: 08:00–13:00"],
+      hours: [t("wh.hours_hol_1", lang), t("wh.hours_hol_2", lang)],
       mapUrl: "https://www.google.com/maps?q=49.59765522565655,6.113726780058291",
     },
     {
