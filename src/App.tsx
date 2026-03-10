@@ -7,6 +7,7 @@ import { LangProvider } from "@/contexts/LangContext";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import Regulamento from "./pages/Regulamento";
+import Congelados from "./pages/Congelados";
 
 const queryClient = new QueryClient();
 
