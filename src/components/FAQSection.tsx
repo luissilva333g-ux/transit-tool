@@ -15,6 +15,7 @@ const FAQ_KEYS: { q: TranslationKey; a: TranslationKey }[] = [
   { q: "faq.q8", a: "faq.a8" },
   { q: "faq.q9", a: "faq.a9" },
   { q: "faq.q10", a: "faq.a10" },
+  { q: "faq.q11", a: "faq.a11" },
 ];
 
 export default function FAQSection() {
