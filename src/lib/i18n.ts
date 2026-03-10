@@ -39,6 +39,7 @@ const translations = {
   "finder.frozen_dates": { pt: "Próximas datas", en: "Upcoming dates", fr: "Prochaines dates", de: "Nächste Termine" },
   "finder.near_mortagua": { pt: "A sua localização fica perto do nosso armazém de Mortágua. Se preferir, pode entregar ou levantar a sua encomenda nas nossas instalações.", en: "Your location is near our Mortágua warehouse. If you prefer, you can drop off or pick up your parcel at our facilities.", fr: "Votre localisation est proche de notre entrepôt de Mortágua. Si vous préférez, vous pouvez déposer ou retirer votre colis dans nos installations.", de: "Ihr Standort befindet sich in der Nähe unseres Lagers in Mortágua. Sie können Ihr Paket auch direkt dort abgeben oder abholen." },
   "finder.see_warehouses": { pt: "Ver os nossos armazéns", en: "See our warehouses", fr: "Voir nos entrepôts", de: "Unsere Lager ansehen" },
+  "finder.all_routes": { pt: "Todas as rotas 2026", en: "All 2026 routes", fr: "Toutes les routes 2026", de: "Alle Routen 2026" },
 
   // Route descriptions
   "route.monday": { pt: "Passamos na sua zona todas as Segundas-feiras.", en: "We pass through your area every Monday.", fr: "Nous passons dans votre zone tous les lundis.", de: "Wir fahren jeden Montag durch Ihre Gegend." },
