@@ -54,12 +54,12 @@ const translations = {
   // Features
   "feat.door_title": { pt: "Porta-a-Porta", en: "Door-to-Door", fr: "Porte-à-Porte", de: "Tür-zu-Tür" },
   "feat.door_desc": { pt: "Recolhemos e entregamos ao domicílio em toda a rota.", en: "We pick up and deliver to your home across the entire route.", fr: "Nous collectons et livrons à domicile sur tout le trajet.", de: "Wir holen ab und liefern entlang der gesamten Route." },
-  "feat.years_title": { pt: "+30 Anos", en: "+30 Years", fr: "+30 Ans", de: "+30 Jahre" },
+  "feat.years_title": { pt: "+40 Anos", en: "+40 Years", fr: "+40 Ans", de: "+40 Jahre" },
   "feat.years_desc": { pt: "Experiência e confiança na rota Portugal ⇄ Luxemburgo.", en: "Experience and trust on the Portugal ⇄ Luxembourg route.", fr: "Expérience et confiance sur la route Portugal ⇄ Luxembourg.", de: "Erfahrung und Vertrauen auf der Route Portugal ⇄ Luxemburg." },
   "feat.free_title": { pt: "Preços Imbatíveis", en: "Unbeatable Prices", fr: "Prix Imbattables", de: "Unschlagbare Preise" },
   "feat.free_desc": { pt: "Os preços mais baixos do mercado. Envios internacionais a partir de 10 €.", en: "The lowest prices on the market. International shipments from €10.", fr: "Les prix les plus bas du marché. Envois internationaux à partir de 10 €.", de: "Die niedrigsten Preise auf dem Markt. Internationale Sendungen ab 10 €." },
-  "feat.coverage_title": { pt: "Cobertura Total", en: "Full Coverage", fr: "Couverture Totale", de: "Vollständige Abdeckung" },
-  "feat.coverage_desc": { pt: "De Bragança ao Alentejo, passamos na sua zona.", en: "From Bragança to Alentejo, we cover your area.", fr: "De Bragança à l'Alentejo, nous couvrons votre zone.", de: "Von Bragança bis zum Alentejo, wir decken Ihr Gebiet ab." },
+  "feat.coverage_title": { pt: "Várias Rotas e Armazéns", en: "Multiple Routes & Warehouses", fr: "Plusieurs Routes et Entrepôts", de: "Mehrere Routen & Lager" },
+  "feat.coverage_desc": { pt: "3 armazéns e rotas que cobrem todo o Luxemburgo e 2/3 de Portugal.", en: "3 warehouses and routes covering all of Luxembourg and 2/3 of Portugal.", fr: "3 entrepôts et des routes couvrant tout le Luxembourg et 2/3 du Portugal.", de: "3 Lager und Routen, die ganz Luxemburg und 2/3 von Portugal abdecken." },
 
   // Warehouses
   "wh.title": { pt: "Os Nossos Armazéns", en: "Our Warehouses", fr: "Nos Entrepôts", de: "Unsere Lager" },
