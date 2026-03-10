@@ -126,8 +126,8 @@ const translations = {
 
   // Footer
   "footer.title": { pt: "Contactos", en: "Contacts", fr: "Contacts", de: "Kontakte" },
-  "footer.office": { pt: "Escritório - Portugal", en: "Office - Portugal", fr: "Bureau - Portugal", de: "Büro - Portugal" },
-  "footer.cesar": { pt: "César - Luxemburgo", en: "César - Luxembourg", fr: "César - Luxembourg", de: "César - Luxemburg" },
+  "footer.office": { pt: "Escritório - Portugal 🇵🇹", en: "Office - Portugal 🇵🇹", fr: "Bureau - Portugal 🇵🇹", de: "Büro - Portugal 🇵🇹" },
+  "footer.cesar": { pt: "César - Luxemburgo 🇱🇺", en: "César - Luxembourg 🇱🇺", fr: "César - Luxembourg 🇱🇺", de: "César - Luxemburg 🇱🇺" },
   "footer.carlos": { pt: "Carlos", en: "Carlos", fr: "Carlos", de: "Carlos" },
   "footer.luis": { pt: "Luís", en: "Luís", fr: "Luís", de: "Luís" },
   "footer.copyright": { pt: "Todos os direitos reservados.", en: "All rights reserved.", fr: "Tous droits réservés.", de: "Alle Rechte vorbehalten." },
