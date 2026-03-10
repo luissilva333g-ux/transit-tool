@@ -13,18 +13,18 @@ import {
 } from "@/components/ui/dialog";
 
 const FROZEN_SCHEDULE = [
-  { month: "Jan", departure: "19 Jan", arrival: "22 Jan" },
-  { month: "Fev", departure: "16 Fev", arrival: "19 Fev" },
-  { month: "Mar", departure: "23 Mar", arrival: "26 Mar" },
-  { month: "Abr", departure: "20 Abr", arrival: "23 Abr" },
-  { month: "Mai", departure: "18 Mai", arrival: "21 Mai" },
-  { month: "Jun", departure: "15 Jun", arrival: "18 Jun" },
-  { month: "Jul", departure: "20 Jul", arrival: "23 Jul" },
-  { month: "Ago", departure: "17 Ago", arrival: "20 Ago" },
-  { month: "Set", departure: "7 Set", arrival: "10 Set" },
-  { month: "Out", departure: "19 Out", arrival: "22 Out" },
-  { month: "Nov", departure: "16 Nov", arrival: "19 Nov" },
-  { month: "Dez", departure: "14 Dez", arrival: "17 Dez" },
+  { month: "Jan", fullMonth: "Janeiro", departure: "19 Jan", arrival: "22 Jan" },
+  { month: "Fev", fullMonth: "Fevereiro", departure: "16 Fev", arrival: "19 Fev" },
+  { month: "Mar", fullMonth: "Março", departure: "23 Mar", arrival: "26 Mar" },
+  { month: "Abr", fullMonth: "Abril", departure: "20 Abr", arrival: "23 Abr" },
+  { month: "Mai", fullMonth: "Maio", departure: "18 Mai", arrival: "21 Mai" },
+  { month: "Jun", fullMonth: "Junho", departure: "15 Jun", arrival: "18 Jun" },
+  { month: "Jul", fullMonth: "Julho", departure: "20 Jul", arrival: "23 Jul" },
+  { month: "Ago", fullMonth: "Agosto", departure: "17 Ago", arrival: "20 Ago" },
+  { month: "Set", fullMonth: "Setembro", departure: "7 Set", arrival: "10 Set" },
+  { month: "Out", fullMonth: "Outubro", departure: "19 Out", arrival: "22 Out" },
+  { month: "Nov", fullMonth: "Novembro", departure: "16 Nov", arrival: "19 Nov" },
+  { month: "Dez", fullMonth: "Dezembro", departure: "14 Dez", arrival: "17 Dez" },
 ];
 
 export default function FrozenSection() {
