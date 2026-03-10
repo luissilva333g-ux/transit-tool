@@ -1,8 +1,17 @@
 import { useState, useMemo } from "react";
-import { Search, MessageCircle, MapPin, AlertTriangle, Snowflake, Warehouse } from "lucide-react";
+import { Search, MessageCircle, MapPin, AlertTriangle, Snowflake, Warehouse, Calendar } from "lucide-react";
 import { useLang } from "@/contexts/LangContext";
 import { t, DATE_LOCALES, type Lang } from "@/lib/i18n";
 import type { TranslationKey } from "@/lib/i18n";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
+import calendarNorth from "@/assets/calendar-north-2026.png";
+import calendarLisbon from "@/assets/calendar-lisbon-2026.png";
+import calendarFrozen from "@/assets/calendar-frozen-2026.png";
 
 const FROZEN_DATES_RAW: number[][] = [
   [2026,0,19],[2026,1,16],[2026,2,23],[2026,3,20],[2026,4,18],[2026,5,15],
@@ -37,7 +46,6 @@ function getNextWeekdaysMulti(daysOfWeek: number[], locale: string, count = 3) {
 function formatConsecutiveDates(dates: Date[], locale: string): string {
   if (dates.length === 0) return "";
   
-  // Group consecutive dates (difference of 1 day and same month)
   const groups: Date[][] = [];
   let currentGroup: Date[] = [dates[0]];
   
@@ -58,7 +66,6 @@ function formatConsecutiveDates(dates: Date[], locale: string): string {
     if (group.length === 1) {
       return group[0].toLocaleDateString(locale, { day: "numeric", month: "long" });
     }
-    // e.g. "13/14 de março"
     const days = group.map(d => d.getDate()).join("/");
     const month = group[0].toLocaleDateString(locale, { month: "long" });
     return `${days} de ${month}`;
@@ -74,6 +81,12 @@ function getNextFromList(allDates: number[][], locale: string, count = 4) {
     .slice(0, count);
   return formatConsecutiveDates(dates, locale);
 }
+
+// Calendar image mapping by route index
+const ROUTE_CALENDAR: Record<number, string> = {
+  3: calendarLisbon,  // Lisboa, Setúbal, Santarém, Leiria
+  4: calendarNorth,   // Viana do Castelo, Vila Real, Bragança
+};
 
 const CITY_ROUTES: { cities: string[]; routeKey: TranslationKey; datesLabelKey: TranslationKey; getDates: (locale: string) => string }[] = [
   {
@@ -154,7 +167,8 @@ type FinderState = "search" | "ask_district" | "result" | "not_covered" | "not_f
 export default function SmartFinder() {
   const [query, setQuery] = useState("");
   const [state, setState] = useState<FinderState>("search");
-  const [selectedResult, setSelectedResult] = useState<{ route: string; dates: string; cityName?: string } | null>(null);
+  const [selectedResult, setSelectedResult] = useState<{ route: string; dates: string; cityName?: string; routeIdx?: number } | null>(null);
+  const [calendarImage, setCalendarImage] = useState<string | null>(null);
   const { lang } = useLang();
   const locale = DATE_LOCALES[lang];
 
@@ -176,7 +190,6 @@ export default function SmartFinder() {
     return results.slice(0, 8);
   }, [query, state, isFrozenSearch]);
 
-  // Check if we should show "ask district" prompt
   const showAskDistrict = useMemo(() => {
     if (state !== "search") return false;
     if (query.length < 3) return false;
@@ -199,13 +212,11 @@ export default function SmartFinder() {
   const handleSelect = (routeIdx: number, cityName?: string) => {
     const r = CITY_ROUTES[routeIdx];
     
-    // Special case: Penacova also passes on Mondays
     let route = t(r.routeKey, lang);
     let dates = r.getDates(locale);
     
     if (cityName && normalize(cityName) === "penacova") {
       route = t("route.penacova", lang);
-      // Get both Monday and the regular route dates
       const mondayDates = getNextWeekdays(1, locale, 2);
       const regularDates = r.getDates(locale);
       dates = `${mondayDates}, ${regularDates}`;
@@ -215,6 +226,7 @@ export default function SmartFinder() {
       route,
       dates: `${t(r.datesLabelKey, lang)}: ${dates}`,
       cityName,
+      routeIdx,
     });
     setState("result");
     setQuery("");
@@ -246,6 +258,9 @@ export default function SmartFinder() {
     setSelectedResult(null);
     setState("search");
   };
+
+  // Get calendar image for current route
+  const currentCalendarImage = selectedResult?.routeIdx !== undefined ? ROUTE_CALENDAR[selectedResult.routeIdx] : undefined;
 
   return (
     <div className="w-full max-w-2xl mx-auto">
@@ -330,16 +345,27 @@ export default function SmartFinder() {
               </a>
             </div>
           )}
-          
-          <a
-            href={`https://wa.me/351917405318?text=${encodeURIComponent(t("finder.wa_text", lang))}`}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 bg-whatsapp text-whatsapp-foreground px-6 sm:px-8 py-3 sm:py-4 rounded-xl sm:rounded-2xl font-semibold text-base sm:text-lg hover:opacity-90 transition-opacity"
-          >
-            <MessageCircle className="h-5 w-5" />
-            {t("finder.schedule", lang)}
-          </a>
+
+          <div className="flex flex-wrap gap-3">
+            <a
+              href={`https://wa.me/351917405318?text=${encodeURIComponent(t("finder.wa_text", lang))}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 bg-whatsapp text-whatsapp-foreground px-6 sm:px-8 py-3 sm:py-4 rounded-xl sm:rounded-2xl font-semibold text-base sm:text-lg hover:opacity-90 transition-opacity"
+            >
+              <MessageCircle className="h-5 w-5" />
+              {t("finder.schedule", lang)}
+            </a>
+            {currentCalendarImage && (
+              <button
+                onClick={() => setCalendarImage(currentCalendarImage)}
+                className="inline-flex items-center gap-2 border border-border bg-card text-foreground px-6 sm:px-8 py-3 sm:py-4 rounded-xl sm:rounded-2xl font-semibold text-sm sm:text-base hover:bg-accent transition-colors"
+              >
+                <Calendar className="h-5 w-5" />
+                {t("finder.all_routes", lang)}
+              </button>
+            )}
+          </div>
         </div>
       )}
 
@@ -396,17 +422,45 @@ export default function SmartFinder() {
           <p className="text-sm sm:text-base text-muted-foreground mb-4 sm:mb-6">
             {t("finder.frozen_dates", lang)}: {getNextFromList(FROZEN_DATES_RAW, locale, 4)}
           </p>
-          <a
-            href="https://wa.me/351231922340?text=Olá! Gostaria de saber mais sobre o serviço de congelados."
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 bg-whatsapp text-whatsapp-foreground px-6 sm:px-8 py-3 sm:py-4 rounded-xl sm:rounded-2xl font-semibold text-base sm:text-lg hover:opacity-90 transition-opacity"
-          >
-            <MessageCircle className="h-5 w-5" />
-            {t("finder.schedule", lang)}
-          </a>
+          <div className="flex flex-wrap gap-3">
+            <a
+              href="https://wa.me/351231922340?text=Olá! Gostaria de saber mais sobre o serviço de congelados."
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 bg-whatsapp text-whatsapp-foreground px-6 sm:px-8 py-3 sm:py-4 rounded-xl sm:rounded-2xl font-semibold text-base sm:text-lg hover:opacity-90 transition-opacity"
+            >
+              <MessageCircle className="h-5 w-5" />
+              {t("finder.schedule", lang)}
+            </a>
+            <button
+              onClick={() => setCalendarImage(calendarFrozen)}
+              className="inline-flex items-center gap-2 border border-border bg-card text-foreground px-6 sm:px-8 py-3 sm:py-4 rounded-xl sm:rounded-2xl font-semibold text-sm sm:text-base hover:bg-accent transition-colors"
+            >
+              <Calendar className="h-5 w-5" />
+              {t("finder.all_routes", lang)}
+            </button>
+          </div>
         </div>
       )}
+
+      {/* Calendar popup */}
+      <Dialog open={!!calendarImage} onOpenChange={(open) => !open && setCalendarImage(null)}>
+        <DialogContent className="sm:max-w-2xl max-h-[90vh] overflow-y-auto p-2 sm:p-4">
+          <DialogHeader>
+            <DialogTitle className="flex items-center gap-2 text-lg">
+              <Calendar className="h-5 w-5 text-primary" />
+              {t("finder.all_routes", lang)}
+            </DialogTitle>
+          </DialogHeader>
+          {calendarImage && (
+            <img
+              src={calendarImage}
+              alt="Calendário de rotas 2026"
+              className="w-full h-auto rounded-lg"
+            />
+          )}
+        </DialogContent>
+      </Dialog>
     </div>
   );
 }
