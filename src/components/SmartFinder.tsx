@@ -180,7 +180,7 @@ type FinderState = "search" | "ask_district" | "result" | "not_covered" | "not_f
 export default function SmartFinder() {
   const [query, setQuery] = useState("");
   const [state, setState] = useState<FinderState>("search");
-  const [selectedResult, setSelectedResult] = useState<{ route: string; dates: string; cityName?: string; routeIdx?: number } | null>(null);
+  const [selectedResult, setSelectedResult] = useState<{ route: string; datesLabel: string; datesValue: string; cityName?: string; routeIdx?: number } | null>(null);
   const [calendarImage, setCalendarImage] = useState<string | null>(null);
   const { lang } = useLang();
   const locale = DATE_LOCALES[lang];
