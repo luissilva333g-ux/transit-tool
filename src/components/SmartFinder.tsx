@@ -121,8 +121,14 @@ export default function SmartFinder() {
   const { lang } = useLang();
   const locale = DATE_LOCALES[lang];
 
+  // Check for "congelados" special keyword
+  const isFrozenSearch = useMemo(() => {
+    if (state !== "search" || query.length < 3) return false;
+    return normalize("congelados").includes(normalize(query)) && normalize(query).length >= 3;
+  }, [query, state]);
+
   const suggestions = useMemo(() => {
-    if (state !== "search" || query.length < 2) return [];
+    if (state !== "search" || query.length < 2 || isFrozenSearch) return [];
     const q = normalize(query);
     const results: { city: string; routeIdx: number }[] = [];
     CITY_ROUTES.forEach((r, idx) => {
@@ -131,15 +137,16 @@ export default function SmartFinder() {
       });
     });
     return results.slice(0, 8);
-  }, [query, state]);
+  }, [query, state, isFrozenSearch]);
 
   // Check if we should show "ask district" prompt
   const showAskDistrict = useMemo(() => {
     if (state !== "search") return false;
     if (query.length < 3) return false;
     if (suggestions.length > 0) return false;
+    if (isFrozenSearch) return false;
     return true;
-  }, [query, suggestions, state]);
+  }, [query, suggestions, state, isFrozenSearch]);
 
   const districtSuggestions = useMemo(() => {
     if (!showAskDistrict) return [];
