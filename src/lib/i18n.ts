@@ -80,7 +80,7 @@ const translations = {
   "frozen.popup_title": { pt: "Congelados", en: "Frozen Goods", fr: "Surgelés", de: "Tiefkühlware" },
   "frozen.departure": { pt: "Saída de Portugal", en: "Departure from Portugal", fr: "Départ du Portugal", de: "Abfahrt aus Portugal" },
   "frozen.arrival": { pt: "Chegada ao Luxemburgo", en: "Arrival in Luxembourg", fr: "Arrivée au Luxembourg", de: "Ankunft in Luxemburg" },
-  "frozen.schedule": { pt: "Agendar com antecedência (WhatsApp)", en: "Schedule in advance (WhatsApp)", fr: "Planifier à l'avance (WhatsApp)", de: "Im Voraus planen (WhatsApp)" },
+  "frozen.schedule": { pt: "Agendar (WhatsApp)", en: "Schedule (WhatsApp)", fr: "Planifier (WhatsApp)", de: "Planen (WhatsApp)" },
   "frozen.wa_text": { pt: "Olá! Gostaria de agendar o envio de congelados para o mês de {month}.", en: "Hello! I'd like to schedule a frozen goods shipment for {month}.", fr: "Bonjour ! Je souhaite planifier un envoi de surgelés pour {month}.", de: "Hallo! Ich möchte einen Tiefkühlversand für {month} planen." },
   "frozen.more_info": { pt: "Mais informações", en: "More information", fr: "Plus d'informations", de: "Mehr Informationen" },
 
