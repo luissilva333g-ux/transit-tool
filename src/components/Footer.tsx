@@ -6,9 +6,9 @@ import logo from "@/assets/logo.png";
 
 const contacts = [
   { nameKey: "footer.office" as const, phone: "+351 231 922 340", wa: "351231922340" },
+  { nameKey: "footer.cesar" as const, phone: "+352 621 152 128", wa: "352621152128" },
   { nameKey: "footer.carlos" as const, phone: "+351 917 405 318", wa: "351917405318" },
   { nameKey: "footer.luis" as const, phone: "+351 968 599 748", wa: "351968599748" },
-  { nameKey: "footer.cesar" as const, phone: "+352 621 152 128", wa: "352621152128" },
 ];
 
 const socials = [
