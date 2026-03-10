@@ -1,4 +1,4 @@
-import { Package, Tag, Tv, Thermometer } from "lucide-react";
+import { Package, Tag, Tv, Thermometer, MessageCircle } from "lucide-react";
 import labelImg from "@/assets/label-detail.jpg";
 import { useLang } from "@/contexts/LangContext";
 import { t } from "@/lib/i18n";
@@ -34,6 +34,15 @@ export default function PrepareSection() {
               </div>
             ))}
           </div>
+          <a
+            href={`https://wa.me/351231922340?text=${encodeURIComponent(t("prep.wa_text", lang))}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 mt-6 sm:mt-8 bg-whatsapp text-whatsapp-foreground px-6 py-3 rounded-xl font-semibold text-base hover:opacity-90 transition-opacity"
+          >
+            <MessageCircle className="h-5 w-5" />
+            {t("prep.cta", lang)}
+          </a>
         </div>
       </div>
     </section>
