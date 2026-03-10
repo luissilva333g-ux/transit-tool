@@ -1,8 +1,13 @@
 import { useState, useMemo } from "react";
-import { Search, MessageCircle, MapPin, AlertTriangle } from "lucide-react";
+import { Search, MessageCircle, MapPin, AlertTriangle, Snowflake } from "lucide-react";
 import { useLang } from "@/contexts/LangContext";
 import { t, DATE_LOCALES, type Lang } from "@/lib/i18n";
 import type { TranslationKey } from "@/lib/i18n";
+
+const FROZEN_DATES_RAW: number[][] = [
+  [2026,0,19],[2026,1,16],[2026,2,23],[2026,3,20],[2026,4,18],[2026,5,15],
+  [2026,6,20],[2026,7,17],[2026,8,7],[2026,9,19],[2026,10,16],[2026,11,14]
+];
 
 function getNextWeekdays(dayOfWeek: number, locale: string, count = 3) {
   const dates: string[] = [];
@@ -107,7 +112,7 @@ const ALL_DISTRICTS = [
   "Porto", "Santarém", "Setúbal", "Viana do Castelo", "Vila Real", "Viseu",
 ];
 
-type FinderState = "search" | "ask_district" | "result" | "not_covered" | "not_found" | "luxembourg";
+type FinderState = "search" | "ask_district" | "result" | "not_covered" | "not_found" | "luxembourg" | "frozen";
 
 export default function SmartFinder() {
   const [query, setQuery] = useState("");
@@ -116,8 +121,14 @@ export default function SmartFinder() {
   const { lang } = useLang();
   const locale = DATE_LOCALES[lang];
 
+  // Check for "congelados" special keyword
+  const isFrozenSearch = useMemo(() => {
+    if (state !== "search" || query.length < 3) return false;
+    return normalize("congelados").includes(normalize(query)) && normalize(query).length >= 3;
+  }, [query, state]);
+
   const suggestions = useMemo(() => {
-    if (state !== "search" || query.length < 2) return [];
+    if (state !== "search" || query.length < 2 || isFrozenSearch) return [];
     const q = normalize(query);
     const results: { city: string; routeIdx: number }[] = [];
     CITY_ROUTES.forEach((r, idx) => {
@@ -126,15 +137,16 @@ export default function SmartFinder() {
       });
     });
     return results.slice(0, 8);
-  }, [query, state]);
+  }, [query, state, isFrozenSearch]);
 
   // Check if we should show "ask district" prompt
   const showAskDistrict = useMemo(() => {
     if (state !== "search") return false;
     if (query.length < 3) return false;
     if (suggestions.length > 0) return false;
+    if (isFrozenSearch) return false;
     return true;
-  }, [query, suggestions, state]);
+  }, [query, suggestions, state, isFrozenSearch]);
 
   const districtSuggestions = useMemo(() => {
     if (!showAskDistrict) return [];
@@ -199,6 +211,17 @@ export default function SmartFinder() {
                 {s.city}
               </button>
             ))}
+          </div>
+        )}
+
+        {/* Frozen suggestion */}
+        {isFrozenSearch && (
+          <div className="absolute top-full left-0 right-0 mt-2 bg-card border border-border rounded-xl sm:rounded-2xl shadow-lg overflow-hidden z-50">
+            <button onClick={() => { setState("frozen"); setQuery(""); }}
+              className="w-full text-left px-4 sm:px-6 py-3 sm:py-3.5 hover:bg-surface transition-colors text-foreground text-sm sm:text-base flex items-center gap-2">
+              <Snowflake className="h-4 w-4 text-primary" />
+              {t("finder.frozen_title", lang)}
+            </button>
           </div>
         )}
 
@@ -280,6 +303,28 @@ export default function SmartFinder() {
           </p>
           <a
             href={`https://wa.me/351917405318?text=${encodeURIComponent(t("finder.wa_text", lang))}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 bg-whatsapp text-whatsapp-foreground px-6 sm:px-8 py-3 sm:py-4 rounded-xl sm:rounded-2xl font-semibold text-base sm:text-lg hover:opacity-90 transition-opacity"
+          >
+            <MessageCircle className="h-5 w-5" />
+            {t("finder.schedule", lang)}
+          </a>
+        </div>
+      )}
+
+      {/* Frozen dates */}
+      {state === "frozen" && (
+        <div className="mt-4 sm:mt-6 bg-surface rounded-2xl sm:rounded-3xl p-5 sm:p-8 animate-in fade-in slide-in-from-bottom-2 duration-300">
+          <p className="text-lg sm:text-xl font-semibold text-foreground mb-1 flex items-center gap-2">
+            <Snowflake className="h-5 w-5 text-primary" />
+            {t("finder.frozen_title", lang)}
+          </p>
+          <p className="text-sm sm:text-base text-muted-foreground mb-4 sm:mb-6">
+            {t("finder.frozen_dates", lang)}: {getNextFromList(FROZEN_DATES_RAW, locale, 4)}
+          </p>
+          <a
+            href="https://wa.me/351231922340?text=Olá! Gostaria de saber mais sobre o serviço de congelados."
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 bg-whatsapp text-whatsapp-foreground px-6 sm:px-8 py-3 sm:py-4 rounded-xl sm:rounded-2xl font-semibold text-base sm:text-lg hover:opacity-90 transition-opacity"

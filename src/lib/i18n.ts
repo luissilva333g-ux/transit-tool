@@ -35,6 +35,8 @@ const translations = {
   "finder.not_covered": { pt: "De momento, as nossas rotas não cobrem essa zona. Contacte-nos para encontrarmos uma solução.", en: "Our routes don't currently cover that area. Contact us to find a solution.", fr: "Nos routes ne couvrent pas cette zone actuellement. Contactez-nous pour trouver une solution.", de: "Unsere Routen decken dieses Gebiet derzeit nicht ab. Kontaktieren Sie uns für eine Lösung." },
   "finder.not_found": { pt: "Não conseguimos encontrar a sua localização. Contacte-nos para mais informações:", en: "We couldn't find your location. Contact us for more information:", fr: "Nous n'avons pas pu trouver votre localisation. Contactez-nous pour plus d'informations :", de: "Wir konnten Ihren Standort nicht finden. Kontaktieren Sie uns für weitere Informationen:" },
   "finder.luxembourg": { pt: "Recolhemos e entregamos no Luxemburgo todas as semanas.", en: "We pick up and deliver in Luxembourg every week.", fr: "Nous collectons et livrons au Luxembourg chaque semaine.", de: "Wir holen ab und liefern jede Woche in Luxemburg." },
+  "finder.frozen_title": { pt: "Serviço de Congelados", en: "Frozen Goods Service", fr: "Service Surgelés", de: "Tiefkühlservice" },
+  "finder.frozen_dates": { pt: "Próximas datas", en: "Upcoming dates", fr: "Prochaines dates", de: "Nächste Termine" },
 
   // Route descriptions
   "route.monday": { pt: "Passamos na sua zona todas as Segundas-feiras.", en: "We pass through your area every Monday.", fr: "Nous passons dans votre zone tous les lundis.", de: "Wir fahren jeden Montag durch Ihre Gegend." },
