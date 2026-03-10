@@ -59,7 +59,7 @@ const translations = {
   "feat.free_title": { pt: "Preços Imbatíveis", en: "Unbeatable Prices", fr: "Prix Imbattables", de: "Unschlagbare Preise" },
   "feat.free_desc": { pt: "Os preços mais baixos do mercado. Envios internacionais a partir de 10 €.", en: "The lowest prices on the market. International shipments from €10.", fr: "Les prix les plus bas du marché. Envois internationaux à partir de 10 €.", de: "Die niedrigsten Preise auf dem Markt. Internationale Sendungen ab 10 €." },
   "feat.coverage_title": { pt: "Várias Rotas e Armazéns", en: "Multiple Routes & Warehouses", fr: "Plusieurs Routes et Entrepôts", de: "Mehrere Routen & Lager" },
-  "feat.coverage_desc": { pt: "3 armazéns e rotas que cobrem todo o Luxemburgo e 2/3 de Portugal.", en: "3 warehouses and routes covering all of Luxembourg and 2/3 of Portugal.", fr: "3 entrepôts et des routes couvrant tout le Luxembourg et 2/3 du Portugal.", de: "3 Lager und Routen, die ganz Luxemburg und 2/3 von Portugal abdecken." },
+  "feat.coverage_desc": { pt: "3 armazéns + rotas que cobrem todo o Luxemburgo e 2/3 de Portugal.", en: "3 warehouses + routes covering all of Luxembourg and 2/3 of Portugal.", fr: "3 entrepôts + routes couvrant tout le Luxembourg et 2/3 du Portugal.", de: "3 Lager + Routen, die ganz Luxemburg und 2/3 von Portugal abdecken." },
 
   // Warehouses
   "wh.title": { pt: "Os Nossos Armazéns", en: "Our Warehouses", fr: "Nos Entrepôts", de: "Unsere Lager" },
