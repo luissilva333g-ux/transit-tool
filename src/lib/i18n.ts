@@ -123,7 +123,7 @@ const translations = {
   "footer.carlos": { pt: "Carlos", en: "Carlos", fr: "Carlos", de: "Carlos" },
   "footer.luis": { pt: "Luís", en: "Luís", fr: "Luís", de: "Luís" },
   "footer.copyright": { pt: "Todos os direitos reservados.", en: "All rights reserved.", fr: "Tous droits réservés.", de: "Alle Rechte vorbehalten." },
-  "footer.tagline": { pt: "Mais de 30 anos na rota Portugal ⇄ Luxemburgo.", en: "Over 30 years on the Portugal ⇄ Luxembourg route.", fr: "Plus de 30 ans sur la route Portugal ⇄ Luxembourg.", de: "Über 30 Jahre auf der Route Portugal ⇄ Luxemburg." },
+  "footer.tagline": { pt: "Mais de 40 anos na rota Portugal ⇄ Luxemburgo.", en: "Over 40 years on the Portugal ⇄ Luxembourg route.", fr: "Plus de 40 ans sur la route Portugal ⇄ Luxembourg.", de: "Über 40 Jahre auf der Route Portugal ⇄ Luxemburg." },
   "footer.regulation": { pt: "Regulamento Geral", en: "General Regulations", fr: "Règlement Général", de: "Allgemeine Geschäftsbedingungen" },
 
   // Regulation page
