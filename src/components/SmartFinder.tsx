@@ -417,14 +417,14 @@ export default function SmartFinder() {
             {t("finder.luxembourg", lang)}
           </p>
           <a
-            href={`https://wa.me/351917405318?text=${encodeURIComponent(t("finder.wa_text", lang))}`}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 bg-whatsapp text-whatsapp-foreground px-6 sm:px-8 py-3 sm:py-4 rounded-xl sm:rounded-2xl font-semibold text-base sm:text-lg hover:opacity-90 transition-opacity"
-          >
-            <MessageCircle className="h-5 w-5" />
-            {t("finder.schedule", lang)}
-          </a>
+              href={`https://wa.me/351231922340?text=${encodeURIComponent(t("finder.wa_text", lang))}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 bg-whatsapp text-whatsapp-foreground px-6 sm:px-8 py-3 sm:py-4 rounded-xl sm:rounded-2xl font-semibold text-base sm:text-lg hover:opacity-90 transition-opacity"
+            >
+              <MessageCircle className="h-5 w-5" />
+              {t("finder.schedule", lang)}
+            </a>
         </div>
       )}
 
