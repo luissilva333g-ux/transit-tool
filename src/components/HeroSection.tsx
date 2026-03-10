@@ -6,7 +6,7 @@ import { t } from "@/lib/i18n";
 export default function HeroSection() {
   const { lang } = useLang();
   return (
-    <section className="relative overflow-hidden bg-background">
+    <section className="relative bg-background">
       <div className="absolute inset-0">
         <img src={heroVan} alt="Carrinha de transporte da Transportes Carlos e César na estrada" className="w-full h-full object-cover" />
         <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/60 to-background" />
