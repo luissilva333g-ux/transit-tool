@@ -24,7 +24,7 @@ export default function WarehousesSection() {
       name: "🇱🇺🇫🇷 Rédange, França",
       address: "712, Rue de la Cote, F-57390",
       note: t("wh.note_redange", lang),
-      hours: ["Ter: 16:00–19:00", "Sáb: 10:00–17:00"],
+      hours: [t("wh.hours_red_1", lang), t("wh.hours_red_2", lang)],
       mapUrl: "https://www.google.com/maps?q=49.49131506157751,5.914277619970524",
     },
   ];
