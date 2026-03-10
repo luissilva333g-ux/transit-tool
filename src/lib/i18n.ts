@@ -69,9 +69,15 @@ const translations = {
   // Frozen
   "frozen.badge": { pt: "Serviço Frigorífico", en: "Refrigerated Service", fr: "Service Réfrigéré", de: "Kühltransport" },
   "frozen.title": { pt: "Congelados Portugal → Luxemburgo", en: "Frozen Goods Portugal → Luxembourg", fr: "Surgelés Portugal → Luxembourg", de: "Tiefkühlware Portugal → Luxemburg" },
-  "frozen.desc": { pt: "Saída às Segundas-feiras, chegada às Quintas. Levantamento no Luxemburgo entre 16:00 e 18:30.", en: "Departure on Mondays, arrival on Thursdays. Pickup in Luxembourg between 4:00 PM and 6:30 PM.", fr: "Départ le lundi, arrivée le jeudi. Retrait au Luxembourg entre 16h00 et 18h30.", de: "Abfahrt montags, Ankunft donnerstags. Abholung in Luxemburg zwischen 16:00 und 18:30." },
+  "frozen.desc": { pt: "Transporte de mercadoria congelada em camião frigorífico, de Portugal para o Luxemburgo.", en: "Frozen goods transport in a refrigerated truck, from Portugal to Luxembourg.", fr: "Transport de marchandises surgelées en camion frigorifique, du Portugal au Luxembourg.", de: "Transport von Tiefkühlware im Kühlwagen, von Portugal nach Luxemburg." },
   "frozen.dates_label": { pt: "Datas de saída 2026:", en: "2026 departure dates:", fr: "Dates de départ 2026 :", de: "Abfahrtstermine 2026:" },
   "frozen.contact": { pt: "Contactar Escritório", en: "Contact Office", fr: "Contacter le Bureau", de: "Büro kontaktieren" },
+  "frozen.popup_title": { pt: "Congelados", en: "Frozen Goods", fr: "Surgelés", de: "Tiefkühlware" },
+  "frozen.departure": { pt: "Saída de Portugal", en: "Departure from Portugal", fr: "Départ du Portugal", de: "Abfahrt aus Portugal" },
+  "frozen.arrival": { pt: "Chegada ao Luxemburgo", en: "Arrival in Luxembourg", fr: "Arrivée au Luxembourg", de: "Ankunft in Luxemburg" },
+  "frozen.schedule": { pt: "Agendar com antecedência (WhatsApp)", en: "Schedule in advance (WhatsApp)", fr: "Planifier à l'avance (WhatsApp)", de: "Im Voraus planen (WhatsApp)" },
+  "frozen.wa_text": { pt: "Olá! Gostaria de agendar o envio de congelados para o mês de {month}.", en: "Hello! I'd like to schedule a frozen goods shipment for {month}.", fr: "Bonjour ! Je souhaite planifier un envoi de surgelés pour {month}.", de: "Hallo! Ich möchte einen Tiefkühlversand für {month} planen." },
+  "frozen.more_info": { pt: "Mais informações", en: "More information", fr: "Plus d'informations", de: "Mehr Informationen" },
 
   // Prepare
   "prep.title": { pt: "Preparar o Envio", en: "Prepare Your Shipment", fr: "Préparer l'Envoi", de: "Sendung Vorbereiten" },
