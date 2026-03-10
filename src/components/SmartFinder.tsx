@@ -64,12 +64,25 @@ function formatConsecutiveDates(dates: Date[], locale: string): string {
   
   return groups.map(group => {
     if (group.length === 1) {
-      return group[0].toLocaleDateString(locale, { day: "numeric", month: "long" });
+      const formatted = group[0].toLocaleDateString(locale, { day: "numeric", month: "long" });
+      return capitalizeMonth(formatted);
     }
     const days = group.map(d => d.getDate()).join("/");
     const month = group[0].toLocaleDateString(locale, { month: "long" });
-    return `${days} de ${month}`;
+    return `${days} de ${capitalizeMonth(month)}`;
   }).join(", ");
+}
+
+function capitalizeMonth(str: string) {
+  // Capitalize first letter of month name (handles "13 de março" → "13 de Março" and "março" → "Março")
+  return str.replace(/\b([a-záàâãéèêíïóôõúüç])/gi, (match, letter, offset) => {
+    // Only capitalize month words (skip day numbers and "de")
+    const before = str.substring(0, offset).trim();
+    if (before === "" || before.endsWith("de") || before.endsWith(",")) {
+      return letter.toUpperCase();
+    }
+    return match;
+  });
 }
 
 function getNextFromList(allDates: number[][], locale: string, count = 4) {
@@ -167,7 +180,7 @@ type FinderState = "search" | "ask_district" | "result" | "not_covered" | "not_f
 export default function SmartFinder() {
   const [query, setQuery] = useState("");
   const [state, setState] = useState<FinderState>("search");
-  const [selectedResult, setSelectedResult] = useState<{ route: string; dates: string; cityName?: string; routeIdx?: number } | null>(null);
+  const [selectedResult, setSelectedResult] = useState<{ route: string; datesLabel: string; datesValue: string; cityName?: string; routeIdx?: number } | null>(null);
   const [calendarImage, setCalendarImage] = useState<string | null>(null);
   const { lang } = useLang();
   const locale = DATE_LOCALES[lang];
@@ -224,7 +237,8 @@ export default function SmartFinder() {
     
     setSelectedResult({
       route,
-      dates: `${t(r.datesLabelKey, lang)}: ${dates}`,
+      datesLabel: t(r.datesLabelKey, lang),
+      datesValue: dates,
       cityName,
       routeIdx,
     });
@@ -328,7 +342,9 @@ export default function SmartFinder() {
       {state === "result" && selectedResult && (
         <div className="mt-4 sm:mt-6 bg-surface rounded-2xl sm:rounded-3xl p-5 sm:p-8 animate-in fade-in slide-in-from-bottom-2 duration-300">
           <p className="text-lg sm:text-xl font-semibold text-foreground mb-1">{selectedResult.route}</p>
-          <p className="text-sm sm:text-base text-muted-foreground mb-4 sm:mb-6">{selectedResult.dates}</p>
+          <p className="text-sm sm:text-base text-muted-foreground mb-4 sm:mb-6">
+            {selectedResult.datesLabel}: <span className="font-bold text-primary">{selectedResult.datesValue}</span>
+          </p>
           
           {/* Mortágua proximity message */}
           {isNearMortagua(selectedResult.cityName) && (
@@ -346,7 +362,7 @@ export default function SmartFinder() {
             </div>
           )}
 
-          <div className="flex flex-wrap gap-3">
+          <div className="flex flex-col items-center gap-3">
             <a
               href={`https://wa.me/351917405318?text=${encodeURIComponent(t("finder.wa_text", lang))}`}
               target="_blank"
@@ -420,9 +436,9 @@ export default function SmartFinder() {
             {t("finder.frozen_title", lang)}
           </p>
           <p className="text-sm sm:text-base text-muted-foreground mb-4 sm:mb-6">
-            {t("finder.frozen_dates", lang)}: {getNextFromList(FROZEN_DATES_RAW, locale, 4)}
+            {t("finder.frozen_dates", lang)}: <span className="font-bold text-primary">{getNextFromList(FROZEN_DATES_RAW, locale, 4)}</span>
           </p>
-          <div className="flex flex-wrap gap-3">
+          <div className="flex flex-col items-center gap-3">
             <a
               href="https://wa.me/351231922340?text=Olá! Gostaria de saber mais sobre o serviço de congelados."
               target="_blank"
