@@ -436,9 +436,9 @@ export default function SmartFinder() {
             {t("finder.frozen_title", lang)}
           </p>
           <p className="text-sm sm:text-base text-muted-foreground mb-4 sm:mb-6">
-            {t("finder.frozen_dates", lang)}: {getNextFromList(FROZEN_DATES_RAW, locale, 4)}
+            {t("finder.frozen_dates", lang)}: <span className="font-bold text-primary">{getNextFromList(FROZEN_DATES_RAW, locale, 4)}</span>
           </p>
-          <div className="flex flex-wrap gap-3">
+          <div className="flex flex-col items-center gap-3">
             <a
               href="https://wa.me/351231922340?text=Olá! Gostaria de saber mais sobre o serviço de congelados."
               target="_blank"
