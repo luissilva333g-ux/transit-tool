@@ -214,6 +214,17 @@ export default function SmartFinder() {
           </div>
         )}
 
+        {/* Frozen suggestion */}
+        {isFrozenSearch && (
+          <div className="absolute top-full left-0 right-0 mt-2 bg-card border border-border rounded-xl sm:rounded-2xl shadow-lg overflow-hidden z-50">
+            <button onClick={() => { setState("frozen"); setQuery(""); }}
+              className="w-full text-left px-4 sm:px-6 py-3 sm:py-3.5 hover:bg-surface transition-colors text-foreground text-sm sm:text-base flex items-center gap-2">
+              <Snowflake className="h-4 w-4 text-primary" />
+              {t("finder.frozen_title", lang)}
+            </button>
+          </div>
+        )}
+
         {/* Ask district fallback */}
         {showAskDistrict && (
           <div className="absolute top-full left-0 right-0 mt-2 bg-card border border-border rounded-xl sm:rounded-2xl shadow-lg overflow-hidden z-50 max-h-72 overflow-y-auto">
