@@ -237,7 +237,8 @@ export default function SmartFinder() {
     
     setSelectedResult({
       route,
-      dates: `${t(r.datesLabelKey, lang)}: ${dates}`,
+      datesLabel: t(r.datesLabelKey, lang),
+      datesValue: dates,
       cityName,
       routeIdx,
     });
