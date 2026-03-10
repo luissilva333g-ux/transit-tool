@@ -1,8 +1,13 @@
 import { useState, useMemo } from "react";
-import { Search, MessageCircle, MapPin, AlertTriangle } from "lucide-react";
+import { Search, MessageCircle, MapPin, AlertTriangle, Snowflake } from "lucide-react";
 import { useLang } from "@/contexts/LangContext";
 import { t, DATE_LOCALES, type Lang } from "@/lib/i18n";
 import type { TranslationKey } from "@/lib/i18n";
+
+const FROZEN_DATES_RAW: number[][] = [
+  [2026,0,19],[2026,1,16],[2026,2,23],[2026,3,20],[2026,4,18],[2026,5,15],
+  [2026,6,20],[2026,7,17],[2026,8,7],[2026,9,19],[2026,10,16],[2026,11,14]
+];
 
 function getNextWeekdays(dayOfWeek: number, locale: string, count = 3) {
   const dates: string[] = [];
