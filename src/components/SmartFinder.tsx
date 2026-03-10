@@ -64,12 +64,25 @@ function formatConsecutiveDates(dates: Date[], locale: string): string {
   
   return groups.map(group => {
     if (group.length === 1) {
-      return group[0].toLocaleDateString(locale, { day: "numeric", month: "long" });
+      const formatted = group[0].toLocaleDateString(locale, { day: "numeric", month: "long" });
+      return capitalizeMonth(formatted);
     }
     const days = group.map(d => d.getDate()).join("/");
     const month = group[0].toLocaleDateString(locale, { month: "long" });
-    return `${days} de ${month}`;
+    return `${days} de ${capitalizeMonth(month)}`;
   }).join(", ");
+}
+
+function capitalizeMonth(str: string) {
+  // Capitalize first letter of month name (handles "13 de março" → "13 de Março" and "março" → "Março")
+  return str.replace(/\b([a-záàâãéèêíïóôõúüç])/gi, (match, letter, offset) => {
+    // Only capitalize month words (skip day numbers and "de")
+    const before = str.substring(0, offset).trim();
+    if (before === "" || before.endsWith("de") || before.endsWith(",")) {
+      return letter.toUpperCase();
+    }
+    return match;
+  });
 }
 
 function getNextFromList(allDates: number[][], locale: string, count = 4) {
