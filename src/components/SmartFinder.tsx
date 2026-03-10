@@ -312,6 +312,28 @@ export default function SmartFinder() {
           </a>
         </div>
       )}
+
+      {/* Frozen dates */}
+      {state === "frozen" && (
+        <div className="mt-4 sm:mt-6 bg-surface rounded-2xl sm:rounded-3xl p-5 sm:p-8 animate-in fade-in slide-in-from-bottom-2 duration-300">
+          <p className="text-lg sm:text-xl font-semibold text-foreground mb-1 flex items-center gap-2">
+            <Snowflake className="h-5 w-5 text-primary" />
+            {t("finder.frozen_title", lang)}
+          </p>
+          <p className="text-sm sm:text-base text-muted-foreground mb-4 sm:mb-6">
+            {t("finder.frozen_dates", lang)}: {getNextFromList(FROZEN_DATES_RAW, locale, 4)}
+          </p>
+          <a
+            href="https://wa.me/351231922340?text=Olá! Gostaria de saber mais sobre o serviço de congelados."
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 bg-whatsapp text-whatsapp-foreground px-6 sm:px-8 py-3 sm:py-4 rounded-xl sm:rounded-2xl font-semibold text-base sm:text-lg hover:opacity-90 transition-opacity"
+          >
+            <MessageCircle className="h-5 w-5" />
+            {t("finder.schedule", lang)}
+          </a>
+        </div>
+      )}
     </div>
   );
 }
