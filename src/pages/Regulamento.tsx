@@ -21,7 +21,7 @@ export default function Regulamento() {
 
         <h1 className="text-3xl sm:text-4xl font-extrabold mb-2">📜 {t("reg.title", lang)}</h1>
         <p className="text-muted-foreground mb-10 text-sm sm:text-base">
-          {t("reg.updated", lang)}: 29 de junho de 2025
+          {t("reg.updated", lang)}: 10 de Março de 2026
         </p>
         <p className="text-muted-foreground mb-10 text-sm sm:text-base font-semibold">
           {t("reg.company", lang)}: TRANSPORTES CARLOS & CÉSAR
