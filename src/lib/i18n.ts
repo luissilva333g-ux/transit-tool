@@ -42,8 +42,9 @@ const translations = {
   "route.monday": { pt: "Passamos na sua zona todas as Segundas-feiras.", en: "We pass through your area every Monday.", fr: "Nous passons dans votre zone tous les lundis.", de: "Wir fahren jeden Montag durch Ihre Gegend." },
   "route.wednesday": { pt: "Passamos na sua zona 2x por semana (Quarta-feira e Sexta ou Sábado).", en: "We pass through your area twice a week (Wednesday and Friday or Saturday).", fr: "Nous passons dans votre zone 2x par semaine (mercredi et vendredi ou samedi).", de: "Wir fahren 2x pro Woche durch Ihre Gegend (Mittwoch und Freitag oder Samstag)." },
   "route.tuesday": { pt: "Passamos na sua zona todas as Terças-feiras (tarde).", en: "We pass through your area every Tuesday (afternoon).", fr: "Nous passons dans votre zone tous les mardis (après-midi).", de: "Wir fahren jeden Dienstag (nachmittags) durch Ihre Gegend." },
-  "route.biweekly": { pt: "Rota Quinzenal (Sexta e Sábado).", en: "Biweekly route (Friday and Saturday).", fr: "Route bimensuelle (vendredi et samedi).", de: "Zweiwöchentliche Route (Freitag und Samstag)." },
+  "route.biweekly": { pt: "Rota Quinzenal (Sexta ou Sábado).", en: "Biweekly route (Friday or Saturday).", fr: "Route bimensuelle (vendredi ou samedi).", de: "Zweiwöchentliche Route (Freitag oder Samstag)." },
   "route.north": { pt: "Rota Norte Especial (datas específicas).", en: "Special Northern Route (specific dates).", fr: "Route Nord spéciale (dates spécifiques).", de: "Spezielle Nordroute (bestimmte Termine)." },
+  "route.penacova": { pt: "Passamos na sua zona às Segundas-feiras e também na rota de Quarta/Sexta.", en: "We pass through your area on Mondays and also on the Wednesday/Friday route.", fr: "Nous passons dans votre zone les lundis et aussi sur la route mercredi/vendredi.", de: "Wir fahren montags und auch auf der Mittwoch/Freitag-Route durch Ihre Gegend." },
   "route.next_trips": { pt: "Próximas viagens", en: "Next trips", fr: "Prochains voyages", de: "Nächste Fahrten" },
   "route.next_dates": { pt: "Próximas datas", en: "Upcoming dates", fr: "Prochaines dates", de: "Nächste Termine" },
 
