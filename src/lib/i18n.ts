@@ -66,6 +66,7 @@ const translations = {
   "wh.note_mortagua": { pt: "(junto ao bar Tirikeda)", en: "(next to bar Tirikeda)", fr: "(à côté du bar Tirikeda)", de: "(neben der Bar Tirikeda)" },
   "wh.note_hollerich": { pt: "(Garagens ao fundo do parque da Intralux)", en: "(Garages at the back of the Intralux park)", fr: "(Garages au fond du parc Intralux)", de: "(Garagen am Ende des Intralux-Parks)" },
   "wh.note_redange": { pt: "(fronteira de Esch 🇱🇺 com Villerupt 🇫🇷)", en: "(border of Esch 🇱🇺 with Villerupt 🇫🇷)", fr: "(frontière d'Esch 🇱🇺 avec Villerupt 🇫🇷)", de: "(Grenze von Esch 🇱🇺 mit Villerupt 🇫🇷)" },
+  "wh.directions": { pt: "Ver no mapa", en: "View on map", fr: "Voir sur la carte", de: "Auf der Karte anzeigen" },
 
   // Frozen
   "frozen.badge": { pt: "Serviço Frigorífico", en: "Refrigerated Service", fr: "Service Réfrigéré", de: "Kühltransport" },
