@@ -103,7 +103,7 @@ const ROUTE_CALENDAR: Record<number, string> = {
 
 const CITY_ROUTES: { cities: string[]; routeKey: TranslationKey; datesLabelKey: TranslationKey; getDates: (locale: string) => string }[] = [
   {
-    cities: ["Porto","Vila Nova de Gaia","Espinho","Valongo","Ermesinde","Alfena","Rio Tinto","Gondomar","São Cosme","Fânzeres","Maia","Águas Santas","Moreira da Maia","Trofa","Vila do Conde","Póvoa de Varzim","Matosinhos","Leça da Palmeira","Senhora da Hora","São Mamede de Infesta","Santo Tirso","Rebordões","Negrelos","Paços de Ferreira","Freamunde","Lousada","Vizela","Felgueiras","Fafe","Braga","Vila Verde","Prado","Amares","Póvoa de Lanhoso","Guimarães","Caldas das Taipas","Pevidém","Joane","Vila Nova de Famalicão","Ribeirão","Riba de Ave","Oliveira São Mateus","Barcelos","Esposende","Apúlia","Fão","Aveiro","Ílhavo","Gafanha da Nazaré","Gafanha da Encarnação","Vagos","Oliveira do Bairro","Oiã","Águeda","Albergaria-a-Velha","Estarreja","Pardilhó","Avanca","Ovar","Esmoriz","Santa Maria da Feira","Fiães","São João da Madeira","Vale de Cambra","Arouca","Sever do Vouga","Mealhada","Pampilhosa","Cantanhede","Tocha","Mira","Coimbra","Cernache","Condeixa-a-Nova","Soure","Montemor-o-Velho","Lousã","Miranda do Corvo","Arganil"],
+    cities: ["Porto","Vila Nova de Gaia","Espinho","Valongo","Ermesinde","Alfena","Rio Tinto","Gondomar","São Cosme","Fânzeres","Maia","Águas Santas","Moreira da Maia","Trofa","Vila do Conde","Póvoa de Varzim","Matosinhos","Leça da Palmeira","Senhora da Hora","São Mamede de Infesta","Santo Tirso","Rebordões","Negrelos","Paços de Ferreira","Freamunde","Lousada","Vizela","Felgueiras","Fafe","Braga","Vila Verde","Prado","Amares","Póvoa de Lanhoso","Guimarães","Caldas das Taipas","Pevidém","Joane","Vila Nova de Famalicão","Ribeirão","Riba de Ave","Oliveira São Mateus","Barcelos","Esposende","Apúlia","Fão","Aveiro","Ílhavo","Gafanha da Nazaré","Gafanha da Encarnação","Vagos","Oliveira do Bairro","Oiã","Águeda","Albergaria-a-Velha","Estarreja","Pardilhó","Avanca","Ovar","Esmoriz","Santa Maria da Feira","Fiães","São João da Madeira","Vale de Cambra","Arouca","Sever do Vouga","Mealhada","Pampilhosa","Cantanhede","Tocha","Mira","Coimbra","Cernache","Condeixa-a-Nova","Soure","Montemor-o-Velho","Lousã","Miranda do Corvo","Arganil","Penacova","Vila Nova de Poiares","Lorvão"],
     routeKey: "route.monday",
     datesLabelKey: "route.next_trips",
     getDates: (locale) => getNextWeekdays(1, locale),
@@ -364,7 +364,7 @@ export default function SmartFinder() {
 
           <div className="flex flex-col items-center gap-3">
             <a
-              href={`https://wa.me/351917405318?text=${encodeURIComponent(t("finder.wa_text", lang))}`}
+              href={`https://wa.me/351231922340?text=${encodeURIComponent(t("finder.wa_text", lang))}`}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 bg-whatsapp text-whatsapp-foreground px-6 sm:px-8 py-3 sm:py-4 rounded-xl sm:rounded-2xl font-semibold text-base sm:text-lg hover:opacity-90 transition-opacity"
@@ -417,14 +417,14 @@ export default function SmartFinder() {
             {t("finder.luxembourg", lang)}
           </p>
           <a
-            href={`https://wa.me/351917405318?text=${encodeURIComponent(t("finder.wa_text", lang))}`}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 bg-whatsapp text-whatsapp-foreground px-6 sm:px-8 py-3 sm:py-4 rounded-xl sm:rounded-2xl font-semibold text-base sm:text-lg hover:opacity-90 transition-opacity"
-          >
-            <MessageCircle className="h-5 w-5" />
-            {t("finder.schedule", lang)}
-          </a>
+              href={`https://wa.me/351231922340?text=${encodeURIComponent(t("finder.wa_text", lang))}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 bg-whatsapp text-whatsapp-foreground px-6 sm:px-8 py-3 sm:py-4 rounded-xl sm:rounded-2xl font-semibold text-base sm:text-lg hover:opacity-90 transition-opacity"
+            >
+              <MessageCircle className="h-5 w-5" />
+              {t("finder.schedule", lang)}
+            </a>
         </div>
       )}
 
