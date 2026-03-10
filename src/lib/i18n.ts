@@ -74,7 +74,7 @@ const translations = {
   // Frozen
   "frozen.badge": { pt: "Serviço Frigorífico", en: "Refrigerated Service", fr: "Service Réfrigéré", de: "Kühltransport" },
   "frozen.title": { pt: "Congelados Portugal → Luxemburgo", en: "Frozen Goods Portugal → Luxembourg", fr: "Surgelés Portugal → Luxembourg", de: "Tiefkühlware Portugal → Luxemburg" },
-  "frozen.desc": { pt: "Transporte de mercadoria congelada em camião frigorífico, de Portugal para o Luxemburgo.", en: "Frozen goods transport in a refrigerated truck, from Portugal to Luxembourg.", fr: "Transport de marchandises surgelées en camion frigorifique, du Portugal au Luxembourg.", de: "Transport von Tiefkühlware im Kühlwagen, von Portugal nach Luxemburg." },
+  "frozen.desc": { pt: "Também oferecemos o serviço de transporte de mercadoria congelada em camião frigorífico.", en: "We also offer frozen goods transport in a refrigerated truck.", fr: "Nous offrons également le transport de marchandises surgelées en camion frigorifique.", de: "Wir bieten auch den Transport von Tiefkühlware im Kühlwagen an." },
   "frozen.dates_label": { pt: "Datas de saída 2026:", en: "2026 departure dates:", fr: "Dates de départ 2026 :", de: "Abfahrtstermine 2026:" },
   "frozen.contact": { pt: "Contactar Escritório", en: "Contact Office", fr: "Contacter le Bureau", de: "Büro kontaktieren" },
   "frozen.popup_title": { pt: "Congelados", en: "Frozen Goods", fr: "Surgelés", de: "Tiefkühlware" },
