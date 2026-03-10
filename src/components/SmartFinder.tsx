@@ -364,7 +364,7 @@ export default function SmartFinder() {
 
           <div className="flex flex-col items-center gap-3">
             <a
-              href={`https://wa.me/351917405318?text=${encodeURIComponent(t("finder.wa_text", lang))}`}
+              href={`https://wa.me/351231922340?text=${encodeURIComponent(t("finder.wa_text", lang))}`}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 bg-whatsapp text-whatsapp-foreground px-6 sm:px-8 py-3 sm:py-4 rounded-xl sm:rounded-2xl font-semibold text-base sm:text-lg hover:opacity-90 transition-opacity"
