@@ -64,7 +64,7 @@ export default function FrozenSection() {
           <DialogHeader>
             <DialogTitle className="flex items-center gap-2 text-xl">
               <Snowflake className="h-5 w-5 text-primary" />
-              {t("frozen.popup_title", lang)} — {selectedMonth?.month}
+              {t("frozen.popup_title", lang)} — {selectedMonth?.fullMonth}
             </DialogTitle>
             <DialogDescription>
               {t("frozen.desc", lang)}
