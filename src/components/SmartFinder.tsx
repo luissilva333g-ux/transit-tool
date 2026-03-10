@@ -1,5 +1,5 @@
 import { useState, useMemo } from "react";
-import { Search, MessageCircle, MapPin, AlertTriangle, Snowflake } from "lucide-react";
+import { Search, MessageCircle, MapPin, AlertTriangle, Snowflake, Warehouse } from "lucide-react";
 import { useLang } from "@/contexts/LangContext";
 import { t, DATE_LOCALES, type Lang } from "@/lib/i18n";
 import type { TranslationKey } from "@/lib/i18n";
@@ -9,31 +9,75 @@ const FROZEN_DATES_RAW: number[][] = [
   [2026,6,20],[2026,7,17],[2026,8,7],[2026,9,19],[2026,10,16],[2026,11,14]
 ];
 
+// Cities near Mortágua warehouse
+const MORTAGUA_NEARBY = ["mortágua", "mortagua", "santa comba dão", "santa comba dao", "penacova", "tondela", "campo de besteiros"];
+
 function getNextWeekdays(dayOfWeek: number, locale: string, count = 3) {
-  const dates: string[] = [];
+  const dates: Date[] = [];
   const now = new Date();
   let d = new Date(now);
   while (dates.length < count) {
-    if (d.getDay() === dayOfWeek && d >= now) dates.push(d.toLocaleDateString(locale, { day: "numeric", month: "long" }));
+    if (d.getDay() === dayOfWeek && d >= now) dates.push(new Date(d));
     d = new Date(d.getTime() + 86400000);
   }
-  return dates.join(", ");
+  return formatConsecutiveDates(dates, locale);
+}
+
+function getNextWeekdaysMulti(daysOfWeek: number[], locale: string, count = 3) {
+  const dates: Date[] = [];
+  const now = new Date();
+  let d = new Date(now);
+  while (dates.length < count) {
+    if (daysOfWeek.includes(d.getDay()) && d >= now) dates.push(new Date(d));
+    d = new Date(d.getTime() + 86400000);
+  }
+  return formatConsecutiveDates(dates, locale);
+}
+
+function formatConsecutiveDates(dates: Date[], locale: string): string {
+  if (dates.length === 0) return "";
+  
+  // Group consecutive dates (difference of 1 day and same month)
+  const groups: Date[][] = [];
+  let currentGroup: Date[] = [dates[0]];
+  
+  for (let i = 1; i < dates.length; i++) {
+    const prev = dates[i - 1];
+    const curr = dates[i];
+    const diffDays = Math.round((curr.getTime() - prev.getTime()) / 86400000);
+    if (diffDays === 1 && curr.getMonth() === prev.getMonth()) {
+      currentGroup.push(curr);
+    } else {
+      groups.push(currentGroup);
+      currentGroup = [curr];
+    }
+  }
+  groups.push(currentGroup);
+  
+  return groups.map(group => {
+    if (group.length === 1) {
+      return group[0].toLocaleDateString(locale, { day: "numeric", month: "long" });
+    }
+    // e.g. "13/14 de março"
+    const days = group.map(d => d.getDate()).join("/");
+    const month = group[0].toLocaleDateString(locale, { month: "long" });
+    return `${days} de ${month}`;
+  }).join(", ");
 }
 
 function getNextFromList(allDates: number[][], locale: string, count = 4) {
   const now = new Date();
   now.setHours(0, 0, 0, 0);
-  return allDates
+  const dates = allDates
     .map(([y, m, d]) => new Date(y, m, d))
     .filter(d => d >= now)
-    .slice(0, count)
-    .map(d => d.toLocaleDateString(locale, { day: "numeric", month: "long" }))
-    .join(", ");
+    .slice(0, count);
+  return formatConsecutiveDates(dates, locale);
 }
 
 const CITY_ROUTES: { cities: string[]; routeKey: TranslationKey; datesLabelKey: TranslationKey; getDates: (locale: string) => string }[] = [
   {
-    cities: ["Porto","Vila Nova de Gaia","Espinho","Valongo","Ermesinde","Alfena","Rio Tinto","Gondomar","São Cosme","Fânzeres","Maia","Águas Santas","Moreira da Maia","Trofa","Vila do Conde","Póvoa de Varzim","Matosinhos","Leça da Palmeira","Senhora da Hora","São Mamede de Infesta","Santo Tirso","Rebordões","Negrelos","Paços de Ferreira","Freamunde","Lousada","Vizela","Felgueiras","Fafe","Braga","Vila Verde","Prado","Amares","Póvoa de Lanhoso","Guimarães","Caldas das Taipas","Pevidém","Joane","Vila Nova de Famalicão","Ribeirão","Riba de Ave","Oliveira São Mateus","Barcelos","Esposende","Apúlia","Fão","Aveiro","Ílhavo","Gafanha da Nazaré","Gafanha da Encarnação","Vagos","Oliveira do Bairro","Oiã","Águeda","Albergaria-a-Velha","Estarreja","Pardilhó","Avanca","Ovar","Esmoriz","Santa Maria da Feira","Fiães","São João da Madeira","Vale de Cambra","Arouca","Sever do Vouga","Mealhada","Pampilhosa","Cantanhede","Tocha","Mira","Coimbra","Cernache","Condeixa-a-Nova","Soure","Montemor-o-Velho","Lousã","Miranda do Corvo","Penacova","Arganil"],
+    cities: ["Porto","Vila Nova de Gaia","Espinho","Valongo","Ermesinde","Alfena","Rio Tinto","Gondomar","São Cosme","Fânzeres","Maia","Águas Santas","Moreira da Maia","Trofa","Vila do Conde","Póvoa de Varzim","Matosinhos","Leça da Palmeira","Senhora da Hora","São Mamede de Infesta","Santo Tirso","Rebordões","Negrelos","Paços de Ferreira","Freamunde","Lousada","Vizela","Felgueiras","Fafe","Braga","Vila Verde","Prado","Amares","Póvoa de Lanhoso","Guimarães","Caldas das Taipas","Pevidém","Joane","Vila Nova de Famalicão","Ribeirão","Riba de Ave","Oliveira São Mateus","Barcelos","Esposende","Apúlia","Fão","Aveiro","Ílhavo","Gafanha da Nazaré","Gafanha da Encarnação","Vagos","Oliveira do Bairro","Oiã","Águeda","Albergaria-a-Velha","Estarreja","Pardilhó","Avanca","Ovar","Esmoriz","Santa Maria da Feira","Fiães","São João da Madeira","Vale de Cambra","Arouca","Sever do Vouga","Mealhada","Pampilhosa","Cantanhede","Tocha","Mira","Coimbra","Cernache","Condeixa-a-Nova","Soure","Montemor-o-Velho","Lousã","Miranda do Corvo","Arganil"],
     routeKey: "route.monday",
     datesLabelKey: "route.next_trips",
     getDates: (locale) => getNextWeekdays(1, locale),
@@ -43,14 +87,7 @@ const CITY_ROUTES: { cities: string[]; routeKey: TranslationKey; datesLabelKey: 
     routeKey: "route.wednesday",
     datesLabelKey: "route.next_trips",
     getDates: (locale) => {
-      const dates: string[] = [];
-      const now = new Date();
-      let d = new Date(now);
-      while (dates.length < 3) {
-        if ((d.getDay() === 3 || d.getDay() === 5) && d >= now) dates.push(d.toLocaleDateString(locale, { day: "numeric", month: "long" }));
-        d = new Date(d.getTime() + 86400000);
-      }
-      return dates.join(", ");
+      return getNextWeekdaysMulti([3, 5], locale, 3);
     },
   },
   {
@@ -117,7 +154,7 @@ type FinderState = "search" | "ask_district" | "result" | "not_covered" | "not_f
 export default function SmartFinder() {
   const [query, setQuery] = useState("");
   const [state, setState] = useState<FinderState>("search");
-  const [selectedResult, setSelectedResult] = useState<{ route: string; dates: string } | null>(null);
+  const [selectedResult, setSelectedResult] = useState<{ route: string; dates: string; cityName?: string } | null>(null);
   const { lang } = useLang();
   const locale = DATE_LOCALES[lang];
 
@@ -154,11 +191,30 @@ export default function SmartFinder() {
     return ALL_DISTRICTS.filter(d => normalize(d).includes(q));
   }, [query, showAskDistrict]);
 
-  const handleSelect = (routeIdx: number) => {
+  const isNearMortagua = (cityName?: string) => {
+    if (!cityName) return false;
+    return MORTAGUA_NEARBY.includes(normalize(cityName));
+  };
+
+  const handleSelect = (routeIdx: number, cityName?: string) => {
     const r = CITY_ROUTES[routeIdx];
+    
+    // Special case: Penacova also passes on Mondays
+    let route = t(r.routeKey, lang);
+    let dates = r.getDates(locale);
+    
+    if (cityName && normalize(cityName) === "penacova") {
+      route = t("route.penacova", lang);
+      // Get both Monday and the regular route dates
+      const mondayDates = getNextWeekdays(1, locale, 2);
+      const regularDates = r.getDates(locale);
+      dates = `${mondayDates}, ${regularDates}`;
+    }
+    
     setSelectedResult({
-      route: t(r.routeKey, lang),
-      dates: `${t(r.datesLabelKey, lang)}: ${r.getDates(locale)}`,
+      route,
+      dates: `${t(r.datesLabelKey, lang)}: ${dates}`,
+      cityName,
     });
     setState("result");
     setQuery("");
@@ -206,7 +262,7 @@ export default function SmartFinder() {
         {suggestions.length > 0 && (
           <div className="absolute top-full left-0 right-0 mt-2 bg-card border border-border rounded-xl sm:rounded-2xl shadow-lg overflow-hidden z-50 max-h-64 overflow-y-auto">
             {suggestions.map((s, i) => (
-              <button key={i} onClick={() => handleSelect(s.routeIdx)}
+              <button key={i} onClick={() => handleSelect(s.routeIdx, s.city)}
                 className="w-full text-left px-4 sm:px-6 py-3 sm:py-3.5 hover:bg-surface transition-colors text-foreground text-sm sm:text-base">
                 {s.city}
               </button>
@@ -258,6 +314,23 @@ export default function SmartFinder() {
         <div className="mt-4 sm:mt-6 bg-surface rounded-2xl sm:rounded-3xl p-5 sm:p-8 animate-in fade-in slide-in-from-bottom-2 duration-300">
           <p className="text-lg sm:text-xl font-semibold text-foreground mb-1">{selectedResult.route}</p>
           <p className="text-sm sm:text-base text-muted-foreground mb-4 sm:mb-6">{selectedResult.dates}</p>
+          
+          {/* Mortágua proximity message */}
+          {isNearMortagua(selectedResult.cityName) && (
+            <div className="bg-primary/5 border border-primary/20 rounded-xl p-4 mb-4 sm:mb-6">
+              <p className="text-sm sm:text-base text-foreground flex items-start gap-2">
+                <Warehouse className="h-5 w-5 text-primary shrink-0 mt-0.5" />
+                {t("finder.near_mortagua", lang)}
+              </p>
+              <a
+                href="#armazens"
+                className="inline-flex items-center gap-1.5 text-primary hover:text-primary/80 text-sm font-medium mt-2 ml-7"
+              >
+                {t("finder.see_warehouses", lang)} →
+              </a>
+            </div>
+          )}
+          
           <a
             href={`https://wa.me/351917405318?text=${encodeURIComponent(t("finder.wa_text", lang))}`}
             target="_blank"

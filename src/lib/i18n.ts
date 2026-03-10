@@ -37,13 +37,16 @@ const translations = {
   "finder.luxembourg": { pt: "Recolhemos e entregamos no Luxemburgo todas as semanas.", en: "We pick up and deliver in Luxembourg every week.", fr: "Nous collectons et livrons au Luxembourg chaque semaine.", de: "Wir holen ab und liefern jede Woche in Luxemburg." },
   "finder.frozen_title": { pt: "Serviço de Congelados", en: "Frozen Goods Service", fr: "Service Surgelés", de: "Tiefkühlservice" },
   "finder.frozen_dates": { pt: "Próximas datas", en: "Upcoming dates", fr: "Prochaines dates", de: "Nächste Termine" },
+  "finder.near_mortagua": { pt: "A sua localização fica perto do nosso armazém de Mortágua. Se preferir, pode entregar ou levantar a sua encomenda nas nossas instalações.", en: "Your location is near our Mortágua warehouse. If you prefer, you can drop off or pick up your parcel at our facilities.", fr: "Votre localisation est proche de notre entrepôt de Mortágua. Si vous préférez, vous pouvez déposer ou retirer votre colis dans nos installations.", de: "Ihr Standort befindet sich in der Nähe unseres Lagers in Mortágua. Sie können Ihr Paket auch direkt dort abgeben oder abholen." },
+  "finder.see_warehouses": { pt: "Ver os nossos armazéns", en: "See our warehouses", fr: "Voir nos entrepôts", de: "Unsere Lager ansehen" },
 
   // Route descriptions
   "route.monday": { pt: "Passamos na sua zona todas as Segundas-feiras.", en: "We pass through your area every Monday.", fr: "Nous passons dans votre zone tous les lundis.", de: "Wir fahren jeden Montag durch Ihre Gegend." },
   "route.wednesday": { pt: "Passamos na sua zona 2x por semana (Quarta-feira e Sexta ou Sábado).", en: "We pass through your area twice a week (Wednesday and Friday or Saturday).", fr: "Nous passons dans votre zone 2x par semaine (mercredi et vendredi ou samedi).", de: "Wir fahren 2x pro Woche durch Ihre Gegend (Mittwoch und Freitag oder Samstag)." },
   "route.tuesday": { pt: "Passamos na sua zona todas as Terças-feiras (tarde).", en: "We pass through your area every Tuesday (afternoon).", fr: "Nous passons dans votre zone tous les mardis (après-midi).", de: "Wir fahren jeden Dienstag (nachmittags) durch Ihre Gegend." },
-  "route.biweekly": { pt: "Rota Quinzenal (Sexta e Sábado).", en: "Biweekly route (Friday and Saturday).", fr: "Route bimensuelle (vendredi et samedi).", de: "Zweiwöchentliche Route (Freitag und Samstag)." },
+  "route.biweekly": { pt: "Rota Quinzenal (Sexta ou Sábado).", en: "Biweekly route (Friday or Saturday).", fr: "Route bimensuelle (vendredi ou samedi).", de: "Zweiwöchentliche Route (Freitag oder Samstag)." },
   "route.north": { pt: "Rota Norte Especial (datas específicas).", en: "Special Northern Route (specific dates).", fr: "Route Nord spéciale (dates spécifiques).", de: "Spezielle Nordroute (bestimmte Termine)." },
+  "route.penacova": { pt: "Passamos na sua zona às Segundas-feiras e também na rota de Quarta/Sexta.", en: "We pass through your area on Mondays and also on the Wednesday/Friday route.", fr: "Nous passons dans votre zone les lundis et aussi sur la route mercredi/vendredi.", de: "Wir fahren montags und auch auf der Mittwoch/Freitag-Route durch Ihre Gegend." },
   "route.next_trips": { pt: "Próximas viagens", en: "Next trips", fr: "Prochains voyages", de: "Nächste Fahrten" },
   "route.next_dates": { pt: "Próximas datas", en: "Upcoming dates", fr: "Prochaines dates", de: "Nächste Termine" },
 
@@ -65,6 +68,7 @@ const translations = {
   "wh.note_mortagua": { pt: "(junto ao bar Tirikeda)", en: "(next to bar Tirikeda)", fr: "(à côté du bar Tirikeda)", de: "(neben der Bar Tirikeda)" },
   "wh.note_hollerich": { pt: "(Garagens ao fundo do parque da Intralux)", en: "(Garages at the back of the Intralux park)", fr: "(Garages au fond du parc Intralux)", de: "(Garagen am Ende des Intralux-Parks)" },
   "wh.note_redange": { pt: "(fronteira de Esch 🇱🇺 com Villerupt 🇫🇷)", en: "(border of Esch 🇱🇺 with Villerupt 🇫🇷)", fr: "(frontière d'Esch 🇱🇺 avec Villerupt 🇫🇷)", de: "(Grenze von Esch 🇱🇺 mit Villerupt 🇫🇷)" },
+  "wh.directions": { pt: "Ver no mapa", en: "View on map", fr: "Voir sur la carte", de: "Auf der Karte anzeigen" },
 
   // Frozen
   "frozen.badge": { pt: "Serviço Frigorífico", en: "Refrigerated Service", fr: "Service Réfrigéré", de: "Kühltransport" },
