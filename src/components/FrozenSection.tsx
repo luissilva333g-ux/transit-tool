@@ -1,5 +1,5 @@
 import { useState } from "react";
-import frozenImg from "@/assets/frozen-service.jpg";
+import frozenImg from "@/assets/frozen-coolers.png";
 import { Snowflake, MessageCircle, Info } from "lucide-react";
 import { useLang } from "@/contexts/LangContext";
 import { t } from "@/lib/i18n";
