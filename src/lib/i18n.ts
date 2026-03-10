@@ -89,7 +89,7 @@ const translations = {
   "prep.fragile_title": { pt: "Frágeis", en: "Fragile Items", fr: "Fragiles", de: "Zerbrechlich" },
   "prep.fragile_desc": { pt: "TVs e eletrónicos devem ir na caixa original com proteção reforçada.", en: "TVs and electronics must be in their original box with extra protection.", fr: "Les TV et appareils électroniques doivent être dans leur boîte d'origine avec protection renforcée.", de: "Fernseher und Elektronik müssen in der Originalverpackung mit zusätzlichem Schutz sein." },
   "prep.frozen_title": { pt: "Congelados", en: "Frozen Goods", fr: "Surgelés", de: "Tiefkühlware" },
-  "prep.frozen_desc": { pt: "Uso obrigatório de geleiras térmicas ou esferovite adequadas.", en: "Thermal coolers or proper polystyrene boxes are mandatory.", fr: "L'utilisation de glacières thermiques ou de polystyrène approprié est obligatoire.", de: "Thermokühler oder geeignete Styroporboxen sind Pflicht." },
+  "prep.frozen_desc": { pt: "Uso obrigatório de geleiras térmicas ou esferovite adequadas. Agende com o máximo de antecedência possível.", en: "Thermal coolers or proper polystyrene boxes are mandatory. Schedule as far in advance as possible.", fr: "L'utilisation de glacières thermiques ou de polystyrène approprié est obligatoire. Planifiez le plus tôt possible.", de: "Thermokühler oder geeignete Styroporboxen sind Pflicht. Planen Sie so früh wie möglich." },
 
   // FAQ
   "faq.title": { pt: "Regras de Ouro", en: "Golden Rules", fr: "Règles d'Or", de: "Goldene Regeln" },
