@@ -10,7 +10,7 @@ export default function WarehousesSection() {
       address: "Zona Industrial de Mortágua",
       note: t("wh.note_mortagua", lang),
       postcode: "3450-232 MRT",
-      hours: ["Seg-Qua: 09:00–13:00 / 15:00–19:00", "Qui: 09:00–13:00", "Sex: 15:00–19:00", "Sáb: 09:00–13:00"],
+      hours: [t("wh.hours_mrt_1", lang), t("wh.hours_mrt_2", lang), t("wh.hours_mrt_3", lang), t("wh.hours_mrt_4", lang)],
       mapUrl: "https://www.google.com/maps?q=40.393832772089816,-8.201443970957152",
     },
     {
