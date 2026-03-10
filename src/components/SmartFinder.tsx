@@ -342,7 +342,9 @@ export default function SmartFinder() {
       {state === "result" && selectedResult && (
         <div className="mt-4 sm:mt-6 bg-surface rounded-2xl sm:rounded-3xl p-5 sm:p-8 animate-in fade-in slide-in-from-bottom-2 duration-300">
           <p className="text-lg sm:text-xl font-semibold text-foreground mb-1">{selectedResult.route}</p>
-          <p className="text-sm sm:text-base text-muted-foreground mb-4 sm:mb-6">{selectedResult.dates}</p>
+          <p className="text-sm sm:text-base text-muted-foreground mb-4 sm:mb-6">
+            {selectedResult.datesLabel}: <span className="font-bold text-primary">{selectedResult.datesValue}</span>
+          </p>
           
           {/* Mortágua proximity message */}
           {isNearMortagua(selectedResult.cityName) && (
@@ -360,7 +362,7 @@ export default function SmartFinder() {
             </div>
           )}
 
-          <div className="flex flex-wrap gap-3">
+          <div className="flex flex-col items-center gap-3">
             <a
               href={`https://wa.me/351917405318?text=${encodeURIComponent(t("finder.wa_text", lang))}`}
               target="_blank"
