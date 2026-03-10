@@ -23,7 +23,7 @@ const translations = {
   "closure.suffix": { pt: "Voltamos em breve!", en: "We'll be back soon!", fr: "Nous revenons bientôt !", de: "Wir sind bald zurück!" },
 
   // Hero
-  "hero.tagline": { pt: "Há mais de 30 anos ao seu serviço", en: "Serving you for over 30 years", fr: "À votre service depuis plus de 30 ans", de: "Seit über 30 Jahren zu Ihrem Dienst" },
+  "hero.tagline": { pt: "Há mais de 40 anos ao seu serviço", en: "Serving you for over 40 years", fr: "À votre service depuis plus de 40 ans", de: "Seit über 40 Jahren zu Ihrem Dienst" },
   "hero.title": { pt: "Portugal ⇄ Luxemburgo", en: "Portugal ⇄ Luxembourg", fr: "Portugal ⇄ Luxembourg", de: "Portugal ⇄ Luxemburg" },
   "hero.subtitle": { pt: "Transporte de mercadorias porta-a-porta com a confiança de sempre.", en: "Door-to-door freight transport you can always trust.", fr: "Transport de marchandises porte-à-porte en toute confiance.", de: "Tür-zu-Tür-Frachttransport, dem Sie vertrauen können." },
 
