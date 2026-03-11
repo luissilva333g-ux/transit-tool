@@ -169,11 +169,15 @@ function normalize(str: string) {
   return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
 }
 
-const ALL_DISTRICTS = [
+const PT_DISTRICTS = [
   "Aveiro", "Beja", "Braga", "Bragança", "Castelo Branco", "Coimbra",
-  "Évora", "Faro", "Guarda", "Leiria", "Lisboa", "Luxemburgo", "Portalegre",
+  "Évora", "Faro", "Guarda", "Leiria", "Lisboa", "Portalegre",
   "Porto", "Santarém", "Setúbal", "Viana do Castelo", "Vila Real", "Viseu",
 ];
+
+const LUX_DISTRICTS = ["Luxemburgo"];
+
+const ALL_DISTRICTS = [...PT_DISTRICTS, ...LUX_DISTRICTS];
 
 type FinderState = "search" | "ask_district" | "result" | "not_covered" | "not_found" | "luxembourg" | "frozen";
 
