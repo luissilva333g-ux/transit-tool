@@ -22,7 +22,7 @@ export default function Navbar() {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-xl border-b border-border/50">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 flex items-center justify-between h-14 sm:h-16">
-        <a href="#" className="flex items-center gap-2 font-extrabold text-foreground min-w-0">
+        <a href="/" className="flex items-center gap-2 font-extrabold text-foreground min-w-0">
           <img src={logo} alt="Logo Transportes Carlos & César" className="h-8 w-8 sm:h-9 sm:w-9 shrink-0" />
           <span className="text-sm sm:text-lg truncate">Transportes Carlos & César</span>
         </a>
