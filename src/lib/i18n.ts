@@ -73,10 +73,10 @@ const translations = {
   "wh.hours_mrt_2": { pt: "Qui: 09:00–13:00", en: "Thu: 09:00–13:00", fr: "Jeu: 09:00–13:00", de: "Do: 09:00–13:00" },
   "wh.hours_mrt_3": { pt: "Sex: 14:00–18:00", en: "Fri: 14:00–18:00", fr: "Ven: 14:00–18:00", de: "Fr: 14:00–18:00" },
   "wh.hours_mrt_4": { pt: "Sáb: 09:00–13:00", en: "Sat: 09:00–13:00", fr: "Sam: 09:00–13:00", de: "Sa: 09:00–13:00" },
-  "wh.hours_hol_1": { pt: "Ter: 17:00–20:30", en: "Tue: 17:00–20:30", fr: "Mar: 17:00–20:30", de: "Di: 17:00–20:30" },
-  "wh.hours_hol_2": { pt: "Sáb: 08:00–13:00", en: "Sat: 08:00–13:00", fr: "Sam: 08:00–13:00", de: "Sa: 08:00–13:00" },
-  "wh.hours_red_1": { pt: "Ter: 16:00–19:00", en: "Tue: 16:00–19:00", fr: "Mar: 16:00–19:00", de: "Di: 16:00–19:00" },
-  "wh.hours_red_2": { pt: "Sáb: 10:00–17:00", en: "Sat: 10:00–17:00", fr: "Sam: 10:00–17:00", de: "Sa: 10:00–17:00" },
+  "wh.hours_hol_1": { pt: "Ter: 16:00–19:00", en: "Tue: 16:00–19:00", fr: "Mar: 16:00–19:00", de: "Di: 16:00–19:00" },
+  "wh.hours_hol_2": { pt: "Sáb: 10:00–17:00", en: "Sat: 10:00–17:00", fr: "Sam: 10:00–17:00", de: "Sa: 10:00–17:00" },
+  "wh.hours_red_1": { pt: "Ter: 17:00–20:00", en: "Tue: 17:00–20:00", fr: "Mar: 17:00–20:00", de: "Di: 17:00–20:00" },
+  "wh.hours_red_2": { pt: "Sáb: 08:00–14:00", en: "Sat: 08:00–14:00", fr: "Sam: 08:00–14:00", de: "Sa: 08:00–14:00" },
   "wh.directions": { pt: "Ver no mapa", en: "View on map", fr: "Voir sur la carte", de: "Auf der Karte anzeigen" },
 
   // Frozen
