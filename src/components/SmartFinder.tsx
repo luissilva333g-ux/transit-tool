@@ -169,11 +169,15 @@ function normalize(str: string) {
   return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
 }
 
-const ALL_DISTRICTS = [
+const PT_DISTRICTS = [
   "Aveiro", "Beja", "Braga", "Bragança", "Castelo Branco", "Coimbra",
-  "Évora", "Faro", "Guarda", "Leiria", "Lisboa", "Luxemburgo", "Portalegre",
+  "Évora", "Faro", "Guarda", "Leiria", "Lisboa", "Portalegre",
   "Porto", "Santarém", "Setúbal", "Viana do Castelo", "Vila Real", "Viseu",
 ];
+
+const LUX_DISTRICTS = ["Luxemburgo"];
+
+const ALL_DISTRICTS = [...PT_DISTRICTS, ...LUX_DISTRICTS];
 
 type FinderState = "search" | "ask_district" | "result" | "not_covered" | "not_found" | "luxembourg" | "frozen";
 
@@ -320,19 +324,45 @@ export default function SmartFinder() {
               </p>
             </div>
             {districtSuggestions.length > 0 ? (
-              districtSuggestions.map((d, i) => (
-                <button key={i} onClick={() => handleDistrictSelect(d)}
-                  className="w-full text-left px-4 sm:px-6 py-3 sm:py-3.5 hover:bg-surface transition-colors text-foreground text-sm sm:text-base">
-                  {d}
-                </button>
-              ))
+              <>
+                {districtSuggestions.filter(d => !LUX_DISTRICTS.includes(d)).map((d, i) => (
+                  <button key={i} onClick={() => handleDistrictSelect(d)}
+                    className="w-full text-left px-4 sm:px-6 py-3 sm:py-3.5 hover:bg-surface transition-colors text-foreground text-sm sm:text-base">
+                    {d}
+                  </button>
+                ))}
+                {districtSuggestions.some(d => LUX_DISTRICTS.includes(d)) && (
+                  <>
+                    <div className="px-4 sm:px-6 py-2 border-t border-border">
+                      <p className="text-xs text-muted-foreground font-semibold uppercase tracking-wider">Luxemburgo</p>
+                    </div>
+                    {districtSuggestions.filter(d => LUX_DISTRICTS.includes(d)).map((d, i) => (
+                      <button key={`lux-${i}`} onClick={() => handleDistrictSelect(d)}
+                        className="w-full text-left px-4 sm:px-6 py-3 sm:py-3.5 hover:bg-surface transition-colors text-foreground text-sm sm:text-base">
+                        {d}
+                      </button>
+                    ))}
+                  </>
+                )}
+              </>
             ) : (
-              ALL_DISTRICTS.map((d, i) => (
-                <button key={i} onClick={() => handleDistrictSelect(d)}
-                  className="w-full text-left px-4 sm:px-6 py-3 sm:py-3.5 hover:bg-surface transition-colors text-foreground text-sm sm:text-base">
-                  {d}
-                </button>
-              ))
+              <>
+                {PT_DISTRICTS.map((d, i) => (
+                  <button key={i} onClick={() => handleDistrictSelect(d)}
+                    className="w-full text-left px-4 sm:px-6 py-3 sm:py-3.5 hover:bg-surface transition-colors text-foreground text-sm sm:text-base">
+                    {d}
+                  </button>
+                ))}
+                <div className="px-4 sm:px-6 py-2 border-t border-border">
+                  <p className="text-xs text-muted-foreground font-semibold uppercase tracking-wider">Luxemburgo</p>
+                </div>
+                {LUX_DISTRICTS.map((d, i) => (
+                  <button key={`lux-${i}`} onClick={() => handleDistrictSelect(d)}
+                    className="w-full text-left px-4 sm:px-6 py-3 sm:py-3.5 hover:bg-surface transition-colors text-foreground text-sm sm:text-base">
+                    {d}
+                  </button>
+                ))}
+              </>
             )}
           </div>
         )}

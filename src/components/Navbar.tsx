@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Menu, X, Globe } from "lucide-react";
+import { useNavigate, useLocation } from "react-router-dom";
 import { useLang } from "@/contexts/LangContext";
 import { t, LANG_LABELS, type Lang } from "@/lib/i18n";
 import logo from "@/assets/logo.png";
@@ -10,6 +11,8 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [langOpen, setLangOpen] = useState(false);
   const { lang, setLang } = useLang();
+  const navigate = useNavigate();
+  const location = useLocation();
 
   const navItems = [
     { label: t("nav.warehouses", lang), href: "#armazens" },
@@ -18,6 +21,18 @@ export default function Navbar() {
     { label: t("nav.faq", lang), href: "#faq" },
     { label: t("nav.contacts", lang), href: "#contactos" },
   ];
+
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
+    if (location.pathname !== "/") {
+      navigate("/" + href);
+    } else {
+      const id = href.replace("#", "");
+      const el = document.getElementById(id);
+      if (el) el.scrollIntoView({ behavior: "smooth" });
+    }
+    setIsOpen(false);
+  };
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-xl border-b border-border/50">
@@ -30,7 +45,8 @@ export default function Navbar() {
         {/* Desktop */}
         <div className="hidden md:flex items-center gap-6 lg:gap-8">
           {navItems.map(item => (
-            <a key={item.href} href={item.href} className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors whitespace-nowrap">
+            <a key={item.href} href={item.href} onClick={(e) => handleNavClick(e, item.href)}
+              className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors whitespace-nowrap">
               {item.label}
             </a>
           ))}
@@ -90,7 +106,7 @@ export default function Navbar() {
       {isOpen && (
         <div className="md:hidden bg-background border-b border-border px-4 pb-4">
           {navItems.map(item => (
-            <a key={item.href} href={item.href} onClick={() => setIsOpen(false)}
+            <a key={item.href} href={item.href} onClick={(e) => handleNavClick(e, item.href)}
               className="block py-3 text-base font-medium text-muted-foreground hover:text-foreground transition-colors">
               {item.label}
             </a>
