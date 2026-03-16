@@ -107,9 +107,19 @@ export default function Regulamento() {
           </Section>
 
           <Section n="11" title={t("reg.s11_title", lang)}>
+            <p className="mb-2">{t("reg.s11_intro", lang)}</p>
             <ul className="list-disc pl-5 space-y-2">
               <li>{t("reg.s11_a", lang)}</li>
               <li>{t("reg.s11_b", lang)}</li>
+              <li>{t("reg.s11_c", lang)}</li>
+              <li>{t("reg.s11_d", lang)}</li>
+            </ul>
+          </Section>
+
+          <Section n="12" title={t("reg.s12_title", lang)}>
+            <ul className="list-disc pl-5 space-y-2">
+              <li>{t("reg.s12_a", lang)}</li>
+              <li>{t("reg.s12_b", lang)}</li>
             </ul>
           </Section>
         </div>
