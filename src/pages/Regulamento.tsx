@@ -21,41 +21,52 @@ export default function Regulamento() {
 
         <h1 className="text-3xl sm:text-4xl font-extrabold mb-2">📜 {t("reg.title", lang)}</h1>
         <p className="text-muted-foreground mb-10 text-sm sm:text-base">
-          {t("reg.updated", lang)}: 10 de Março de 2026
+          {t("reg.updated", lang)}: 16 de Março de 2026
         </p>
         <p className="text-muted-foreground mb-10 text-sm sm:text-base font-semibold">
           {t("reg.company", lang)}: TRANSPORTES CARLOS & CÉSAR
         </p>
 
         <div className="space-y-8 sm:space-y-10">
+          {/* 1. Objetivo */}
           <Section n="1" title={t("reg.s1_title", lang)}>
-            <p>{t("reg.s1_text", lang)}</p>
+            <p className="mb-2">{t("reg.s1_a", lang)}</p>
+            <p>{t("reg.s1_b", lang)}</p>
           </Section>
 
+          {/* 2. Agendamentos */}
           <Section n="2" title={t("reg.s2_title", lang)}>
             <ul className="list-disc pl-5 space-y-2">
               <li>{t("reg.s2_a", lang)}</li>
               <li>{t("reg.s2_b", lang)}</li>
               <li>{t("reg.s2_c", lang)}</li>
+              <li>{t("reg.s2_d", lang)}</li>
             </ul>
           </Section>
 
+          {/* 3. Embalamento */}
           <Section n="3" title={t("reg.s3_title", lang)}>
             <ul className="list-disc pl-5 space-y-2">
               <li>{t("reg.s3_a", lang)}</li>
               <li>{t("reg.s3_b", lang)}</li>
               <li>{t("reg.s3_c", lang)}</li>
+              <li>{t("reg.s3_d", lang)}</li>
+              <li>{t("reg.s3_e", lang)}</li>
+              <li>{t("reg.s3_f", lang)}</li>
             </ul>
           </Section>
 
+          {/* 4. Pagamento */}
           <Section n="4" title={t("reg.s4_title", lang)}>
             <ul className="list-disc pl-5 space-y-2">
               <li>{t("reg.s4_a", lang)}</li>
               <li>{t("reg.s4_b", lang)}</li>
               <li>{t("reg.s4_c", lang)}</li>
+              <li>{t("reg.s4_d", lang)}</li>
             </ul>
           </Section>
 
+          {/* 5. Cancelamentos */}
           <Section n="5" title={t("reg.s5_title", lang)}>
             <ul className="list-disc pl-5 space-y-2">
               <li>{t("reg.s5_a", lang)}</li>
@@ -63,7 +74,9 @@ export default function Regulamento() {
             </ul>
           </Section>
 
+          {/* 6. Transporte e Entregas */}
           <Section n="6" title={t("reg.s6_title", lang)}>
+            <p className="mb-2">{t("reg.s6_intro", lang)}</p>
             <ul className="list-disc pl-5 space-y-2">
               <li>{t("reg.s6_a", lang)}</li>
               <li>{t("reg.s6_b", lang)}</li>
@@ -72,6 +85,7 @@ export default function Regulamento() {
             </ul>
           </Section>
 
+          {/* 7. Mercadorias Proibidas */}
           <Section n="7" title={t("reg.s7_title", lang)}>
             <p className="mb-2">{t("reg.s7_intro", lang)}</p>
             <ul className="list-disc pl-5 space-y-2">
@@ -83,21 +97,36 @@ export default function Regulamento() {
               <li>{t("reg.s7_f", lang)}</li>
               <li>{t("reg.s7_g", lang)}</li>
               <li>{t("reg.s7_h", lang)}</li>
+              <li>{t("reg.s7_i", lang)}</li>
+              <li>{t("reg.s7_j", lang)}</li>
+              <li>{t("reg.s7_k", lang)}</li>
+              <li>{t("reg.s7_l", lang)}</li>
             </ul>
+            <p className="mt-2">{t("reg.s7_outro", lang)}</p>
           </Section>
 
+          {/* 8. Documentação */}
           <Section n="8" title={t("reg.s8_title", lang)}>
+            <p className="mb-2">{t("reg.s8_intro", lang)}</p>
             <ul className="list-disc pl-5 space-y-2">
               <li>{t("reg.s8_a", lang)}</li>
               <li>{t("reg.s8_b", lang)}</li>
               <li>{t("reg.s8_c", lang)}</li>
+              <li>{t("reg.s8_d", lang)}</li>
+            </ul>
+            <p className="mt-2">{t("reg.s8_outro", lang)}</p>
+          </Section>
+
+          {/* 9. Reclamações */}
+          <Section n="9" title={t("reg.s9_title", lang)}>
+            <ul className="list-disc pl-5 space-y-2">
+              <li>{t("reg.s9_a", lang)}</li>
+              <li>{t("reg.s9_b", lang)}</li>
+              <li>{t("reg.s9_c", lang)}</li>
             </ul>
           </Section>
 
-          <Section n="9" title={t("reg.s9_title", lang)}>
-            <p>{t("reg.s9_text", lang)}</p>
-          </Section>
-
+          {/* 10. Armazéns */}
           <Section n="10" title={t("reg.s10_title", lang)}>
             <ul className="list-disc pl-5 space-y-2">
               <li>{t("reg.s10_a", lang)}</li>
@@ -106,20 +135,57 @@ export default function Regulamento() {
             </ul>
           </Section>
 
+          {/* 11. Confidencialidade */}
           <Section n="11" title={t("reg.s11_title", lang)}>
             <p className="mb-2">{t("reg.s11_intro", lang)}</p>
             <ul className="list-disc pl-5 space-y-2">
               <li>{t("reg.s11_a", lang)}</li>
               <li>{t("reg.s11_b", lang)}</li>
               <li>{t("reg.s11_c", lang)}</li>
-              <li>{t("reg.s11_d", lang)}</li>
             </ul>
+            <p className="mt-2">{t("reg.s11_d", lang)}</p>
+            <p>{t("reg.s11_e", lang)}</p>
           </Section>
 
+          {/* 12. CMR */}
           <Section n="12" title={t("reg.s12_title", lang)}>
             <ul className="list-disc pl-5 space-y-2">
               <li>{t("reg.s12_a", lang)}</li>
               <li>{t("reg.s12_b", lang)}</li>
+              <li>{t("reg.s12_c", lang)}</li>
+              <li>{t("reg.s12_d", lang)}</li>
+              <li>{t("reg.s12_e", lang)}</li>
+            </ul>
+          </Section>
+
+          {/* 13. Declaração de Valor */}
+          <Section n="13" title={t("reg.s13_title", lang)}>
+            <ul className="list-disc pl-5 space-y-2">
+              <li>{t("reg.s13_a", lang)}</li>
+              <li>{t("reg.s13_b", lang)}</li>
+              <li>{t("reg.s13_c", lang)}</li>
+            </ul>
+          </Section>
+
+          {/* 14. Força Maior */}
+          <Section n="14" title={t("reg.s14_title", lang)}>
+            <p className="mb-2">{t("reg.s14_intro", lang)}</p>
+            <ul className="list-disc pl-5 space-y-2">
+              <li>{t("reg.s14_a", lang)}</li>
+              <li>{t("reg.s14_b", lang)}</li>
+              <li>{t("reg.s14_c", lang)}</li>
+              <li>{t("reg.s14_d", lang)}</li>
+              <li>{t("reg.s14_e", lang)}</li>
+              <li>{t("reg.s14_f", lang)}</li>
+            </ul>
+          </Section>
+
+          {/* 15. Disposições Finais */}
+          <Section n="15" title={t("reg.s15_title", lang)}>
+            <ul className="list-disc pl-5 space-y-2">
+              <li>{t("reg.s15_a", lang)}</li>
+              <li>{t("reg.s15_b", lang)}</li>
+              <li>{t("reg.s15_c", lang)}</li>
             </ul>
           </Section>
         </div>
