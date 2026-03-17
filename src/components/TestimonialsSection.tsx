@@ -36,9 +36,12 @@ export default function TestimonialsSection() {
   return (
     <section id="testemunhos" className="section-padding bg-surface">
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-center mb-8 sm:mb-12">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-center mb-3">
           {t("testimonials.title", lang)}
         </h2>
+        <p className="text-muted-foreground text-center mb-8 sm:mb-12 text-sm sm:text-base max-w-2xl mx-auto">
+          {t("testimonials.subtitle", lang)}
+        </p>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
           {testimonials.map((item, i) => (
