@@ -8,6 +8,7 @@ const testimonials = [
   { firstName: "Fabio", rest: "Correia", key: "testimonials.t3" as const },
   { firstName: "Centro", rest: "Balmar", key: "testimonials.t4" as const },
   { firstName: "Litos", rest: "Soninha", key: "testimonials.t5" as const },
+  { firstName: "Diogo", rest: "Castanheira", key: "testimonials.t6" as const },
 ];
 
 function BlurredName({ firstName, rest }: { firstName: string; rest: string }) {
