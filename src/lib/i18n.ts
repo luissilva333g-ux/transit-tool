@@ -293,7 +293,7 @@ const translations = {
 
   // Press / Media coverage
   "press.title": { pt: "Falam de nós", en: "In the press", fr: "Ils parlent de nous", de: "Über uns in der Presse" },
-  "press.subtitle": { pt: "Notícias e reportagens publicadas sobre a nossa empresa.", en: "News and reports published about our company.", fr: "Actualités et reportages publiés sur notre entreprise.", de: "Nachrichten und Berichte über unser Unternehmen." },
+  "press.subtitle": { pt: "Artigos e reportagens publicadas sobre a nossa empresa.", en: "Articles and reports published about our company.", fr: "Articles et reportages publiés sur notre entreprise.", de: "Artikel und Berichte über unser Unternehmen." },
   "press.read": { pt: "Ler artigo", en: "Read article", fr: "Lire l'article", de: "Artikel lesen" },
   "press.source": { pt: "Contacto.lu", en: "Contacto.lu", fr: "Contacto.lu", de: "Contacto.lu" },
   "press.p1_title": { pt: "Manu, o homem que transporta mercadorias entre Luxemburgo e Portugal", en: "Manu, the man who transports goods between Luxembourg and Portugal", fr: "Manu, l'homme qui transporte des marchandises entre le Luxembourg et le Portugal", de: "Manu, der Mann, der Waren zwischen Luxemburg und Portugal transportiert" },
