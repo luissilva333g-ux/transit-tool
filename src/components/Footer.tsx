@@ -1,4 +1,4 @@
-import { Phone, MessageCircle, FileText, Facebook, Instagram, Globe } from "lucide-react";
+import { Phone, MessageCircle, FileText, Facebook, Instagram, Globe, MapPin } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useLang } from "@/contexts/LangContext";
 import { t } from "@/lib/i18n";
@@ -58,6 +58,13 @@ export default function Footer() {
 
         <div className="border-t border-background/10 pt-6 sm:pt-8 flex flex-col items-center gap-2 sm:gap-3 text-center text-background/50 text-xs sm:text-sm">
           <img src={logo} alt="Logo Transportes Carlos & César" className="h-10 w-10 sm:h-12 sm:w-12 opacity-60" />
+          <p className="inline-flex items-start gap-1.5 text-background/60 text-xs sm:text-sm max-w-md">
+            <MapPin className="h-3.5 w-3.5 mt-0.5 shrink-0" />
+            <span>
+              <span className="font-semibold">{t("footer.address_label", lang)}:</span>{" "}
+              {t("footer.address", lang)}
+            </span>
+          </p>
           <Link
             to="/regulamento"
             className="inline-flex items-center gap-1.5 text-background/60 hover:text-background transition-colors text-xs sm:text-sm"

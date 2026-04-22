@@ -26,6 +26,10 @@ export default function Regulamento() {
         <p className="text-muted-foreground mb-10 text-sm sm:text-base font-semibold">
           {t("reg.company", lang)}: TRANSPORTES CARLOS & CÉSAR
         </p>
+        <p className="text-muted-foreground mb-10 text-sm sm:text-base">
+          <span className="font-semibold">{t("reg.headquarters", lang)}:</span>{" "}
+          {t("reg.address", lang)}
+        </p>
 
         <div className="space-y-8 sm:space-y-10">
           {/* 1. Objetivo */}
