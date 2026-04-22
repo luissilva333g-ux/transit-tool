@@ -9,6 +9,7 @@ import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import Regulamento from "./pages/Regulamento";
 import Congelados from "./pages/Congelados";
+import LinkPage from "./pages/Link";
 
 const queryClient = new QueryClient();
 
@@ -24,6 +25,7 @@ const App = () => (
             <Route path="/" element={<Index />} />
             <Route path="/regulamento" element={<Regulamento />} />
             <Route path="/congelados" element={<Congelados />} />
+            <Route path="/link" element={<LinkPage />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>
