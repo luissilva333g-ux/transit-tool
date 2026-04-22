@@ -12,7 +12,7 @@ const officePT = {
 
 const officeLU = {
   flag: "🇱🇺",
-  name: "Escritório Luxemburgo",
+  name: "César - Luxemburgo",
   phone: "+352 621 152 128",
   wa: "352621152128",
 };
@@ -106,9 +106,11 @@ export default function LinkPage() {
     <div className="min-h-screen bg-gradient-to-b from-surface via-background to-surface flex flex-col items-center justify-start px-4 py-10 sm:py-16">
       <div className="w-full max-w-md flex flex-col items-center">
         {/* Logo + header */}
-        <div className="bg-foreground rounded-3xl p-5 mb-5 shadow-lg">
-          <img src={logo} alt="Transportes Carlos & César" className="h-20 w-20 object-contain" />
-        </div>
+        <img
+          src={logo}
+          alt="Transportes Carlos & César"
+          className="h-16 w-16 sm:h-20 sm:w-20 object-contain mb-4"
+        />
         <h1 className="text-2xl sm:text-3xl font-extrabold text-center mb-1">
           Transportes Carlos & César
         </h1>
