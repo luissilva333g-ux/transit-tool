@@ -11,6 +11,7 @@ import Regulamento from "./pages/Regulamento";
 import Congelados from "./pages/Congelados";
 import LinkPage from "./pages/Link";
 import Paletes from "./pages/Paletes";
+import Mudancas from "./pages/Mudancas";
 
 const queryClient = new QueryClient();
 
@@ -28,6 +29,7 @@ const App = () => (
             <Route path="/congelados" element={<Congelados />} />
             <Route path="/link" element={<LinkPage />} />
             <Route path="/paletes" element={<Paletes />} />
+            <Route path="/mudancas" element={<Mudancas />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>

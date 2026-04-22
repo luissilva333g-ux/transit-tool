@@ -16,7 +16,6 @@ export default function Navbar() {
 
   const navItems = [
     { label: t("nav.warehouses", lang), href: "#armazens" },
-    { label: t("nav.pallets", lang), href: "/paletes" },
     { label: t("nav.frozen", lang), href: "#congelados" },
     { label: t("nav.prepare", lang), href: "#preparar" },
     { label: t("nav.faq", lang), href: "#faq" },
@@ -25,11 +24,6 @@ export default function Navbar() {
 
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     e.preventDefault();
-    if (href.startsWith("/")) {
-      navigate(href);
-      setIsOpen(false);
-      return;
-    }
     if (location.pathname !== "/") {
       navigate("/" + href);
     } else {
