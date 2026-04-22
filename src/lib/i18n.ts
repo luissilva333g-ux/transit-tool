@@ -141,12 +141,16 @@ const translations = {
   "footer.copyright": { pt: "Todos os direitos reservados.", en: "All rights reserved.", fr: "Tous droits réservés.", de: "Alle Rechte vorbehalten." },
   "footer.tagline": { pt: "Mais de 40 anos na rota Portugal ⇄ Luxemburgo.", en: "Over 40 years on the Portugal ⇄ Luxembourg route.", fr: "Plus de 40 ans sur la route Portugal ⇄ Luxembourg.", de: "Über 40 Jahre auf der Route Portugal ⇄ Luxemburg." },
   "footer.regulation": { pt: "Regulamento Geral", en: "General Regulations", fr: "Règlement Général", de: "Allgemeine Geschäftsbedingungen" },
+  "footer.address_label": { pt: "Escritório Luxemburgo", en: "Luxembourg Office", fr: "Bureau Luxembourg", de: "Büro Luxemburg" },
+  "footer.address": { pt: "10, Rue Giallewe, L-9749 Fischbach, Clervaux, Luxemburgo", en: "10, Rue Giallewe, L-9749 Fischbach, Clervaux, Luxembourg", fr: "10, Rue Giallewe, L-9749 Fischbach, Clervaux, Luxembourg", de: "10, Rue Giallewe, L-9749 Fischbach, Clervaux, Luxemburg" },
 
   // Regulation page
   "reg.back": { pt: "Voltar", en: "Back", fr: "Retour", de: "Zurück" },
   "reg.title": { pt: "Regulamento Geral", en: "General Regulations", fr: "Règlement Général", de: "Allgemeine Geschäftsbedingungen" },
   "reg.updated": { pt: "Última atualização", en: "Last updated", fr: "Dernière mise à jour", de: "Letzte Aktualisierung" },
   "reg.company": { pt: "Empresa", en: "Company", fr: "Entreprise", de: "Unternehmen" },
+  "reg.headquarters": { pt: "Sede / Escritório Luxemburgo", en: "Headquarters / Luxembourg Office", fr: "Siège / Bureau Luxembourg", de: "Hauptsitz / Büro Luxemburg" },
+  "reg.address": { pt: "10, Rue Giallewe, L-9749 Fischbach, Clervaux, Luxemburgo", en: "10, Rue Giallewe, L-9749 Fischbach, Clervaux, Luxembourg", fr: "10, Rue Giallewe, L-9749 Fischbach, Clervaux, Luxembourg", de: "10, Rue Giallewe, L-9749 Fischbach, Clervaux, Luxemburg" },
 
   // S1 - Objetivo
   "reg.s1_title": { pt: "Objetivo", en: "Purpose", fr: "Objectif", de: "Zweck" },
