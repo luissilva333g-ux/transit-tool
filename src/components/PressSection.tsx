@@ -48,11 +48,8 @@ export default function PressSection() {
   return (
     <section
       id="imprensa"
-      className="section-padding relative overflow-hidden bg-gradient-to-b from-primary/10 via-background to-background border-y border-primary/20"
+      className="section-padding relative overflow-hidden bg-surface"
     >
-      {/* Decorative top accent */}
-      <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-primary to-transparent" />
-
       <div className="max-w-6xl mx-auto relative">
         <div className="flex flex-col items-center gap-3 mb-4">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 border border-primary/30">
