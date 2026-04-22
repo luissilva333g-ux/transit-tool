@@ -34,7 +34,7 @@ export default function TestimonialsSection() {
   const { lang } = useLang();
 
   return (
-    <section id="testemunhos" className="section-padding bg-surface">
+    <section id="testemunhos" className="section-padding bg-background">
       <div className="max-w-6xl mx-auto">
         <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-center mb-3">
           {t("testimonials.title", lang)}
