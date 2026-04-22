@@ -4,12 +4,12 @@ import { t } from "@/lib/i18n";
 
 const articles = [
   {
-    url: "https://www.contacto.lu/luxemburgo/manu-o-homem-que-transporta-mercadorias-entre-luxemburgo-e-portugal/10947671.html",
+    url: "https://www.contacto.lu/luxemburgo/medo-da-guerra.-portugueses-do-luxemburgo-reduzem-envio-de-encomendas-para-portugal/145331415.html",
     image:
-      "https://img.contacto.lu/public/luxemburgo/991ikp-interview-manu-ferreira-2.jpg/alternates/WIDTH_1440/Interview-Manu-Ferreira%202.jpg",
-    titleKey: "press.p1_title" as const,
-    excerptKey: "press.p1_excerpt" as const,
-    date: "2021",
+      "https://img.contacto.lu/public/luxemburgo/7ubh90-interview-manu-ferreira-3.jpg/alternates/SIXTEEN_NINE_1920/Interview-Manu-Ferreira%203.jpg",
+    titleKey: "press.p3_title" as const,
+    excerptKey: "press.p3_excerpt" as const,
+    date: "2024",
   },
   {
     url: "https://www.contacto.lu/reportagem/mandar-o-pinheiro-para-portugal-e-receber-o-bacalhau-no-luxemburgo/111435303.html",
@@ -20,12 +20,12 @@ const articles = [
     date: "2022",
   },
   {
-    url: "https://www.contacto.lu/luxemburgo/medo-da-guerra.-portugueses-do-luxemburgo-reduzem-envio-de-encomendas-para-portugal/145331415.html",
+    url: "https://www.contacto.lu/luxemburgo/manu-o-homem-que-transporta-mercadorias-entre-luxemburgo-e-portugal/10947671.html",
     image:
-      "https://img.contacto.lu/public/luxemburgo/7ubh90-interview-manu-ferreira-3.jpg/alternates/SIXTEEN_NINE_1920/Interview-Manu-Ferreira%203.jpg",
-    titleKey: "press.p3_title" as const,
-    excerptKey: "press.p3_excerpt" as const,
-    date: "2024",
+      "https://img.contacto.lu/public/luxemburgo/991ikp-interview-manu-ferreira-2.jpg/alternates/WIDTH_1440/Interview-Manu-Ferreira%202.jpg",
+    titleKey: "press.p1_title" as const,
+    excerptKey: "press.p1_excerpt" as const,
+    date: "2021",
   },
 ];
 
@@ -61,7 +61,6 @@ export default function PressSection() {
               {t("press.title", lang)}
             </span>
           </div>
-          <ContactoLogo className="text-3xl sm:text-4xl" />
         </div>
         <p className="text-muted-foreground text-center mb-10 sm:mb-14 text-sm sm:text-base max-w-2xl mx-auto">
           {t("press.subtitle", lang)}
@@ -83,7 +82,7 @@ export default function PressSection() {
                   loading="lazy"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
-                <div className="absolute top-3 left-3 bg-background/95 backdrop-blur px-2.5 py-1 rounded-md shadow-sm">
+                <div className="absolute top-3 right-3 bg-background/95 backdrop-blur px-2.5 py-1 rounded-md shadow-sm">
                   <ContactoLogo className="text-sm" />
                 </div>
               </div>
