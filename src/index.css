@@ -100,3 +100,36 @@
     @apply bg-card rounded-2xl sm:rounded-3xl border border-border p-5 sm:p-8 shadow-sm transition-shadow hover:shadow-md;
   }
 }
+
+@layer components {
+  .prose-blog {
+    @apply text-foreground/90 text-base sm:text-lg leading-relaxed;
+  }
+  .prose-blog > p {
+    @apply mb-5;
+  }
+  .prose-blog > p.lead {
+    @apply text-lg sm:text-xl text-foreground/95;
+  }
+  .prose-blog h2 {
+    @apply text-2xl sm:text-3xl font-extrabold mt-10 mb-4 tracking-tight;
+  }
+  .prose-blog h3 {
+    @apply text-xl sm:text-2xl font-bold mt-8 mb-3;
+  }
+  .prose-blog ul {
+    @apply list-disc pl-6 mb-5 space-y-1.5 marker:text-primary;
+  }
+  .prose-blog ol {
+    @apply list-decimal pl-6 mb-5 space-y-1.5 marker:text-primary;
+  }
+  .prose-blog strong {
+    @apply text-foreground font-semibold;
+  }
+  .prose-blog em {
+    @apply text-foreground/90;
+  }
+  .prose-blog a {
+    @apply text-primary underline underline-offset-4 hover:opacity-80;
+  }
+}

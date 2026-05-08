@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Menu, X, Globe } from "lucide-react";
-import { useNavigate, useLocation } from "react-router-dom";
+import { useNavigate, useLocation, Link } from "react-router-dom";
 import { useLang } from "@/contexts/LangContext";
 import { t, LANG_LABELS, type Lang } from "@/lib/i18n";
 import logo from "@/assets/logo.png";
@@ -50,6 +50,16 @@ export default function Navbar() {
               {item.label}
             </a>
           ))}
+          <Link
+            to="/blog"
+            className={`text-sm font-medium transition-colors whitespace-nowrap ${
+              location.pathname.startsWith("/blog")
+                ? "text-primary"
+                : "text-muted-foreground hover:text-foreground"
+            }`}
+          >
+            {t("nav.blog", lang)}
+          </Link>
 
           {/* Language Switcher */}
           <div className="relative">
@@ -111,6 +121,17 @@ export default function Navbar() {
               {item.label}
             </a>
           ))}
+          <Link
+            to="/blog"
+            onClick={() => setIsOpen(false)}
+            className={`block py-3 text-base font-medium transition-colors ${
+              location.pathname.startsWith("/blog")
+                ? "text-primary"
+                : "text-muted-foreground hover:text-foreground"
+            }`}
+          >
+            {t("nav.blog", lang)}
+          </Link>
         </div>
       )}
     </nav>
