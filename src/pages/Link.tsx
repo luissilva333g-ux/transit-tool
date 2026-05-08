@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Globe, Phone, MapPin, Facebook, Instagram, Clock, Navigation, MessageCircle } from "lucide-react";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import logo from "@/assets/logo.png";
+import linkBg from "@/assets/link-bg.jpg";
 
 const officePT = {
   flag: "🇵🇹",
@@ -103,18 +104,25 @@ export default function LinkPage() {
   const [locationsOpen, setLocationsOpen] = useState(false);
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-surface via-background to-surface flex flex-col items-center justify-start px-4 py-10 sm:py-16">
-      <div className="w-full max-w-md flex flex-col items-center">
+    <div className="relative min-h-screen flex flex-col items-center justify-start px-4 py-10 sm:py-16 overflow-hidden">
+      {/* Background image with subtle blur and dark overlay */}
+      <div
+        aria-hidden
+        className="absolute inset-0 bg-cover bg-center scale-110"
+        style={{ backgroundImage: `url(${linkBg})`, filter: "blur(4px) brightness(0.45)" }}
+      />
+      <div aria-hidden className="absolute inset-0 bg-black/55" />
+      <div className="relative w-full max-w-md flex flex-col items-center text-white">
         {/* Logo + header */}
         <img
           src={logo}
           alt="Transportes Carlos & César"
           className="h-16 w-16 sm:h-20 sm:w-20 object-contain mb-4"
         />
-        <h1 className="text-2xl sm:text-3xl font-extrabold text-center mb-1">
+        <h1 className="text-2xl sm:text-3xl font-extrabold text-center mb-1 text-white drop-shadow">
           Transportes Carlos & César
         </h1>
-        <p className="text-muted-foreground text-center text-sm sm:text-base mb-8">
+        <p className="text-white/80 text-center text-sm sm:text-base mb-8 drop-shadow">
           Portugal ⇄ Luxemburgo · há mais de 40 anos
         </p>
 
@@ -147,7 +155,7 @@ export default function LinkPage() {
           />
         </div>
 
-        <p className="text-xs text-muted-foreground mt-10 text-center">
+        <p className="text-xs text-white/70 mt-10 text-center drop-shadow">
           © 2026 Transportes Carlos & César
         </p>
       </div>
