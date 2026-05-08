@@ -9,7 +9,7 @@ const articles = [
       "https://img.contacto.lu/public/luxemburgo/7ubh90-interview-manu-ferreira-3.jpg/alternates/SIXTEEN_NINE_1920/Interview-Manu-Ferreira%203.jpg",
     titleKey: "press.p3_title" as const,
     excerptKey: "press.p3_excerpt" as const,
-    date: "2024",
+    date: "2026",
   },
   {
     url: "https://www.contacto.lu/reportagem/mandar-o-pinheiro-para-portugal-e-receber-o-bacalhau-no-luxemburgo/111435303.html",
@@ -17,7 +17,7 @@ const articles = [
       "https://img.contacto.lu/public/luxemburgo/9dlgqy-goods-that-are-transported-betwe-15.jpg/alternates/TWENTYONE_NINE_1620/Goods-that-are-transported-betwe%2015.jpg",
     titleKey: "press.p2_title" as const,
     excerptKey: "press.p2_excerpt" as const,
-    date: "2022",
+    date: "2025",
   },
   {
     url: "https://www.contacto.lu/luxemburgo/manu-o-homem-que-transporta-mercadorias-entre-luxemburgo-e-portugal/10947671.html",
@@ -25,7 +25,7 @@ const articles = [
       "https://img.contacto.lu/public/luxemburgo/991ikp-interview-manu-ferreira-2.jpg/alternates/WIDTH_1440/Interview-Manu-Ferreira%202.jpg",
     titleKey: "press.p1_title" as const,
     excerptKey: "press.p1_excerpt" as const,
-    date: "2021",
+    date: "2024",
   },
 ];
 
