@@ -61,7 +61,6 @@ export default function Footer() {
           <p className="inline-flex items-start gap-1.5 text-background/60 text-xs sm:text-sm max-w-md">
             <MapPin className="h-3.5 w-3.5 mt-0.5 shrink-0" />
             <span>
-              <span className="font-semibold">{t("footer.address_label", lang)}:</span>{" "}
               {t("footer.address", lang)}
             </span>
           </p>
