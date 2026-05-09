@@ -1,5 +1,6 @@
 import type { ReactNode } from "react";
 import precosCover from "@/assets/blog-precos.jpg";
+import cartaoTaxisAndrade from "@/assets/blog-cartao-taxis-andrade.jpg";
 
 export interface BlogPost {
   slug: string;
@@ -206,6 +207,18 @@ export const posts: BlogPost[] = [
           Era sinónimo de alguém que cumpria.
         </p>
         <p>E isso constrói-se com tempo.</p>
+
+        <figure className="my-8">
+          <img
+            src={cartaoTaxisAndrade}
+            alt="Antigo cartão de visita da empresa Táxis Mário Andrade, com contactos das agências em Portugal e Luxemburgo"
+            loading="lazy"
+            className="w-full max-w-xl mx-auto rounded-xl border border-border shadow-sm"
+          />
+          <figcaption className="text-center text-sm text-muted-foreground mt-3 italic">
+            Antigo cartão de visita da empresa Táxis Mário Andrade
+          </figcaption>
+        </figure>
 
         <h2>Carlos Silva: uma vida dentro da empresa</h2>
         <p>
