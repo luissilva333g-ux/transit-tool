@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { Link, useParams, Navigate } from "react-router-dom";
-import { ArrowLeft, Calendar, Clock, MessageCircle, Phone, ArrowRight } from "lucide-react";
+import { ArrowLeft, Calendar, Clock, MessageCircle, Phone, ArrowRight, Newspaper } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { useLang } from "@/contexts/LangContext";
@@ -50,7 +50,9 @@ export default function BlogPost() {
       description: post.metaDescription,
       datePublished: post.date,
       dateModified: post.date,
-      image: [`https://transportescarlosecesar.com${post.cover}`],
+      ...(post.cover
+        ? { image: [`https://transportescarlosecesar.com${post.cover}`] }
+        : {}),
       author: {
         "@type": "Organization",
         name: "Transportes Carlos & César",
@@ -114,17 +116,19 @@ export default function BlogPost() {
           </header>
 
           {/* Cover */}
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 mb-10 sm:mb-14">
-            <div className="rounded-2xl overflow-hidden border border-border shadow-sm aspect-[16/9] bg-muted">
-              <img
-                src={post.cover}
-                alt={post.coverAlt}
-                width={1280}
-                height={768}
-                className="w-full h-full object-cover"
-              />
+          {post.cover && (
+            <div className="max-w-4xl mx-auto px-4 sm:px-6 mb-10 sm:mb-14">
+              <div className="rounded-2xl overflow-hidden border border-border shadow-sm aspect-[16/9] bg-muted">
+                <img
+                  src={post.cover}
+                  alt={post.coverAlt}
+                  width={1280}
+                  height={768}
+                  className="w-full h-full object-cover"
+                />
+              </div>
             </div>
-          </div>
+          )}
 
           {/* Body */}
           <div className="max-w-3xl mx-auto px-4 sm:px-6">
@@ -174,12 +178,18 @@ export default function BlogPost() {
                       className="group flex flex-col bg-card rounded-xl overflow-hidden border border-border hover:border-primary/50 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
                     >
                       <div className="relative aspect-[16/10] overflow-hidden bg-muted">
-                        <img
-                          src={p.cover}
-                          alt={p.coverAlt}
-                          loading="lazy"
-                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                        />
+                        {p.cover ? (
+                          <img
+                            src={p.cover}
+                            alt={p.coverAlt}
+                            loading="lazy"
+                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                          />
+                        ) : (
+                          <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-primary/20 via-surface to-primary/5">
+                            <Newspaper className="h-8 w-8 text-primary/60" />
+                          </div>
+                        )}
                       </div>
                       <div className="flex flex-col flex-1 p-5">
                         <h3 className="text-base sm:text-lg font-bold mb-2 leading-snug group-hover:text-primary transition-colors">
