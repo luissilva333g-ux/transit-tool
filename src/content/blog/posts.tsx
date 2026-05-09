@@ -1,6 +1,7 @@
 import type { ReactNode } from "react";
 import precosCover from "@/assets/blog-precos.jpg";
 import cartaoTaxisAndrade from "@/assets/blog-cartao-taxis-andrade.jpg";
+import cesarFoto from "@/assets/blog-cesar.jpg";
 
 export interface BlogPost {
   slug: string;
@@ -280,6 +281,18 @@ export const posts: BlogPost[] = [
           Uma nova estrutura.<br />
           Mas com as mesmas raízes.
         </p>
+
+        <figure className="my-8">
+          <img
+            src={cesarFoto}
+            alt="César, sócio da Transportes Carlos & César, junto a uma carrinha da empresa com matrícula do Luxemburgo"
+            loading="lazy"
+            className="w-full max-w-xl mx-auto rounded-xl border border-border shadow-sm"
+          />
+          <figcaption className="text-center text-sm text-muted-foreground mt-3 italic">
+            César, sócio da Transportes Carlos &amp; César, junto a uma das carrinhas da empresa
+          </figcaption>
+        </figure>
 
         <h2>Transportes Carlos &amp; César: continuidade com visão de futuro</h2>
         <p>
