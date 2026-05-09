@@ -72,14 +72,20 @@ export default function Blog() {
                   className="group flex flex-col bg-card rounded-xl overflow-hidden border border-border hover:border-primary/50 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
                 >
                   <div className="relative aspect-[16/10] overflow-hidden bg-muted">
-                    <img
-                      src={p.cover}
-                      alt={p.coverAlt}
-                      loading="lazy"
-                      width={1280}
-                      height={768}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                    />
+                    {p.cover ? (
+                      <img
+                        src={p.cover}
+                        alt={p.coverAlt}
+                        loading="lazy"
+                        width={1280}
+                        height={768}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      />
+                    ) : (
+                      <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-primary/20 via-surface to-primary/5">
+                        <Newspaper className="h-10 w-10 text-primary/60" />
+                      </div>
+                    )}
                   </div>
                   <div className="flex flex-col flex-1 p-5">
                     <div className="flex items-center gap-3 text-xs text-muted-foreground mb-3">
