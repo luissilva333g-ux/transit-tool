@@ -8,8 +8,8 @@ export interface BlogPost {
   metaDescription: string;
   date: string; // ISO yyyy-mm-dd
   readingMinutes: number;
-  cover: string;
-  coverAlt: string;
+  cover?: string;
+  coverAlt?: string;
   content: () => ReactNode;
 }
 
