@@ -10,7 +10,7 @@ import { getPostBySlug, getSortedPosts } from "@/content/blog/posts";
 export default function BlogPost() {
   const { slug = "" } = useParams();
   const { lang } = useLang();
-  const post = getPostBySlug(slug);
+  const post = getPostBySlug(slug, lang);
 
   useEffect(() => {
     if (!post) return;
@@ -83,7 +83,7 @@ export default function BlogPost() {
       day: "numeric",
     });
 
-  const others = getSortedPosts().filter((p) => p.slug !== post.slug).slice(0, 3);
+  const others = getSortedPosts(lang).filter((p) => p.slug !== post.slug).slice(0, 3);
 
   return (
     <div className="min-h-screen bg-background text-foreground">

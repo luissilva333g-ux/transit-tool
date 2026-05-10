@@ -10,7 +10,7 @@ import { DATE_LOCALES } from "@/lib/i18n";
 
 export default function Blog() {
   const { lang } = useLang();
-  const allPosts = getSortedPosts();
+  const allPosts = getSortedPosts(lang);
 
   useEffect(() => {
     document.title = `${t("blog.meta_title", lang)} | Transportes Carlos & César`;
