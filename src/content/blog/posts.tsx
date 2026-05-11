@@ -666,6 +666,44 @@ const historia_de = () => (
 // ---------- Posts list ----------
 export const posts: BlogPost[] = [
   {
+    slug: "cadeado-tsa-malas-transporte",
+    date: "2026-05-11",
+    readingMinutes: 6,
+    cover: cadeadoTsaCover,
+    title: {
+      pt: "Devo enviar a minha mala ou mercadoria fechada com cadeado?",
+      en: "Should I send my suitcase or goods locked with a padlock?",
+      fr: "Dois-je envoyer ma valise ou ma marchandise fermée avec un cadenas ?",
+      de: "Sollte ich meinen Koffer oder meine Ware mit einem Schloss verschlossen versenden?",
+    },
+    excerpt: {
+      pt: "Cadeados comuns podem causar danos durante fiscalizações. Saiba quando usar cadeados TSA e como preparar a sua mala para o transporte internacional.",
+      en: "Common padlocks can cause damage during inspections. Learn when to use TSA locks and how to prepare your luggage for international transport.",
+      fr: "Les cadenas classiques peuvent causer des dégâts lors des contrôles. Découvrez quand utiliser un cadenas TSA et comment préparer votre valise.",
+      de: "Gewöhnliche Schlösser können bei Kontrollen Schäden verursachen. Erfahren Sie, wann Sie TSA-Schlösser nutzen und wie Sie Ihren Koffer vorbereiten sollten.",
+    },
+    metaDescription: {
+      pt: "Descubra porque não deve enviar malas com cadeados comuns e quando deve usar cadeados TSA para evitar danos durante fiscalizações internacionais.",
+      en: "Find out why you shouldn't send suitcases with common padlocks and when to use TSA locks to avoid damage during international inspections.",
+      fr: "Découvrez pourquoi il ne faut pas envoyer de valises avec des cadenas classiques et quand utiliser des cadenas TSA pour éviter les dégâts lors des contrôles internationaux.",
+      de: "Erfahren Sie, warum Sie Koffer nicht mit gewöhnlichen Schlössern versenden sollten und wann TSA-Schlösser Schäden bei internationalen Kontrollen vermeiden.",
+    },
+    coverAlt: {
+      pt: "Mala metálica com cadeado TSA num armazém de transporte — Transportes Carlos & César",
+      en: "Metallic suitcase with TSA lock in a transport warehouse — Transportes Carlos & César",
+      fr: "Valise métallique avec cadenas TSA dans un entrepôt de transport — Transportes Carlos & César",
+      de: "Metallkoffer mit TSA-Schloss in einem Transportlager — Transportes Carlos & César",
+    },
+    content: (lang) => {
+      switch (lang) {
+        case "en": return cadeado_en();
+        case "fr": return cadeado_fr();
+        case "de": return cadeado_de();
+        default: return cadeado_pt();
+      }
+    },
+  },
+  {
     slug: "precos-transporte-portugal-luxemburgo",
     date: "2026-05-08",
     readingMinutes: 5,
