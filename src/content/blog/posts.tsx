@@ -1216,6 +1216,7 @@ export const posts: BlogPost[] = [
     slug: "historia-da-empresa-portugal-luxemburgo",
     date: "2026-05-09",
     readingMinutes: 7,
+    cover: carlosFoto,
     title: {
       pt: "A nossa história: mais de 40 anos de experiência entre Portugal e Luxemburgo",
       en: "Our story: more than 40 years of experience between Portugal and Luxembourg",
@@ -1234,7 +1235,12 @@ export const posts: BlogPost[] = [
       fr: "Découvrez l’histoire de notre entreprise et plus de 40 ans d’expérience dans le transport entre le Portugal et le Luxembourg, de Táxis Mário Andrade à Transportes Carlos & César.",
       de: "Entdecken Sie die Geschichte unseres Unternehmens und die Kontinuität von mehr als 40 Jahren Erfahrung im Transport zwischen Portugal und Luxemburg, von Táxis Mário Andrade bis Transportes Carlos & César.",
     },
-    coverAlt: { pt: "", en: "", fr: "", de: "" },
+    coverAlt: {
+      pt: "Carlos Silva, sócio da Transportes Carlos & César, em frente a um camião da empresa",
+      en: "Carlos Silva, partner at Transportes Carlos & César, in front of one of the company trucks",
+      fr: "Carlos Silva, associé de Transportes Carlos & César, devant un camion de l’entreprise",
+      de: "Carlos Silva, Partner bei Transportes Carlos & César, vor einem LKW des Unternehmens",
+    },
     content: (lang) => {
       switch (lang) {
         case "en": return historia_en();
