@@ -663,6 +663,477 @@ const historia_de = () => (
   </>
 );
 
+// ---------- Post 3: Cadeado TSA ----------
+const cadeado_pt = () => (
+  <>
+    <p className="lead">
+      Esta é uma dúvida muito frequente entre clientes que enviam malas, bagagens pessoais ou
+      mercadorias entre Portugal e Luxemburgo: <em>“Posso enviar a minha mala fechada com cadeado?”</em>
+    </p>
+    <p>A resposta mais correta é: <strong>depende do tipo de cadeado</strong>.</p>
+    <p>
+      Na maioria dos casos, não recomendamos o uso de cadeados comuns, especialmente cadeados
+      tradicionais, aluquetes normais ou fechaduras com código sem certificação apropriada.
+    </p>
+    <p>
+      Isto porque durante o transporte internacional podem existir fiscalizações e inspeções
+      por parte das autoridades competentes. Quando isso acontece, a mala pode precisar de ser
+      aberta imediatamente. E se o cadeado não permitir essa abertura, o resultado costuma ser
+      simples: o cadeado é forçado e, muitas vezes, a própria mala acaba danificada ou inutilizada.
+    </p>
+
+    <h2>Porque é que isto acontece?</h2>
+    <p>
+      Durante o transporte internacional, especialmente em rotas frequentes entre Portugal e
+      Luxemburgo, podem existir controlos aduaneiros, inspeções de segurança e verificações por
+      parte das autoridades. Essas fiscalizações são normais e fazem parte do processo.
+    </p>
+    <p>
+      Quando uma mala, caixa ou mercadoria precisa de ser aberta para inspeção, as entidades
+      responsáveis precisam de acesso rápido e imediato ao interior. Se a bagagem estiver fechada
+      com um cadeado comum, sem sistema de abertura autorizado, os agentes não vão esperar nem
+      procurar o proprietário.
+    </p>
+    <p>
+      Na maioria das situações, o cadeado é cortado. E em alguns casos, dependendo da estrutura
+      da mala, a própria mala pode ser danificada de forma irreversível.
+    </p>
+
+    <h2>O problema dos cadeados comuns</h2>
+    <p>
+      Muitas pessoas usam cadeados tradicionais por acharem que estão a proteger melhor os seus
+      bens. Mas no transporte internacional, isso pode acabar por criar exatamente o problema contrário.
+    </p>
+    <p>Um cadeado comum:</p>
+    <ul>
+      <li>pode ser cortado</li>
+      <li>pode obrigar à destruição parcial da mala</li>
+      <li>pode atrasar o processo de inspeção</li>
+      <li>pode gerar danos desnecessários</li>
+    </ul>
+    <p>Ou seja, aquilo que parecia proteção pode transformar-se num prejuízo.</p>
+
+    <h2>A melhor opção: cadeados TSA</h2>
+    <p>
+      Se pretende proteger a sua bagagem e, ao mesmo tempo, evitar problemas em fiscalizações,
+      a melhor solução é utilizar <strong>cadeados TSA</strong>.
+    </p>
+    <p>Mas afinal, o que significa isso?</p>
+    <p>
+      TSA significa <em>Travel Sentry Approved</em>. São cadeados desenvolvidos especificamente
+      para viagens e transportes internacionais, permitindo que as autoridades autorizadas
+      consigam abrir a mala com uma chave mestra própria, sem necessidade de cortar o cadeado
+      ou danificar a bagagem.
+    </p>
+    <p>
+      Estes cadeados costumam ter o símbolo vermelho característico TSA, facilmente identificável.
+      Esse pequeno detalhe pode evitar muitos problemas.
+    </p>
+
+    <h2>Como identificar um cadeado TSA</h2>
+    <p>É simples. Normalmente, os cadeados TSA apresentam:</p>
+    <ul>
+      <li>símbolo vermelho característico</li>
+      <li>identificação <em>Travel Sentry</em></li>
+      <li>estrutura própria para abertura com chave mestra autorizada</li>
+    </ul>
+    <p>
+      Se o seu cadeado não tiver estas características, muito provavelmente trata-se de um
+      cadeado comum. Nesse caso, não é a melhor opção para transporte internacional.
+    </p>
+
+    <h2>Então devo enviar sem cadeado?</h2>
+    <p>
+      Se não tiver um cadeado TSA, muitas vezes é preferível enviar sem cadeado do que usar um
+      cadeado comum que possa provocar danos maiores.
+    </p>
+    <p>
+      A segurança do transporte não depende apenas do cadeado. Depende também da forma como a
+      bagagem é preparada, embalada e transportada. E principalmente, depende da confiança na
+      empresa que faz esse transporte.
+    </p>
+    <p>
+      Por isso, mais importante do que um cadeado forte, é escolher um serviço de transporte
+      sério e experiente.
+    </p>
+
+    <h2>A nossa recomendação</h2>
+    <p>A nossa recomendação é simples:</p>
+    <p><strong>Evite cadeados comuns.</strong></p>
+    <p>
+      Se quiser proteger a sua mala ou mercadoria, utilize apenas cadeados com certificação TSA.
+      Isso reduz significativamente o risco de danos durante fiscalizações e evita situações
+      desagradáveis no momento da entrega.
+    </p>
+    <p>É uma pequena escolha que pode fazer uma grande diferença.</p>
+
+    <h2>Em caso de dúvida, fale connosco</h2>
+    <p>
+      Cada envio é diferente. Algumas mercadorias exigem cuidados específicos e algumas bagagens
+      precisam de preparação especial antes do transporte.
+    </p>
+    <p>
+      Se tiver dúvidas sobre como preparar a sua mala, bagagem ou mercadoria para envio entre
+      Portugal e Luxemburgo, fale connosco.
+    </p>
+    <p>Preferimos esclarecer antes do transporte do que resolver problemas depois.</p>
+    <p>A prevenção continua a ser a melhor solução.</p>
+  </>
+);
+
+const cadeado_en = () => (
+  <>
+    <p className="lead">
+      This is a very common question among clients who send suitcases, personal luggage or goods
+      between Portugal and Luxembourg: <em>“Can I send my suitcase locked with a padlock?”</em>
+    </p>
+    <p>The most accurate answer is: <strong>it depends on the type of padlock</strong>.</p>
+    <p>
+      In most cases, we do not recommend using common padlocks, especially traditional padlocks,
+      regular locks or combination locks without proper certification.
+    </p>
+    <p>
+      This is because during international transport there may be inspections and checks by the
+      competent authorities. When this happens, the suitcase may need to be opened immediately.
+      And if the padlock does not allow that, the result is usually simple: the lock is forced
+      and, very often, the suitcase itself ends up damaged or destroyed.
+    </p>
+
+    <h2>Why does this happen?</h2>
+    <p>
+      During international transport, especially on frequent routes between Portugal and
+      Luxembourg, there can be customs controls, security inspections and checks by the
+      authorities. These inspections are normal and part of the process.
+    </p>
+    <p>
+      When a suitcase, box or goods need to be opened for inspection, the responsible authorities
+      need quick and immediate access to the inside. If the luggage is closed with a common
+      padlock, without an authorised opening system, agents will not wait or look for the owner.
+    </p>
+    <p>
+      In most situations, the padlock is cut. And in some cases, depending on the structure of
+      the suitcase, the suitcase itself can be irreversibly damaged.
+    </p>
+
+    <h2>The problem with common padlocks</h2>
+    <p>
+      Many people use traditional padlocks because they think they are better protecting their
+      belongings. But in international transport, this can actually create the opposite problem.
+    </p>
+    <p>A common padlock:</p>
+    <ul>
+      <li>can be cut</li>
+      <li>can force partial destruction of the suitcase</li>
+      <li>can delay the inspection process</li>
+      <li>can cause unnecessary damage</li>
+    </ul>
+    <p>In short, what looked like protection can become a loss.</p>
+
+    <h2>The best option: TSA locks</h2>
+    <p>
+      If you want to protect your luggage while avoiding problems during inspections, the best
+      solution is to use <strong>TSA locks</strong>.
+    </p>
+    <p>But what does that actually mean?</p>
+    <p>
+      TSA stands for <em>Travel Sentry Approved</em>. These padlocks are designed specifically
+      for travel and international transport, allowing authorised authorities to open the
+      suitcase with their own master key, without cutting the lock or damaging the luggage.
+    </p>
+    <p>
+      They usually carry the characteristic red TSA symbol, easy to identify. That small detail
+      can prevent many problems.
+    </p>
+
+    <h2>How to identify a TSA lock</h2>
+    <p>It is simple. TSA locks usually feature:</p>
+    <ul>
+      <li>the characteristic red symbol</li>
+      <li><em>Travel Sentry</em> identification</li>
+      <li>a structure designed to open with an authorised master key</li>
+    </ul>
+    <p>
+      If your padlock does not have these features, it is most likely a common padlock — and
+      therefore not the best option for international transport.
+    </p>
+
+    <h2>Should I send it without a padlock?</h2>
+    <p>
+      If you do not have a TSA lock, it is often better to send the luggage without a padlock
+      than to use a common one that may cause greater damage.
+    </p>
+    <p>
+      Transport safety does not depend solely on the padlock. It also depends on how the luggage
+      is prepared, packed and transported. And above all, it depends on trust in the company
+      handling the transport.
+    </p>
+    <p>
+      That is why, more important than a strong padlock, is choosing a serious and experienced
+      transport service.
+    </p>
+
+    <h2>Our recommendation</h2>
+    <p>Our recommendation is simple:</p>
+    <p><strong>Avoid common padlocks.</strong></p>
+    <p>
+      If you want to protect your suitcase or goods, use only TSA-certified locks. This
+      significantly reduces the risk of damage during inspections and avoids unpleasant
+      situations on delivery.
+    </p>
+    <p>It is a small choice that can make a big difference.</p>
+
+    <h2>If in doubt, talk to us</h2>
+    <p>
+      Every shipment is different. Some goods require specific care and some luggage needs
+      special preparation before transport.
+    </p>
+    <p>
+      If you have any doubts about how to prepare your suitcase, luggage or goods for shipment
+      between Portugal and Luxembourg, talk to us.
+    </p>
+    <p>We prefer to clarify things before transport rather than solve problems afterwards.</p>
+    <p>Prevention remains the best solution.</p>
+  </>
+);
+
+const cadeado_fr = () => (
+  <>
+    <p className="lead">
+      C’est une question très fréquente parmi les clients qui envoient des valises, des bagages
+      personnels ou des marchandises entre le Portugal et le Luxembourg :{" "}
+      <em>« Puis-je envoyer ma valise fermée avec un cadenas ? »</em>
+    </p>
+    <p>La réponse la plus juste est : <strong>cela dépend du type de cadenas</strong>.</p>
+    <p>
+      Dans la plupart des cas, nous ne recommandons pas l’utilisation de cadenas classiques,
+      notamment les cadenas traditionnels, les serrures normales ou les serrures à code sans
+      certification appropriée.
+    </p>
+    <p>
+      En effet, durant le transport international, des contrôles et inspections peuvent être
+      effectués par les autorités compétentes. Lorsque cela arrive, la valise peut devoir être
+      ouverte immédiatement. Et si le cadenas ne le permet pas, le résultat est souvent simple :
+      le cadenas est forcé et, très souvent, la valise elle-même est endommagée, voire inutilisable.
+    </p>
+
+    <h2>Pourquoi cela arrive-t-il ?</h2>
+    <p>
+      Pendant le transport international, en particulier sur les itinéraires fréquents entre le
+      Portugal et le Luxembourg, il peut y avoir des contrôles douaniers, des inspections de
+      sécurité et des vérifications par les autorités. Ces contrôles sont normaux et font partie
+      du processus.
+    </p>
+    <p>
+      Lorsqu’une valise, une caisse ou une marchandise doit être ouverte pour inspection, les
+      autorités responsables ont besoin d’un accès rapide et immédiat. Si le bagage est fermé
+      avec un cadenas classique, sans système d’ouverture autorisé, les agents n’attendront pas
+      ni ne chercheront le propriétaire.
+    </p>
+    <p>
+      Dans la plupart des situations, le cadenas est coupé. Et dans certains cas, selon la
+      structure de la valise, celle-ci peut être endommagée de manière irréversible.
+    </p>
+
+    <h2>Le problème des cadenas classiques</h2>
+    <p>
+      Beaucoup utilisent des cadenas traditionnels en pensant mieux protéger leurs biens. Mais
+      dans le transport international, cela peut produire exactement l’effet inverse.
+    </p>
+    <p>Un cadenas classique :</p>
+    <ul>
+      <li>peut être coupé</li>
+      <li>peut entraîner la destruction partielle de la valise</li>
+      <li>peut retarder le processus d’inspection</li>
+      <li>peut générer des dégâts inutiles</li>
+    </ul>
+    <p>En d’autres termes, ce qui semblait être une protection peut devenir une perte.</p>
+
+    <h2>La meilleure option : les cadenas TSA</h2>
+    <p>
+      Si vous souhaitez protéger vos bagages tout en évitant les problèmes lors des contrôles,
+      la meilleure solution est d’utiliser des <strong>cadenas TSA</strong>.
+    </p>
+    <p>Mais qu’est-ce que cela signifie au juste ?</p>
+    <p>
+      TSA signifie <em>Travel Sentry Approved</em>. Ce sont des cadenas conçus spécifiquement
+      pour les voyages et les transports internationaux, permettant aux autorités autorisées
+      d’ouvrir la valise avec leur propre clé maîtresse, sans avoir à couper le cadenas ni à
+      endommager le bagage.
+    </p>
+    <p>
+      Ces cadenas portent généralement le symbole rouge caractéristique TSA, facilement
+      identifiable. Ce petit détail peut éviter bien des problèmes.
+    </p>
+
+    <h2>Comment identifier un cadenas TSA</h2>
+    <p>C’est simple. Les cadenas TSA présentent généralement :</p>
+    <ul>
+      <li>le symbole rouge caractéristique</li>
+      <li>la mention <em>Travel Sentry</em></li>
+      <li>une structure conçue pour être ouverte avec une clé maîtresse autorisée</li>
+    </ul>
+    <p>
+      Si votre cadenas ne possède pas ces caractéristiques, il s’agit très probablement d’un
+      cadenas classique — et ce n’est donc pas la meilleure option pour le transport international.
+    </p>
+
+    <h2>Dois-je envoyer sans cadenas ?</h2>
+    <p>
+      Si vous n’avez pas de cadenas TSA, il est souvent préférable d’envoyer sans cadenas
+      plutôt qu’avec un cadenas classique pouvant causer des dégâts plus importants.
+    </p>
+    <p>
+      La sécurité du transport ne dépend pas uniquement du cadenas. Elle dépend aussi de la
+      manière dont les bagages sont préparés, emballés et transportés. Et surtout, de la
+      confiance accordée à l’entreprise qui réalise ce transport.
+    </p>
+    <p>
+      C’est pourquoi, plus important qu’un cadenas solide, c’est de choisir un service de
+      transport sérieux et expérimenté.
+    </p>
+
+    <h2>Notre recommandation</h2>
+    <p>Notre recommandation est simple :</p>
+    <p><strong>Évitez les cadenas classiques.</strong></p>
+    <p>
+      Si vous souhaitez protéger votre valise ou votre marchandise, utilisez uniquement des
+      cadenas certifiés TSA. Cela réduit considérablement le risque de dégâts lors des contrôles
+      et évite les situations désagréables au moment de la livraison.
+    </p>
+    <p>C’est un petit choix qui peut faire une grande différence.</p>
+
+    <h2>En cas de doute, parlez-nous</h2>
+    <p>
+      Chaque envoi est différent. Certaines marchandises nécessitent des soins spécifiques et
+      certains bagages exigent une préparation particulière avant le transport.
+    </p>
+    <p>
+      Si vous avez des doutes sur la façon de préparer votre valise, vos bagages ou votre
+      marchandise pour un envoi entre le Portugal et le Luxembourg, parlez-nous.
+    </p>
+    <p>Nous préférons clarifier avant le transport plutôt que résoudre les problèmes après.</p>
+    <p>La prévention reste la meilleure solution.</p>
+  </>
+);
+
+const cadeado_de = () => (
+  <>
+    <p className="lead">
+      Diese Frage stellen viele Kunden, die Koffer, persönliches Gepäck oder Waren zwischen
+      Portugal und Luxemburg versenden: <em>„Kann ich meinen Koffer mit einem Schloss verschlossen versenden?“</em>
+    </p>
+    <p>Die richtigste Antwort lautet: <strong>es kommt auf die Art des Schlosses an</strong>.</p>
+    <p>
+      In den meisten Fällen empfehlen wir keine gewöhnlichen Schlösser, insbesondere keine
+      traditionellen Vorhängeschlösser, einfache Schlösser oder Zahlenschlösser ohne
+      entsprechende Zertifizierung.
+    </p>
+    <p>
+      Denn beim internationalen Transport kann es zu Kontrollen und Inspektionen durch die
+      zuständigen Behörden kommen. In solchen Fällen muss der Koffer unter Umständen sofort
+      geöffnet werden. Lässt das Schloss dies nicht zu, ist das Ergebnis meist klar: Das Schloss
+      wird aufgebrochen und sehr oft wird auch der Koffer selbst beschädigt oder unbrauchbar.
+    </p>
+
+    <h2>Warum passiert das?</h2>
+    <p>
+      Beim internationalen Transport, vor allem auf den häufigen Strecken zwischen Portugal und
+      Luxemburg, kann es zu Zollkontrollen, Sicherheitsinspektionen und Überprüfungen durch
+      Behörden kommen. Diese Kontrollen sind normal und Teil des Prozesses.
+    </p>
+    <p>
+      Wenn ein Koffer, eine Kiste oder eine Ware zur Inspektion geöffnet werden muss, brauchen
+      die zuständigen Stellen schnellen und sofortigen Zugang zum Inhalt. Ist das Gepäck mit
+      einem gewöhnlichen Schloss ohne autorisiertes Öffnungssystem verschlossen, werden die
+      Beamten nicht warten oder den Eigentümer suchen.
+    </p>
+    <p>
+      In den meisten Fällen wird das Schloss aufgeschnitten. Und je nach Struktur des Koffers
+      kann dieser dabei irreversibel beschädigt werden.
+    </p>
+
+    <h2>Das Problem mit gewöhnlichen Schlössern</h2>
+    <p>
+      Viele Menschen verwenden traditionelle Schlösser in der Annahme, ihre Sachen besser zu
+      schützen. Im internationalen Transport kann das jedoch genau das Gegenteil bewirken.
+    </p>
+    <p>Ein gewöhnliches Schloss:</p>
+    <ul>
+      <li>kann aufgeschnitten werden</li>
+      <li>kann zur teilweisen Zerstörung des Koffers führen</li>
+      <li>kann den Inspektionsprozess verzögern</li>
+      <li>kann unnötige Schäden verursachen</li>
+    </ul>
+    <p>Was nach Schutz aussah, kann sich also in einen Schaden verwandeln.</p>
+
+    <h2>Die beste Option: TSA-Schlösser</h2>
+    <p>
+      Wenn Sie Ihr Gepäck schützen und gleichzeitig Probleme bei Kontrollen vermeiden möchten,
+      ist die beste Lösung die Verwendung von <strong>TSA-Schlössern</strong>.
+    </p>
+    <p>Aber was bedeutet das eigentlich?</p>
+    <p>
+      TSA steht für <em>Travel Sentry Approved</em>. Diese Schlösser wurden speziell für Reisen
+      und internationale Transporte entwickelt und ermöglichen es autorisierten Behörden, den
+      Koffer mit einem eigenen Generalschlüssel zu öffnen, ohne das Schloss aufzuschneiden oder
+      das Gepäck zu beschädigen.
+    </p>
+    <p>
+      Diese Schlösser tragen in der Regel das charakteristische rote TSA-Symbol, das leicht zu
+      erkennen ist. Dieses kleine Detail kann viele Probleme vermeiden.
+    </p>
+
+    <h2>Wie erkennt man ein TSA-Schloss?</h2>
+    <p>Es ist einfach. TSA-Schlösser zeigen normalerweise:</p>
+    <ul>
+      <li>das charakteristische rote Symbol</li>
+      <li>die Kennzeichnung <em>Travel Sentry</em></li>
+      <li>eine Struktur, die das Öffnen mit einem autorisierten Generalschlüssel erlaubt</li>
+    </ul>
+    <p>
+      Hat Ihr Schloss diese Merkmale nicht, handelt es sich höchstwahrscheinlich um ein
+      gewöhnliches Schloss — und damit nicht um die beste Wahl für internationale Transporte.
+    </p>
+
+    <h2>Soll ich also ohne Schloss versenden?</h2>
+    <p>
+      Wenn Sie kein TSA-Schloss haben, ist es oft besser, ohne Schloss zu versenden, als ein
+      gewöhnliches Schloss zu verwenden, das größere Schäden verursachen kann.
+    </p>
+    <p>
+      Die Sicherheit des Transports hängt nicht allein vom Schloss ab. Sie hängt auch davon ab,
+      wie das Gepäck vorbereitet, verpackt und transportiert wird. Und vor allem vom Vertrauen
+      in das Unternehmen, das den Transport durchführt.
+    </p>
+    <p>
+      Deshalb ist wichtiger als ein starkes Schloss die Wahl eines seriösen und erfahrenen
+      Transportdienstes.
+    </p>
+
+    <h2>Unsere Empfehlung</h2>
+    <p>Unsere Empfehlung ist einfach:</p>
+    <p><strong>Vermeiden Sie gewöhnliche Schlösser.</strong></p>
+    <p>
+      Wenn Sie Ihren Koffer oder Ihre Ware schützen möchten, verwenden Sie nur TSA-zertifizierte
+      Schlösser. Das verringert das Risiko von Schäden bei Kontrollen erheblich und vermeidet
+      unangenehme Situationen bei der Lieferung.
+    </p>
+    <p>Eine kleine Entscheidung, die einen großen Unterschied machen kann.</p>
+
+    <h2>Im Zweifel sprechen Sie mit uns</h2>
+    <p>
+      Jede Sendung ist anders. Manche Waren erfordern besondere Sorgfalt und manches Gepäck
+      eine besondere Vorbereitung vor dem Transport.
+    </p>
+    <p>
+      Wenn Sie Fragen zur Vorbereitung Ihres Koffers, Ihres Gepäcks oder Ihrer Ware für den
+      Versand zwischen Portugal und Luxemburg haben, sprechen Sie uns an.
+    </p>
+    <p>Wir klären lieber vor dem Transport, als hinterher Probleme zu lösen.</p>
+    <p>Vorbeugen bleibt die beste Lösung.</p>
+  </>
+);
+
 // ---------- Posts list ----------
 export const posts: BlogPost[] = [
   {
