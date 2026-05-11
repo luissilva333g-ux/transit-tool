@@ -3,6 +3,7 @@ import precosCover from "@/assets/blog-precos.jpg";
 import cartaoTaxisAndrade from "@/assets/blog-cartao-taxis-andrade.jpg";
 import cesarFoto from "@/assets/blog-cesar.jpg";
 import carlosFoto from "@/assets/blog-carlos.jpg";
+import cadeadoTsaCover from "@/assets/blog-cadeado-tsa.jpg";
 import type { Lang } from "@/lib/i18n";
 
 type Localized<T> = Record<Lang, T>;
