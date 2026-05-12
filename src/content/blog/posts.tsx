@@ -1118,6 +1118,7 @@ export const posts: BlogPost[] = [
     date: "2026-05-09",
     readingMinutes: 7,
     cover: carlosFoto,
+    pinned: true,
     title: {
       pt: "A nossa história: mais de 40 anos de experiência entre Portugal e Luxemburgo",
       en: "Our story: more than 40 years of experience between Portugal and Luxembourg",
@@ -1159,6 +1160,7 @@ export function localizePost(post: BlogPost, lang: Lang): LocalizedBlogPost {
     date: post.date,
     readingMinutes: post.readingMinutes,
     cover: post.cover,
+    pinned: post.pinned,
     title: post.title[lang],
     excerpt: post.excerpt[lang],
     metaDescription: post.metaDescription[lang],
@@ -1174,6 +1176,9 @@ export function getPostBySlug(slug: string, lang: Lang): LocalizedBlogPost | und
 
 export function getSortedPosts(lang: Lang): LocalizedBlogPost[] {
   return [...posts]
-    .sort((a, b) => (a.date < b.date ? 1 : -1))
+    .sort((a, b) => {
+      if (!!a.pinned !== !!b.pinned) return a.pinned ? -1 : 1;
+      return a.date < b.date ? 1 : -1;
+    })
     .map((p) => localizePost(p, lang));
 }
