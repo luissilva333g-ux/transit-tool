@@ -4,6 +4,7 @@ import cartaoTaxisAndrade from "@/assets/blog-cartao-taxis-andrade.jpg";
 import cesarFoto from "@/assets/blog-cesar.jpg";
 import carlosFoto from "@/assets/blog-carlos.jpg";
 import cadeadoTsaCover from "@/assets/blog-cadeado-tsa.jpg";
+import cadeadoTsaLock from "@/assets/blog-tsa-lock.jpg";
 import type { Lang } from "@/lib/i18n";
 
 type Localized<T> = Record<Lang, T>;
@@ -13,6 +14,7 @@ export interface BlogPost {
   date: string; // ISO yyyy-mm-dd
   readingMinutes: number;
   cover?: string;
+  pinned?: boolean;
   title: Localized<string>;
   excerpt: Localized<string>;
   metaDescription: Localized<string>;
@@ -25,6 +27,7 @@ export interface LocalizedBlogPost {
   date: string;
   readingMinutes: number;
   cover?: string;
+  pinned?: boolean;
   title: string;
   excerpt: string;
   metaDescription: string;
