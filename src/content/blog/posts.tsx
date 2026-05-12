@@ -361,7 +361,7 @@ const historia_pt = () => (
     <p>Chegou o momento em que o senhor Mário Andrade decidiu reformar-se.</p>
     <p>Depois de décadas de trabalho e de uma vida dedicada ao setor dos transportes, era tempo de passar o testemunho.</p>
     <p>E essa continuidade não podia ficar em mãos mais preparadas.</p>
-    <p>Em <strong>2018</strong>, Carlos Silva adquiriu a empresa, juntamente com César, formando uma nova sociedade com um objetivo muito claro: dar continuidade ao trabalho, à reputação e ao legado construído durante tantos anos.</p>
+    <p>Em <strong>2015</strong>, Carlos Silva adquiriu a empresa, juntamente com César, formando uma nova sociedade com um objetivo muito claro: dar continuidade ao trabalho, à reputação e ao legado construído durante tantos anos.</p>
     <p>Não se tratava de começar uma empresa nova.</p>
     <p>Tratava-se de preservar uma história.</p>
     <p>Tratava-se de respeitar tudo aquilo que já tinha sido construído.</p>
@@ -447,7 +447,7 @@ const historia_en = () => (
     <p>The time came when Mr. Mário Andrade decided to retire.</p>
     <p>After decades of work and a life dedicated to the transport sector, it was time to pass the torch.</p>
     <p>And that continuity could not be left in better-prepared hands.</p>
-    <p>In <strong>2018</strong>, Carlos Silva acquired the company, together with César, forming a new partnership with a very clear goal: to give continuity to the work, the reputation and the legacy built over so many years.</p>
+    <p>In <strong>2015</strong>, Carlos Silva acquired the company, together with César, forming a new partnership with a very clear goal: to give continuity to the work, the reputation and the legacy built over so many years.</p>
     <p>It was not about starting a new company.</p>
     <p>It was about preserving a story.</p>
     <p>It was about respecting everything that had already been built.</p>
@@ -533,7 +533,7 @@ const historia_fr = () => (
     <p>Le moment est venu où Monsieur Mário Andrade a décidé de prendre sa retraite.</p>
     <p>Après des décennies de travail et une vie consacrée au secteur du transport, il était temps de passer le témoin.</p>
     <p>Et cette continuité ne pouvait être confiée à de meilleures mains.</p>
-    <p>En <strong>2018</strong>, Carlos Silva a racheté l’entreprise, avec César, formant une nouvelle société avec un objectif très clair : assurer la continuité du travail, de la réputation et de l’héritage construits durant tant d’années.</p>
+    <p>En <strong>2015</strong>, Carlos Silva a racheté l’entreprise, avec César, formant une nouvelle société avec un objectif très clair : assurer la continuité du travail, de la réputation et de l’héritage construits durant tant d’années.</p>
     <p>Il ne s’agissait pas de créer une nouvelle entreprise.</p>
     <p>Il s’agissait de préserver une histoire.</p>
     <p>De respecter tout ce qui avait déjà été bâti.</p>
@@ -619,7 +619,7 @@ const historia_de = () => (
     <p>Es kam der Moment, an dem Herr Mário Andrade entschied, in den Ruhestand zu gehen.</p>
     <p>Nach Jahrzehnten der Arbeit und einem dem Transportsektor gewidmeten Leben war es Zeit, den Staffelstab zu übergeben.</p>
     <p>Und diese Kontinuität konnte nicht in besser vorbereiteten Händen liegen.</p>
-    <p>Im Jahr <strong>2018</strong> übernahm Carlos Silva das Unternehmen gemeinsam mit César und gründete eine neue Gesellschaft mit einem klaren Ziel: die Arbeit, den Ruf und das Erbe, das über so viele Jahre aufgebaut wurde, fortzuführen.</p>
+    <p>Im Jahr <strong>2015</strong> übernahm Carlos Silva das Unternehmen gemeinsam mit César und gründete eine neue Gesellschaft mit einem klaren Ziel: die Arbeit, den Ruf und das Erbe, das über so viele Jahre aufgebaut wurde, fortzuführen.</p>
     <p>Es ging nicht darum, ein neues Unternehmen zu gründen.</p>
     <p>Es ging darum, eine Geschichte zu bewahren.</p>
     <p>Alles zu respektieren, was bereits aufgebaut worden war.</p>
