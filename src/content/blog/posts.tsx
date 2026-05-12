@@ -893,26 +893,11 @@ const cadeado_fr = () => (
       structure de la valise, celle-ci peut être endommagée de manière irréversible.
     </p>
 
-    <h2>Le problème des cadenas classiques</h2>
-    <p>
-      Beaucoup utilisent des cadenas traditionnels en pensant mieux protéger leurs biens. Mais
-      dans le transport international, cela peut produire exactement l’effet inverse.
-    </p>
-    <p>Un cadenas classique :</p>
-    <ul>
-      <li>peut être coupé</li>
-      <li>peut entraîner la destruction partielle de la valise</li>
-      <li>peut retarder le processus d’inspection</li>
-      <li>peut générer des dégâts inutiles</li>
-    </ul>
-    <p>En d’autres termes, ce qui semblait être une protection peut devenir une perte.</p>
-
     <h2>La meilleure option : les cadenas TSA</h2>
     <p>
       Si vous souhaitez protéger vos bagages tout en évitant les problèmes lors des contrôles,
       la meilleure solution est d’utiliser des <strong>cadenas TSA</strong>.
     </p>
-    <p>Mais qu’est-ce que cela signifie au juste ?</p>
     <p>
       TSA signifie <em>Travel Sentry Approved</em>. Ce sont des cadenas conçus spécifiquement
       pour les voyages et les transports internationaux, permettant aux autorités autorisées
@@ -923,6 +908,8 @@ const cadeado_fr = () => (
       Ces cadenas portent généralement le symbole rouge caractéristique TSA, facilement
       identifiable. Ce petit détail peut éviter bien des problèmes.
     </p>
+
+    <CadeadoFigTsa caption="Exemple de cadenas TSA sur une valise : le symbole rouge en forme de losange identifie les modèles certifiés Travel Sentry Approved." />
 
     <h2>Comment identifier un cadenas TSA</h2>
     <p>C’est simple. Les cadenas TSA présentent généralement :</p>
@@ -942,24 +929,9 @@ const cadeado_fr = () => (
       plutôt qu’avec un cadenas classique pouvant causer des dégâts plus importants.
     </p>
     <p>
-      La sécurité du transport ne dépend pas uniquement du cadenas. Elle dépend aussi de la
-      manière dont les bagages sont préparés, emballés et transportés. Et surtout, de la
-      confiance accordée à l’entreprise qui réalise ce transport.
+      Plus important qu’un cadenas solide, c’est la manière dont le bagage est préparé et la
+      confiance accordée à l’entreprise qui réalise le transport.
     </p>
-    <p>
-      C’est pourquoi, plus important qu’un cadenas solide, c’est de choisir un service de
-      transport sérieux et expérimenté.
-    </p>
-
-    <h2>Notre recommandation</h2>
-    <p>Notre recommandation est simple :</p>
-    <p><strong>Évitez les cadenas classiques.</strong></p>
-    <p>
-      Si vous souhaitez protéger votre valise ou votre marchandise, utilisez uniquement des
-      cadenas certifiés TSA. Cela réduit considérablement le risque de dégâts lors des contrôles
-      et évite les situations désagréables au moment de la livraison.
-    </p>
-    <p>C’est un petit choix qui peut faire une grande différence.</p>
 
     <h2>En cas de doute, parlez-nous</h2>
     <p>
@@ -970,8 +942,7 @@ const cadeado_fr = () => (
       Si vous avez des doutes sur la façon de préparer votre valise, vos bagages ou votre
       marchandise pour un envoi entre le Portugal et le Luxembourg, parlez-nous.
     </p>
-    <p>Nous préférons clarifier avant le transport plutôt que résoudre les problèmes après.</p>
-    <p>La prévention reste la meilleure solution.</p>
+    <p>Nous préférons clarifier avant le transport plutôt que résoudre les problèmes après — la prévention reste la meilleure solution.</p>
   </>
 );
 
