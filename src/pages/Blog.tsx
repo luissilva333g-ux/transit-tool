@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
-import { ArrowRight, Newspaper, Calendar, Clock } from "lucide-react";
+import { ArrowRight, Newspaper, Calendar, Clock, Pin } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { useLang } from "@/contexts/LangContext";
@@ -85,6 +85,12 @@ export default function Blog() {
                       <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-primary/20 via-surface to-primary/5">
                         <Newspaper className="h-10 w-10 text-primary/60" />
                       </div>
+                    )}
+                    {p.pinned && (
+                      <span className="absolute top-3 left-3 inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-primary text-primary-foreground text-[11px] font-bold uppercase tracking-wider shadow-md">
+                        <Pin className="h-3 w-3 fill-current" />
+                        {t("blog.pinned", lang)}
+                      </span>
                     )}
                   </div>
                   <div className="flex flex-col flex-1 p-5">
