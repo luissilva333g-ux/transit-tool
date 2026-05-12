@@ -4,6 +4,7 @@ import cartaoTaxisAndrade from "@/assets/blog-cartao-taxis-andrade.jpg";
 import cesarFoto from "@/assets/blog-cesar.jpg";
 import carlosFoto from "@/assets/blog-carlos.jpg";
 import cadeadoTsaCover from "@/assets/blog-cadeado-tsa.jpg";
+import cadeadoTsaLock from "@/assets/blog-tsa-lock.jpg";
 import type { Lang } from "@/lib/i18n";
 
 type Localized<T> = Record<Lang, T>;
@@ -13,6 +14,7 @@ export interface BlogPost {
   date: string; // ISO yyyy-mm-dd
   readingMinutes: number;
   cover?: string;
+  pinned?: boolean;
   title: Localized<string>;
   excerpt: Localized<string>;
   metaDescription: Localized<string>;
@@ -25,6 +27,7 @@ export interface LocalizedBlogPost {
   date: string;
   readingMinutes: number;
   cover?: string;
+  pinned?: boolean;
   title: string;
   excerpt: string;
   metaDescription: string;
@@ -358,7 +361,7 @@ const historia_pt = () => (
     <p>Chegou o momento em que o senhor Mário Andrade decidiu reformar-se.</p>
     <p>Depois de décadas de trabalho e de uma vida dedicada ao setor dos transportes, era tempo de passar o testemunho.</p>
     <p>E essa continuidade não podia ficar em mãos mais preparadas.</p>
-    <p>Em <strong>2018</strong>, Carlos Silva adquiriu a empresa, juntamente com César, formando uma nova sociedade com um objetivo muito claro: dar continuidade ao trabalho, à reputação e ao legado construído durante tantos anos.</p>
+    <p>Em <strong>2015</strong>, Carlos Silva adquiriu a empresa, juntamente com César, formando uma nova sociedade com um objetivo muito claro: dar continuidade ao trabalho, à reputação e ao legado construído durante tantos anos.</p>
     <p>Não se tratava de começar uma empresa nova.</p>
     <p>Tratava-se de preservar uma história.</p>
     <p>Tratava-se de respeitar tudo aquilo que já tinha sido construído.</p>
@@ -444,7 +447,7 @@ const historia_en = () => (
     <p>The time came when Mr. Mário Andrade decided to retire.</p>
     <p>After decades of work and a life dedicated to the transport sector, it was time to pass the torch.</p>
     <p>And that continuity could not be left in better-prepared hands.</p>
-    <p>In <strong>2018</strong>, Carlos Silva acquired the company, together with César, forming a new partnership with a very clear goal: to give continuity to the work, the reputation and the legacy built over so many years.</p>
+    <p>In <strong>2015</strong>, Carlos Silva acquired the company, together with César, forming a new partnership with a very clear goal: to give continuity to the work, the reputation and the legacy built over so many years.</p>
     <p>It was not about starting a new company.</p>
     <p>It was about preserving a story.</p>
     <p>It was about respecting everything that had already been built.</p>
@@ -530,7 +533,7 @@ const historia_fr = () => (
     <p>Le moment est venu où Monsieur Mário Andrade a décidé de prendre sa retraite.</p>
     <p>Après des décennies de travail et une vie consacrée au secteur du transport, il était temps de passer le témoin.</p>
     <p>Et cette continuité ne pouvait être confiée à de meilleures mains.</p>
-    <p>En <strong>2018</strong>, Carlos Silva a racheté l’entreprise, avec César, formant une nouvelle société avec un objectif très clair : assurer la continuité du travail, de la réputation et de l’héritage construits durant tant d’années.</p>
+    <p>En <strong>2015</strong>, Carlos Silva a racheté l’entreprise, avec César, formant une nouvelle société avec un objectif très clair : assurer la continuité du travail, de la réputation et de l’héritage construits durant tant d’années.</p>
     <p>Il ne s’agissait pas de créer une nouvelle entreprise.</p>
     <p>Il s’agissait de préserver une histoire.</p>
     <p>De respecter tout ce qui avait déjà été bâti.</p>
@@ -616,7 +619,7 @@ const historia_de = () => (
     <p>Es kam der Moment, an dem Herr Mário Andrade entschied, in den Ruhestand zu gehen.</p>
     <p>Nach Jahrzehnten der Arbeit und einem dem Transportsektor gewidmeten Leben war es Zeit, den Staffelstab zu übergeben.</p>
     <p>Und diese Kontinuität konnte nicht in besser vorbereiteten Händen liegen.</p>
-    <p>Im Jahr <strong>2018</strong> übernahm Carlos Silva das Unternehmen gemeinsam mit César und gründete eine neue Gesellschaft mit einem klaren Ziel: die Arbeit, den Ruf und das Erbe, das über so viele Jahre aufgebaut wurde, fortzuführen.</p>
+    <p>Im Jahr <strong>2015</strong> übernahm Carlos Silva das Unternehmen gemeinsam mit César und gründete eine neue Gesellschaft mit einem klaren Ziel: die Arbeit, den Ruf und das Erbe, das über so viele Jahre aufgebaut wurde, fortzuführen.</p>
     <p>Es ging nicht darum, ein neues Unternehmen zu gründen.</p>
     <p>Es ging darum, eine Geschichte zu bewahren.</p>
     <p>Alles zu respektieren, was bereits aufgebaut worden war.</p>
@@ -664,6 +667,20 @@ const historia_de = () => (
 );
 
 // ---------- Post 3: Cadeado TSA ----------
+const CadeadoFigTsa = ({ caption }: { caption: string }) => (
+  <figure className="my-8">
+    <img
+      src={cadeadoTsaLock}
+      alt={caption}
+      loading="lazy"
+      className="w-full max-w-xl mx-auto rounded-xl border border-border shadow-sm"
+    />
+    <figcaption className="text-center text-sm text-muted-foreground mt-3 italic">
+      {caption}
+    </figcaption>
+  </figure>
+);
+
 const cadeado_pt = () => (
   <>
     <p className="lead">
@@ -699,26 +716,11 @@ const cadeado_pt = () => (
       da mala, a própria mala pode ser danificada de forma irreversível.
     </p>
 
-    <h2>O problema dos cadeados comuns</h2>
-    <p>
-      Muitas pessoas usam cadeados tradicionais por acharem que estão a proteger melhor os seus
-      bens. Mas no transporte internacional, isso pode acabar por criar exatamente o problema contrário.
-    </p>
-    <p>Um cadeado comum:</p>
-    <ul>
-      <li>pode ser cortado</li>
-      <li>pode obrigar à destruição parcial da mala</li>
-      <li>pode atrasar o processo de inspeção</li>
-      <li>pode gerar danos desnecessários</li>
-    </ul>
-    <p>Ou seja, aquilo que parecia proteção pode transformar-se num prejuízo.</p>
-
     <h2>A melhor opção: cadeados TSA</h2>
     <p>
       Se pretende proteger a sua bagagem e, ao mesmo tempo, evitar problemas em fiscalizações,
       a melhor solução é utilizar <strong>cadeados TSA</strong>.
     </p>
-    <p>Mas afinal, o que significa isso?</p>
     <p>
       TSA significa <em>Travel Sentry Approved</em>. São cadeados desenvolvidos especificamente
       para viagens e transportes internacionais, permitindo que as autoridades autorizadas
@@ -729,6 +731,8 @@ const cadeado_pt = () => (
       Estes cadeados costumam ter o símbolo vermelho característico TSA, facilmente identificável.
       Esse pequeno detalhe pode evitar muitos problemas.
     </p>
+
+    <CadeadoFigTsa caption="Exemplo de cadeado TSA numa mala: o símbolo vermelho em forma de losango identifica os modelos certificados Travel Sentry Approved." />
 
     <h2>Como identificar um cadeado TSA</h2>
     <p>É simples. Normalmente, os cadeados TSA apresentam:</p>
@@ -748,24 +752,9 @@ const cadeado_pt = () => (
       cadeado comum que possa provocar danos maiores.
     </p>
     <p>
-      A segurança do transporte não depende apenas do cadeado. Depende também da forma como a
-      bagagem é preparada, embalada e transportada. E principalmente, depende da confiança na
-      empresa que faz esse transporte.
+      Mais importante do que um cadeado forte é a forma como a bagagem é preparada e a confiança
+      na empresa que realiza o transporte.
     </p>
-    <p>
-      Por isso, mais importante do que um cadeado forte, é escolher um serviço de transporte
-      sério e experiente.
-    </p>
-
-    <h2>A nossa recomendação</h2>
-    <p>A nossa recomendação é simples:</p>
-    <p><strong>Evite cadeados comuns.</strong></p>
-    <p>
-      Se quiser proteger a sua mala ou mercadoria, utilize apenas cadeados com certificação TSA.
-      Isso reduz significativamente o risco de danos durante fiscalizações e evita situações
-      desagradáveis no momento da entrega.
-    </p>
-    <p>É uma pequena escolha que pode fazer uma grande diferença.</p>
 
     <h2>Em caso de dúvida, fale connosco</h2>
     <p>
@@ -776,8 +765,7 @@ const cadeado_pt = () => (
       Se tiver dúvidas sobre como preparar a sua mala, bagagem ou mercadoria para envio entre
       Portugal e Luxemburgo, fale connosco.
     </p>
-    <p>Preferimos esclarecer antes do transporte do que resolver problemas depois.</p>
-    <p>A prevenção continua a ser a melhor solução.</p>
+    <p>Preferimos esclarecer antes do transporte do que resolver problemas depois — a prevenção continua a ser a melhor solução.</p>
   </>
 );
 
@@ -815,26 +803,11 @@ const cadeado_en = () => (
       the suitcase, the suitcase itself can be irreversibly damaged.
     </p>
 
-    <h2>The problem with common padlocks</h2>
-    <p>
-      Many people use traditional padlocks because they think they are better protecting their
-      belongings. But in international transport, this can actually create the opposite problem.
-    </p>
-    <p>A common padlock:</p>
-    <ul>
-      <li>can be cut</li>
-      <li>can force partial destruction of the suitcase</li>
-      <li>can delay the inspection process</li>
-      <li>can cause unnecessary damage</li>
-    </ul>
-    <p>In short, what looked like protection can become a loss.</p>
-
     <h2>The best option: TSA locks</h2>
     <p>
       If you want to protect your luggage while avoiding problems during inspections, the best
       solution is to use <strong>TSA locks</strong>.
     </p>
-    <p>But what does that actually mean?</p>
     <p>
       TSA stands for <em>Travel Sentry Approved</em>. These padlocks are designed specifically
       for travel and international transport, allowing authorised authorities to open the
@@ -844,6 +817,8 @@ const cadeado_en = () => (
       They usually carry the characteristic red TSA symbol, easy to identify. That small detail
       can prevent many problems.
     </p>
+
+    <CadeadoFigTsa caption="Example of a TSA lock on a suitcase: the red diamond-shaped symbol identifies models certified as Travel Sentry Approved." />
 
     <h2>How to identify a TSA lock</h2>
     <p>It is simple. TSA locks usually feature:</p>
@@ -863,24 +838,9 @@ const cadeado_en = () => (
       than to use a common one that may cause greater damage.
     </p>
     <p>
-      Transport safety does not depend solely on the padlock. It also depends on how the luggage
-      is prepared, packed and transported. And above all, it depends on trust in the company
-      handling the transport.
+      More important than a strong padlock is how the luggage is prepared and the trust placed
+      in the company carrying out the transport.
     </p>
-    <p>
-      That is why, more important than a strong padlock, is choosing a serious and experienced
-      transport service.
-    </p>
-
-    <h2>Our recommendation</h2>
-    <p>Our recommendation is simple:</p>
-    <p><strong>Avoid common padlocks.</strong></p>
-    <p>
-      If you want to protect your suitcase or goods, use only TSA-certified locks. This
-      significantly reduces the risk of damage during inspections and avoids unpleasant
-      situations on delivery.
-    </p>
-    <p>It is a small choice that can make a big difference.</p>
 
     <h2>If in doubt, talk to us</h2>
     <p>
@@ -891,8 +851,7 @@ const cadeado_en = () => (
       If you have any doubts about how to prepare your suitcase, luggage or goods for shipment
       between Portugal and Luxembourg, talk to us.
     </p>
-    <p>We prefer to clarify things before transport rather than solve problems afterwards.</p>
-    <p>Prevention remains the best solution.</p>
+    <p>We prefer to clarify things before transport rather than solve problems afterwards — prevention remains the best solution.</p>
   </>
 );
 
@@ -934,26 +893,11 @@ const cadeado_fr = () => (
       structure de la valise, celle-ci peut être endommagée de manière irréversible.
     </p>
 
-    <h2>Le problème des cadenas classiques</h2>
-    <p>
-      Beaucoup utilisent des cadenas traditionnels en pensant mieux protéger leurs biens. Mais
-      dans le transport international, cela peut produire exactement l’effet inverse.
-    </p>
-    <p>Un cadenas classique :</p>
-    <ul>
-      <li>peut être coupé</li>
-      <li>peut entraîner la destruction partielle de la valise</li>
-      <li>peut retarder le processus d’inspection</li>
-      <li>peut générer des dégâts inutiles</li>
-    </ul>
-    <p>En d’autres termes, ce qui semblait être une protection peut devenir une perte.</p>
-
     <h2>La meilleure option : les cadenas TSA</h2>
     <p>
       Si vous souhaitez protéger vos bagages tout en évitant les problèmes lors des contrôles,
       la meilleure solution est d’utiliser des <strong>cadenas TSA</strong>.
     </p>
-    <p>Mais qu’est-ce que cela signifie au juste ?</p>
     <p>
       TSA signifie <em>Travel Sentry Approved</em>. Ce sont des cadenas conçus spécifiquement
       pour les voyages et les transports internationaux, permettant aux autorités autorisées
@@ -964,6 +908,8 @@ const cadeado_fr = () => (
       Ces cadenas portent généralement le symbole rouge caractéristique TSA, facilement
       identifiable. Ce petit détail peut éviter bien des problèmes.
     </p>
+
+    <CadeadoFigTsa caption="Exemple de cadenas TSA sur une valise : le symbole rouge en forme de losange identifie les modèles certifiés Travel Sentry Approved." />
 
     <h2>Comment identifier un cadenas TSA</h2>
     <p>C’est simple. Les cadenas TSA présentent généralement :</p>
@@ -983,24 +929,9 @@ const cadeado_fr = () => (
       plutôt qu’avec un cadenas classique pouvant causer des dégâts plus importants.
     </p>
     <p>
-      La sécurité du transport ne dépend pas uniquement du cadenas. Elle dépend aussi de la
-      manière dont les bagages sont préparés, emballés et transportés. Et surtout, de la
-      confiance accordée à l’entreprise qui réalise ce transport.
+      Plus important qu’un cadenas solide, c’est la manière dont le bagage est préparé et la
+      confiance accordée à l’entreprise qui réalise le transport.
     </p>
-    <p>
-      C’est pourquoi, plus important qu’un cadenas solide, c’est de choisir un service de
-      transport sérieux et expérimenté.
-    </p>
-
-    <h2>Notre recommandation</h2>
-    <p>Notre recommandation est simple :</p>
-    <p><strong>Évitez les cadenas classiques.</strong></p>
-    <p>
-      Si vous souhaitez protéger votre valise ou votre marchandise, utilisez uniquement des
-      cadenas certifiés TSA. Cela réduit considérablement le risque de dégâts lors des contrôles
-      et évite les situations désagréables au moment de la livraison.
-    </p>
-    <p>C’est un petit choix qui peut faire une grande différence.</p>
 
     <h2>En cas de doute, parlez-nous</h2>
     <p>
@@ -1011,8 +942,7 @@ const cadeado_fr = () => (
       Si vous avez des doutes sur la façon de préparer votre valise, vos bagages ou votre
       marchandise pour un envoi entre le Portugal et le Luxembourg, parlez-nous.
     </p>
-    <p>Nous préférons clarifier avant le transport plutôt que résoudre les problèmes après.</p>
-    <p>La prévention reste la meilleure solution.</p>
+    <p>Nous préférons clarifier avant le transport plutôt que résoudre les problèmes après — la prévention reste la meilleure solution.</p>
   </>
 );
 
@@ -1052,26 +982,11 @@ const cadeado_de = () => (
       kann dieser dabei irreversibel beschädigt werden.
     </p>
 
-    <h2>Das Problem mit gewöhnlichen Schlössern</h2>
-    <p>
-      Viele Menschen verwenden traditionelle Schlösser in der Annahme, ihre Sachen besser zu
-      schützen. Im internationalen Transport kann das jedoch genau das Gegenteil bewirken.
-    </p>
-    <p>Ein gewöhnliches Schloss:</p>
-    <ul>
-      <li>kann aufgeschnitten werden</li>
-      <li>kann zur teilweisen Zerstörung des Koffers führen</li>
-      <li>kann den Inspektionsprozess verzögern</li>
-      <li>kann unnötige Schäden verursachen</li>
-    </ul>
-    <p>Was nach Schutz aussah, kann sich also in einen Schaden verwandeln.</p>
-
     <h2>Die beste Option: TSA-Schlösser</h2>
     <p>
       Wenn Sie Ihr Gepäck schützen und gleichzeitig Probleme bei Kontrollen vermeiden möchten,
       ist die beste Lösung die Verwendung von <strong>TSA-Schlössern</strong>.
     </p>
-    <p>Aber was bedeutet das eigentlich?</p>
     <p>
       TSA steht für <em>Travel Sentry Approved</em>. Diese Schlösser wurden speziell für Reisen
       und internationale Transporte entwickelt und ermöglichen es autorisierten Behörden, den
@@ -1082,6 +997,8 @@ const cadeado_de = () => (
       Diese Schlösser tragen in der Regel das charakteristische rote TSA-Symbol, das leicht zu
       erkennen ist. Dieses kleine Detail kann viele Probleme vermeiden.
     </p>
+
+    <CadeadoFigTsa caption="Beispiel eines TSA-Schlosses an einem Koffer: Das rote rautenförmige Symbol kennzeichnet die als Travel Sentry Approved zertifizierten Modelle." />
 
     <h2>Wie erkennt man ein TSA-Schloss?</h2>
     <p>Es ist einfach. TSA-Schlösser zeigen normalerweise:</p>
@@ -1101,24 +1018,9 @@ const cadeado_de = () => (
       gewöhnliches Schloss zu verwenden, das größere Schäden verursachen kann.
     </p>
     <p>
-      Die Sicherheit des Transports hängt nicht allein vom Schloss ab. Sie hängt auch davon ab,
-      wie das Gepäck vorbereitet, verpackt und transportiert wird. Und vor allem vom Vertrauen
+      Wichtiger als ein starkes Schloss ist, wie das Gepäck vorbereitet wird, und das Vertrauen
       in das Unternehmen, das den Transport durchführt.
     </p>
-    <p>
-      Deshalb ist wichtiger als ein starkes Schloss die Wahl eines seriösen und erfahrenen
-      Transportdienstes.
-    </p>
-
-    <h2>Unsere Empfehlung</h2>
-    <p>Unsere Empfehlung ist einfach:</p>
-    <p><strong>Vermeiden Sie gewöhnliche Schlösser.</strong></p>
-    <p>
-      Wenn Sie Ihren Koffer oder Ihre Ware schützen möchten, verwenden Sie nur TSA-zertifizierte
-      Schlösser. Das verringert das Risiko von Schäden bei Kontrollen erheblich und vermeidet
-      unangenehme Situationen bei der Lieferung.
-    </p>
-    <p>Eine kleine Entscheidung, die einen großen Unterschied machen kann.</p>
 
     <h2>Im Zweifel sprechen Sie mit uns</h2>
     <p>
@@ -1129,8 +1031,7 @@ const cadeado_de = () => (
       Wenn Sie Fragen zur Vorbereitung Ihres Koffers, Ihres Gepäcks oder Ihrer Ware für den
       Versand zwischen Portugal und Luxemburg haben, sprechen Sie uns an.
     </p>
-    <p>Wir klären lieber vor dem Transport, als hinterher Probleme zu lösen.</p>
-    <p>Vorbeugen bleibt die beste Lösung.</p>
+    <p>Wir klären lieber vor dem Transport, als hinterher Probleme zu lösen — Vorbeugen bleibt die beste Lösung.</p>
   </>
 );
 
@@ -1217,6 +1118,7 @@ export const posts: BlogPost[] = [
     date: "2026-05-09",
     readingMinutes: 7,
     cover: carlosFoto,
+    pinned: true,
     title: {
       pt: "A nossa história: mais de 40 anos de experiência entre Portugal e Luxemburgo",
       en: "Our story: more than 40 years of experience between Portugal and Luxembourg",
@@ -1258,6 +1160,7 @@ export function localizePost(post: BlogPost, lang: Lang): LocalizedBlogPost {
     date: post.date,
     readingMinutes: post.readingMinutes,
     cover: post.cover,
+    pinned: post.pinned,
     title: post.title[lang],
     excerpt: post.excerpt[lang],
     metaDescription: post.metaDescription[lang],
@@ -1273,6 +1176,9 @@ export function getPostBySlug(slug: string, lang: Lang): LocalizedBlogPost | und
 
 export function getSortedPosts(lang: Lang): LocalizedBlogPost[] {
   return [...posts]
-    .sort((a, b) => (a.date < b.date ? 1 : -1))
+    .sort((a, b) => {
+      if (!!a.pinned !== !!b.pinned) return a.pinned ? -1 : 1;
+      return a.date < b.date ? 1 : -1;
+    })
     .map((p) => localizePost(p, lang));
 }
