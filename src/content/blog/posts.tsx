@@ -667,6 +667,20 @@ const historia_de = () => (
 );
 
 // ---------- Post 3: Cadeado TSA ----------
+const CadeadoFigTsa = ({ caption }: { caption: string }) => (
+  <figure className="my-8">
+    <img
+      src={cadeadoTsaLock}
+      alt={caption}
+      loading="lazy"
+      className="w-full max-w-xl mx-auto rounded-xl border border-border shadow-sm"
+    />
+    <figcaption className="text-center text-sm text-muted-foreground mt-3 italic">
+      {caption}
+    </figcaption>
+  </figure>
+);
+
 const cadeado_pt = () => (
   <>
     <p className="lead">
