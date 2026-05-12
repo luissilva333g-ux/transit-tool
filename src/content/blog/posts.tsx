@@ -716,26 +716,11 @@ const cadeado_pt = () => (
       da mala, a própria mala pode ser danificada de forma irreversível.
     </p>
 
-    <h2>O problema dos cadeados comuns</h2>
-    <p>
-      Muitas pessoas usam cadeados tradicionais por acharem que estão a proteger melhor os seus
-      bens. Mas no transporte internacional, isso pode acabar por criar exatamente o problema contrário.
-    </p>
-    <p>Um cadeado comum:</p>
-    <ul>
-      <li>pode ser cortado</li>
-      <li>pode obrigar à destruição parcial da mala</li>
-      <li>pode atrasar o processo de inspeção</li>
-      <li>pode gerar danos desnecessários</li>
-    </ul>
-    <p>Ou seja, aquilo que parecia proteção pode transformar-se num prejuízo.</p>
-
     <h2>A melhor opção: cadeados TSA</h2>
     <p>
       Se pretende proteger a sua bagagem e, ao mesmo tempo, evitar problemas em fiscalizações,
       a melhor solução é utilizar <strong>cadeados TSA</strong>.
     </p>
-    <p>Mas afinal, o que significa isso?</p>
     <p>
       TSA significa <em>Travel Sentry Approved</em>. São cadeados desenvolvidos especificamente
       para viagens e transportes internacionais, permitindo que as autoridades autorizadas
@@ -746,6 +731,8 @@ const cadeado_pt = () => (
       Estes cadeados costumam ter o símbolo vermelho característico TSA, facilmente identificável.
       Esse pequeno detalhe pode evitar muitos problemas.
     </p>
+
+    <CadeadoFigTsa caption="Exemplo de cadeado TSA numa mala: o símbolo vermelho em forma de losango identifica os modelos certificados Travel Sentry Approved." />
 
     <h2>Como identificar um cadeado TSA</h2>
     <p>É simples. Normalmente, os cadeados TSA apresentam:</p>
@@ -765,24 +752,9 @@ const cadeado_pt = () => (
       cadeado comum que possa provocar danos maiores.
     </p>
     <p>
-      A segurança do transporte não depende apenas do cadeado. Depende também da forma como a
-      bagagem é preparada, embalada e transportada. E principalmente, depende da confiança na
-      empresa que faz esse transporte.
+      Mais importante do que um cadeado forte é a forma como a bagagem é preparada e a confiança
+      na empresa que realiza o transporte.
     </p>
-    <p>
-      Por isso, mais importante do que um cadeado forte, é escolher um serviço de transporte
-      sério e experiente.
-    </p>
-
-    <h2>A nossa recomendação</h2>
-    <p>A nossa recomendação é simples:</p>
-    <p><strong>Evite cadeados comuns.</strong></p>
-    <p>
-      Se quiser proteger a sua mala ou mercadoria, utilize apenas cadeados com certificação TSA.
-      Isso reduz significativamente o risco de danos durante fiscalizações e evita situações
-      desagradáveis no momento da entrega.
-    </p>
-    <p>É uma pequena escolha que pode fazer uma grande diferença.</p>
 
     <h2>Em caso de dúvida, fale connosco</h2>
     <p>
@@ -793,8 +765,7 @@ const cadeado_pt = () => (
       Se tiver dúvidas sobre como preparar a sua mala, bagagem ou mercadoria para envio entre
       Portugal e Luxemburgo, fale connosco.
     </p>
-    <p>Preferimos esclarecer antes do transporte do que resolver problemas depois.</p>
-    <p>A prevenção continua a ser a melhor solução.</p>
+    <p>Preferimos esclarecer antes do transporte do que resolver problemas depois — a prevenção continua a ser a melhor solução.</p>
   </>
 );
 
