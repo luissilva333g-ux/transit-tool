@@ -366,6 +366,7 @@ const translations = {
   "blog.cta_quote": { pt: "Pedir orçamento", en: "Request a quote", fr: "Demander un devis", de: "Angebot anfordern" },
   "blog.cta_contact": { pt: "Ver contactos", en: "View contacts", fr: "Voir les contacts", de: "Kontakte ansehen" },
   "blog.more_articles": { pt: "Mais artigos do blog", en: "More articles from the blog", fr: "Plus d'articles du blog", de: "Weitere Beiträge aus dem Blog" },
+  "blog.pinned": { pt: "Em destaque", en: "Pinned", fr: "Épinglé", de: "Angeheftet" },
 } as const;
 
 export type TranslationKey = keyof typeof translations;
