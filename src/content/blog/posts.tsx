@@ -982,26 +982,11 @@ const cadeado_de = () => (
       kann dieser dabei irreversibel beschädigt werden.
     </p>
 
-    <h2>Das Problem mit gewöhnlichen Schlössern</h2>
-    <p>
-      Viele Menschen verwenden traditionelle Schlösser in der Annahme, ihre Sachen besser zu
-      schützen. Im internationalen Transport kann das jedoch genau das Gegenteil bewirken.
-    </p>
-    <p>Ein gewöhnliches Schloss:</p>
-    <ul>
-      <li>kann aufgeschnitten werden</li>
-      <li>kann zur teilweisen Zerstörung des Koffers führen</li>
-      <li>kann den Inspektionsprozess verzögern</li>
-      <li>kann unnötige Schäden verursachen</li>
-    </ul>
-    <p>Was nach Schutz aussah, kann sich also in einen Schaden verwandeln.</p>
-
     <h2>Die beste Option: TSA-Schlösser</h2>
     <p>
       Wenn Sie Ihr Gepäck schützen und gleichzeitig Probleme bei Kontrollen vermeiden möchten,
       ist die beste Lösung die Verwendung von <strong>TSA-Schlössern</strong>.
     </p>
-    <p>Aber was bedeutet das eigentlich?</p>
     <p>
       TSA steht für <em>Travel Sentry Approved</em>. Diese Schlösser wurden speziell für Reisen
       und internationale Transporte entwickelt und ermöglichen es autorisierten Behörden, den
@@ -1012,6 +997,8 @@ const cadeado_de = () => (
       Diese Schlösser tragen in der Regel das charakteristische rote TSA-Symbol, das leicht zu
       erkennen ist. Dieses kleine Detail kann viele Probleme vermeiden.
     </p>
+
+    <CadeadoFigTsa caption="Beispiel eines TSA-Schlosses an einem Koffer: Das rote rautenförmige Symbol kennzeichnet die als Travel Sentry Approved zertifizierten Modelle." />
 
     <h2>Wie erkennt man ein TSA-Schloss?</h2>
     <p>Es ist einfach. TSA-Schlösser zeigen normalerweise:</p>
@@ -1031,24 +1018,9 @@ const cadeado_de = () => (
       gewöhnliches Schloss zu verwenden, das größere Schäden verursachen kann.
     </p>
     <p>
-      Die Sicherheit des Transports hängt nicht allein vom Schloss ab. Sie hängt auch davon ab,
-      wie das Gepäck vorbereitet, verpackt und transportiert wird. Und vor allem vom Vertrauen
+      Wichtiger als ein starkes Schloss ist, wie das Gepäck vorbereitet wird, und das Vertrauen
       in das Unternehmen, das den Transport durchführt.
     </p>
-    <p>
-      Deshalb ist wichtiger als ein starkes Schloss die Wahl eines seriösen und erfahrenen
-      Transportdienstes.
-    </p>
-
-    <h2>Unsere Empfehlung</h2>
-    <p>Unsere Empfehlung ist einfach:</p>
-    <p><strong>Vermeiden Sie gewöhnliche Schlösser.</strong></p>
-    <p>
-      Wenn Sie Ihren Koffer oder Ihre Ware schützen möchten, verwenden Sie nur TSA-zertifizierte
-      Schlösser. Das verringert das Risiko von Schäden bei Kontrollen erheblich und vermeidet
-      unangenehme Situationen bei der Lieferung.
-    </p>
-    <p>Eine kleine Entscheidung, die einen großen Unterschied machen kann.</p>
 
     <h2>Im Zweifel sprechen Sie mit uns</h2>
     <p>
@@ -1059,8 +1031,7 @@ const cadeado_de = () => (
       Wenn Sie Fragen zur Vorbereitung Ihres Koffers, Ihres Gepäcks oder Ihrer Ware für den
       Versand zwischen Portugal und Luxemburg haben, sprechen Sie uns an.
     </p>
-    <p>Wir klären lieber vor dem Transport, als hinterher Probleme zu lösen.</p>
-    <p>Vorbeugen bleibt die beste Lösung.</p>
+    <p>Wir klären lieber vor dem Transport, als hinterher Probleme zu lösen — Vorbeugen bleibt die beste Lösung.</p>
   </>
 );
 
