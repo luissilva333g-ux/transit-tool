@@ -803,26 +803,11 @@ const cadeado_en = () => (
       the suitcase, the suitcase itself can be irreversibly damaged.
     </p>
 
-    <h2>The problem with common padlocks</h2>
-    <p>
-      Many people use traditional padlocks because they think they are better protecting their
-      belongings. But in international transport, this can actually create the opposite problem.
-    </p>
-    <p>A common padlock:</p>
-    <ul>
-      <li>can be cut</li>
-      <li>can force partial destruction of the suitcase</li>
-      <li>can delay the inspection process</li>
-      <li>can cause unnecessary damage</li>
-    </ul>
-    <p>In short, what looked like protection can become a loss.</p>
-
     <h2>The best option: TSA locks</h2>
     <p>
       If you want to protect your luggage while avoiding problems during inspections, the best
       solution is to use <strong>TSA locks</strong>.
     </p>
-    <p>But what does that actually mean?</p>
     <p>
       TSA stands for <em>Travel Sentry Approved</em>. These padlocks are designed specifically
       for travel and international transport, allowing authorised authorities to open the
@@ -832,6 +817,8 @@ const cadeado_en = () => (
       They usually carry the characteristic red TSA symbol, easy to identify. That small detail
       can prevent many problems.
     </p>
+
+    <CadeadoFigTsa caption="Example of a TSA lock on a suitcase: the red diamond-shaped symbol identifies models certified as Travel Sentry Approved." />
 
     <h2>How to identify a TSA lock</h2>
     <p>It is simple. TSA locks usually feature:</p>
@@ -851,24 +838,9 @@ const cadeado_en = () => (
       than to use a common one that may cause greater damage.
     </p>
     <p>
-      Transport safety does not depend solely on the padlock. It also depends on how the luggage
-      is prepared, packed and transported. And above all, it depends on trust in the company
-      handling the transport.
+      More important than a strong padlock is how the luggage is prepared and the trust placed
+      in the company carrying out the transport.
     </p>
-    <p>
-      That is why, more important than a strong padlock, is choosing a serious and experienced
-      transport service.
-    </p>
-
-    <h2>Our recommendation</h2>
-    <p>Our recommendation is simple:</p>
-    <p><strong>Avoid common padlocks.</strong></p>
-    <p>
-      If you want to protect your suitcase or goods, use only TSA-certified locks. This
-      significantly reduces the risk of damage during inspections and avoids unpleasant
-      situations on delivery.
-    </p>
-    <p>It is a small choice that can make a big difference.</p>
 
     <h2>If in doubt, talk to us</h2>
     <p>
@@ -879,8 +851,7 @@ const cadeado_en = () => (
       If you have any doubts about how to prepare your suitcase, luggage or goods for shipment
       between Portugal and Luxembourg, talk to us.
     </p>
-    <p>We prefer to clarify things before transport rather than solve problems afterwards.</p>
-    <p>Prevention remains the best solution.</p>
+    <p>We prefer to clarify things before transport rather than solve problems afterwards — prevention remains the best solution.</p>
   </>
 );
 
