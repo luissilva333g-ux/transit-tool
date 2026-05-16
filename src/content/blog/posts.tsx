@@ -5,6 +5,8 @@ import cesarFoto from "@/assets/blog-cesar.jpg";
 import carlosFoto from "@/assets/blog-carlos.jpg";
 import cadeadoTsaCover from "@/assets/blog-cadeado-tsa.jpg";
 import cadeadoTsaLock from "@/assets/blog-tsa-lock.jpg";
+import comoFuncionaCover from "@/assets/blog-como-funciona-cover.jpg";
+import { ComoFuncionaPost } from "./ComoFuncionaPost";
 import type { Lang } from "@/lib/i18n";
 
 type Localized<T> = Record<Lang, T>;
