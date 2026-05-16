@@ -1040,6 +1040,37 @@ const cadeado_de = () => (
 // ---------- Posts list ----------
 export const posts: BlogPost[] = [
   {
+    slug: "como-funciona-transporte-portugal-luxemburgo",
+    date: "2026-05-16",
+    readingMinutes: 8,
+    cover: comoFuncionaCover,
+    title: {
+      pt: "Como funciona o transporte de mercadorias entre Portugal e Luxemburgo?",
+      en: "How does freight transport between Portugal and Luxembourg work?",
+      fr: "Comment fonctionne le transport de marchandises entre le Portugal et le Luxembourg ?",
+      de: "Wie funktioniert der Warentransport zwischen Portugal und Luxemburg?",
+    },
+    excerpt: {
+      pt: "Recolha porta a porta, saídas semanais e mais de 40 anos de experiência. Saiba exatamente como funciona o nosso serviço entre Portugal e Luxemburgo.",
+      en: "Door-to-door pickup, weekly departures and over 40 years of experience. Find out exactly how our service between Portugal and Luxembourg works.",
+      fr: "Enlèvement porte-à-porte, départs hebdomadaires et plus de 40 ans d'expérience. Découvrez comment fonctionne notre service entre le Portugal et le Luxembourg.",
+      de: "Haus-zu-Haus-Abholung, wöchentliche Abfahrten und über 40 Jahre Erfahrung. Erfahren Sie, wie unser Service zwischen Portugal und Luxemburg funktioniert.",
+    },
+    metaDescription: {
+      pt: "Descubra como funciona o transporte porta a porta entre Portugal e Luxemburgo. Recolhas semanais, entregas ao domicílio e mais de 40 anos de experiência.",
+      en: "Discover how door-to-door transport between Portugal and Luxembourg works. Weekly pickups, home deliveries and over 40 years of experience.",
+      fr: "Découvrez comment fonctionne le transport porte-à-porte entre le Portugal et le Luxembourg. Enlèvements hebdomadaires et plus de 40 ans d'expérience.",
+      de: "Erfahren Sie, wie der Haus-zu-Haus-Transport zwischen Portugal und Luxemburg funktioniert. Wöchentliche Abholungen und über 40 Jahre Erfahrung.",
+    },
+    coverAlt: {
+      pt: "Estafeta entrega encomenda ao domicílio a partir de carrinha de transporte branca — Transportes Carlos & César",
+      en: "Driver hands a parcel to a customer at the doorstep from a white delivery van — Transportes Carlos & César",
+      fr: "Chauffeur remet un colis à un client devant la porte depuis une camionnette blanche — Transportes Carlos & César",
+      de: "Fahrer übergibt einem Kunden ein Paket an der Haustür aus einem weißen Lieferwagen — Transportes Carlos & César",
+    },
+    content: (lang) => <ComoFuncionaPost lang={lang} />,
+  },
+  {
     slug: "cadeado-tsa-malas-transporte",
     date: "2026-05-11",
     readingMinutes: 6,
