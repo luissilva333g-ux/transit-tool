@@ -44,7 +44,7 @@ export default function Blog() {
       <Navbar />
       <main>
         {/* Hero */}
-        <section className="section-padding pt-28 sm:pt-32 bg-surface relative overflow-hidden">
+        <section className="section-padding pt-36 sm:pt-40 bg-surface relative overflow-hidden">
           <div className="max-w-4xl mx-auto text-center relative">
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 border border-primary/30 mb-5">
               <Newspaper className="h-4 w-4 text-primary" />
